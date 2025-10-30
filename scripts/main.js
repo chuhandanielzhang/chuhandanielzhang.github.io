@@ -61,3 +61,22 @@ document.querySelectorAll('.project-card, .about-text').forEach(el => {
 // Console message
 console.log('%c 欢迎来到我的网站！', 'color: #6366f1; font-size: 20px; font-weight: bold;');
 
+// Thumbnail hover effect - only scale within original bounds
+document.querySelectorAll('.thumbnail-container').forEach(container => {
+    let isHovering = false;
+    
+    container.addEventListener('mouseenter', function() {
+        isHovering = true;
+        // Add a small invisible overlay to track mouse position
+        const overlay = document.createElement('div');
+        overlay.className = 'thumbnail-overlay';
+        this.appendChild(overlay);
+    });
+    
+    container.addEventListener('mouseleave', function() {
+        isHovering = false;
+        const overlay = this.querySelector('.thumbnail-overlay');
+        if (overlay) overlay.remove();
+    });
+});
+
