@@ -61,14 +61,3 @@ document.querySelectorAll('.project-card, .about-text').forEach(el => {
 // Console message
 console.log('%c 欢迎来到我的网站！', 'color: #6366f1; font-size: 20px; font-weight: bold;');
 
-// Thumbnail hover effect - create invisible overlay to limit hover area
-document.addEventListener('DOMContentLoaded', function() {
-    document.querySelectorAll('.thumbnail-container').forEach(container => {
-        // Create an invisible div to track mouse position within original bounds
-        const overlay = document.createElement('div');
-        overlay.className = 'hover-overlay';
-        overlay.style.cssText = 'position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; pointer-events: auto;';
-        container.appendChild(overlay);
-    });
-});
-
