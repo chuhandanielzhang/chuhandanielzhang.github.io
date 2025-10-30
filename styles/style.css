@@ -141,6 +141,16 @@ body {
     transform: translateX(5px);
 }
 
+/* Third-level submenu */
+.sidebar-submenu .sidebar-submenu {
+    margin-left: 15px;
+}
+
+.sidebar-submenu .sidebar-submenu .sidebar-sublink {
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
 /* Search Section */
 .sidebar-search {
     margin-top: 40px;
