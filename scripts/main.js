@@ -59,5 +59,15 @@ document.querySelectorAll('.project-card, .about-text').forEach(el => {
 });
 
 // Console message
-console.log('%c 欢迎来到我的网站！', 'color: #6366f1; font-size: 20px; font-weight: bold;');
+console.log('%c Welcome to my website!', 'color: #6366f1; font-size: 20px; font-weight: bold;');
+
+// Collapsible submenu - hide all submenus by default
+document.addEventListener('DOMContentLoaded', function() {
+    const allSubmenus = document.querySelectorAll('.sidebar-submenu');
+    
+    // Hide all submenus initially
+    allSubmenus.forEach(submenu => {
+        submenu.style.display = 'none';
+    });
+});
 
