@@ -12,16 +12,21 @@
             display: flex;
             flex-wrap: wrap;
             gap: 20px;
-            justify-content: center;
+            justify-content: flex-start;
         }
 
         .thumbnail-container {
             position: relative;
             width: 120px;
             height: 90px;
-            transition: transform 0.3s ease, z-index 0.3s ease;
+            transition: transform 0.3s ease;
             border-radius: 6px;
             overflow: visible;
+        }
+
+        .image-gallery:has(.thumbnail-container:hover) .thumbnail-container:not(:hover) {
+            transform: scale(0.9);
+            opacity: 0.5;
         }
 
         .thumbnail-container:hover {
