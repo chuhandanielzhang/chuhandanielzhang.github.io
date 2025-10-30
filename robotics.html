@@ -10,7 +10,7 @@
         .thumbnail-container {
             display: inline-block;
             width: 120px;
-            height: auto;
+            height: 90px;
             margin: 10px;
             cursor: pointer;
             transition: transform 0.3s ease;
@@ -21,15 +21,16 @@
         }
         
         .thumbnail-container:hover {
-            transform: scale(2.5);
+            transform: scale(3.5);
             z-index: 100;
             position: relative;
-            box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
         }
         
         .thumbnail-container img {
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover;
             display: block;
         }
 
@@ -57,19 +58,19 @@
             <!-- Navigation Menu -->
             <div class="sidebar-navigation">
                 <ul class="sidebar-menu">
-                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home / 首页</a></li>
-                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards / 获奖证书</a></li>
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
                     <li>
-                        <a href="robotics.html" class="sidebar-link active"><span class="icon">🤖</span>Robotics / 机器人竞赛</a>
+                        <a href="robotics.html" class="sidebar-link active"><span class="icon">🤖</span>Robotics</a>
                         <ul class="sidebar-submenu">
                             <li><a href="#nothing-but-net" class="sidebar-sublink">2016 Nothing But Net</a></li>
                             <li><a href="#tower-takeover" class="sidebar-sublink">2019-2022 Tower Takeover</a></li>
                         </ul>
                     </li>
-                    <li><a href="#education" class="sidebar-link"><span class="icon">🎓</span>Education / 教育</a></li>
-                    <li><a href="#publication" class="sidebar-link"><span class="icon">📄</span>Publications / 发表作品</a></li>
-                    <li><a href="#talks" class="sidebar-link"><span class="icon">🎤</span>Talks / 演讲</a></li>
-                    <li><a href="#media" class="sidebar-link"><span class="icon">📺</span>Media Coverage / 媒体报道</a></li>
+                    <li><a href="#education" class="sidebar-link"><span class="icon">🎓</span>Education</a></li>
+                    <li><a href="#publication" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="#talks" class="sidebar-link"><span class="icon">🎤</span>Talks</a></li>
+                    <li><a href="#media" class="sidebar-link"><span class="icon">📺</span>Media</a></li>
                     <li><a href="#research-robotics" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
                     <li><a href="#research-biology" class="sidebar-link"><span class="icon">🧬</span>Research: Biology</a></li>
                 </ul>
@@ -77,7 +78,7 @@
 
             <!-- Search Section -->
             <div class="sidebar-search">
-                <label class="search-label">Search / 搜索</label>
+                <label class="search-label">Search</label>
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="Search...">
                     <button class="search-btn">Search</button>
@@ -90,37 +91,36 @@
             <!-- Robotics Header -->
             <section class="content-header">
                 <h1>Robotics Competition</h1>
-                <p>My journey in VEX Robotics Competitions</p>
+                <p>My VEX Robotics Journey</p>
             </section>
 
-            <!-- What's VEX? -->
+            <!-- Intro Section -->
             <section class="project-section">
-                <h2 class="section-title">What's VEX?</h2>
                 <div class="project-content">
-                    <p>VEX Robotics is the largest and fastest-growing robotics program for middle and high school students worldwide. VEX competitions combine competitive robotics with educational initiatives, encouraging students to apply Science, Technology, Engineering, and Mathematics (STEM) principles in a hands-on, real-world context.</p>
-                    <p>Through VEX, students design, build, and program robots to compete in exciting tournaments that combine the tactical decision-making of a sport with the technical rigor of engineering. Each season presents a new game challenge that tests teams' creativity, problem-solving skills, and ability to work collaboratively under pressure.</p>
-                    <p><a href="https://www.vexrobotics.com/" target="_blank" class="btn btn-outline">Visit VEX Robotics Website →</a></p>
+                    <p>My passion for robotics ignited in middle school through VEX Robotics Competitions. These events are more than just contests; they're a hands-on fusion of sport, strategy, and engineering, where students worldwide design, build, and program robots to solve a new game challenge each season. It was here I learned to lead, innovate, and turn ideas into a functioning, competitive machine.</p>
                 </div>
             </section>
 
-            <!-- Team 9698B -->
+            <!-- Team 9698B (Middle School) -->
             <section id="nothing-but-net" class="project-section">
-                <h2 class="section-title">About Team 9698B</h2>
+                <h2 class="section-title">About Team 9698B (Middle School)</h2>
                 <div class="project-content">
-                    <p>As team captain, I co-founded Team 9698B with four middle school classmates. Together, we embarked on an ambitious project from initial CAD modeling to final assembly, creating a highly capable mobile platform.</p>
-                    <h3>Our Robot's Capabilities</h3>
+                    <p>I co-founded and captained Team 9698B, guiding four classmates from initial concept to a fully operational robot. We managed the entire process—brainstorming, CAD design, programming, and integration—as a collaborative team.</p>
+                    
+                    <h3>Our Creation & Key Innovations</h3>
                     <ul>
-                        <li><strong>Collection System</strong>: Engineered an efficient mechanism to gather spherical game objects from the playing field</li>
-                        <li><strong>Precision Launching</strong>: Developed a high-accuracy shooting system capable of consistently hitting elevated goals</li>
-                        <li><strong>Dual Control Modes</strong>: Implemented both autonomous programming and manual driver control capabilities</li>
-                        <li><strong>Competitive Performance</strong>: Combined strategic gameplay with technical excellence to excel in tournaments</li>
+                        <li><strong>Agile Movement</strong>: We built a holonomic drivetrain for superior mobility, allowing our robot to strafe and reposition with ease.</li>
+                        <li><strong>Efficient Collection & Launching</strong>: I designed a wide roller intake system to gather balls, which were then fed into a dual-flywheel launcher. By implementing a PID control loop with encoder feedback, we achieved consistent, high-accuracy shots.</li>
+                        <li><strong>Smart Architecture</strong>: Our "front-intake, front-shooter" design was not only intuitive for drivers but also enabled unique scoring angles, even from directly beneath the goal.</li>
+                        <li><strong>Autonomous Precision</strong>: I programmed a reliable 15-second autonomous routine that scored pre-loaded balls and navigated to a strategic starting position.</li>
                     </ul>
-                    <h3>Achievements</h3>
+
+                    <h3>Achievements (9698B)</h3>
                     <ul>
-                        <li>🏆 <strong>2016 VEX Asia-Pacific Robotics Championship - Champion</strong> (Melbourne, Australia)</li>
-                        <li>🏆 <strong>2016 VEX Robotics World Championship - Division Champion</strong> (Louisville, KY, USA)</li>
-                        <li>🥉 <strong>17th China Adolescent Robotics Competition - Third Prize</strong></li>
-                        <li>🥇 <strong>16th China Adolescent Robotics Competition - First Prize</strong> (Elementary Division)</li>
+                        <li>🏆 <strong>Champion, 2016 VEX Asia-Pacific Robotics Championship</strong> (Melbourne, Australia)</li>
+                        <li>🏆 <strong>Division Champion, 2016 VEX Robotics World Championship</strong> (Louisville, KY, USA)</li>
+                        <li>🥉 <strong>Third Prize, 17th China Adolescent Robotics Competition</strong></li>
+                        <li>🥇 <strong>First Prize, 16th China Adolescent Robotics Competition</strong> (Elementary Division)</li>
                     </ul>
                 </div>
             </section>
@@ -148,26 +148,25 @@
                 </div>
             </section>
 
-            <!-- Team 9666A -->
+            <!-- Team 9666A (High School) -->
             <section id="tower-takeover" class="project-section">
-                <h2 class="section-title">About Team 9666A</h2>
+                <h2 class="section-title">About Team 9666A (High School)</h2>
                 <div class="project-content">
-                    <p>As I entered high school, I founded a new robotics club and led Team 9666A. I mentored two complete beginners, guiding them through the entire design and build process.</p>
+                    <p>Entering high school, I founded a new robotics club and led Team 9666A. This time, I took on a mentorship role, guiding two beginners through their first build. We used project management tools like Notion to structure our workflow, with weekly goals and learning modules to ensure steady progress.</p>
                     
-                    <h3>Our Robot's Capabilities</h3>
+                    <h3>Our Robot & Key Features</h3>
                     <ul>
-                        <li><strong>10-Cube Collection</strong>: Designed a mechanism capable of collecting up to 10 game cubes simultaneously</li>
-                        <li><strong>Tower Stacking</strong>: Engineered a precise stacking system for high-rise tower construction</li>
-                        <li><strong>Programmed Automation</strong>: Developed sophisticated autonomous routines for strategic gameplay</li>
-                        <li><strong>Human-Robot Collaboration</strong>: Seamlessly integrated driver control with autonomous sequences for maximum efficiency</li>
+                        <li><strong>High-Capacity Handling</strong>: We engineered a tilting tray mechanism that could collect and hold up to 10 cubes, using reversible rollers for precise control.</li>
+                        <li><strong>Articulated Stacking Arm</strong>: I developed a parallelogram lift with an articulating intake. This clever mechanism ensured a clean release of stacked cubes as the robot moved away.</li>
+                        <li><strong>Driver-Friendly Automation</strong>: To simplify the complex stacking task, I coded a 'one-touch stacking' macro. This driver-assist feature automated the lift-and-place sequence, allowing us to execute consistent, high-scoring stacks under pressure.</li>
                     </ul>
 
-                    <h3>Achievements</h3>
+                    <h3>Achievements (9666A)</h3>
                     <ul>
-                        <li>🥈 <strong>2019 VEX World Championship China Qualifier - Runner-up</strong></li>
-                        <li>🥇 <strong>2019 VEX World Championship China Qualifier - First Prize</strong></li>
-                        <li>🏆 <strong>13th VEX Asia-Pacific Robotics Championship - Gold Award</strong></li>
-                        <li>🥉 <strong>13th VEX Asia-Pacific Robotics Championship - Third Place</strong></li>
+                        <li>🥈 <strong>Runner-up, 2019 VEX World Championship China Qualifier</strong></li>
+                        <li>🥇 <strong>First Prize, 2019 VEX World Championship China Qualifier</strong></li>
+                        <li>🏆 <strong>Gold Award, 13th VEX Asia-Pacific Robotics Championship</strong></li>
+                        <li>🥉 <strong>Third Place, 13th VEX Asia-Pacific Robotics Championship</strong></li>
                     </ul>
                 </div>
             </section>
@@ -183,7 +182,7 @@
                             <img src="vex1.jpg" alt="Team 9666A Tower Takeover robot">
                         </div>
                         <div class="thumbnail-container">
-                            <img src="vex-9666a-worlds.jpg" alt="Team 9666A at VEX Worlds 2016 celebration photo">
+                            <img src="vex-9666a-worlds.jpg" alt="Team 9666A at VEX Worlds celebration">
                         </div>
                     </div>
                 </div>
