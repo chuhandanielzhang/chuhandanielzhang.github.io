@@ -9,18 +9,19 @@
     <style>
         .thumbnail-container {
             display: inline-block;
-            width: 150px;
+            width: 100px;
             height: auto;
-            margin: 20px 20px 20px 0;
+            margin: 10px;
             cursor: pointer;
             transition: transform 0.3s ease;
-            border-radius: 8px;
+            border-radius: 6px;
             overflow: hidden;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            vertical-align: top;
         }
         
         .thumbnail-container:hover {
-            transform: scale(1.8);
+            transform: scale(1.5);
             z-index: 10;
             position: relative;
             box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -30,6 +31,13 @@
             width: 100%;
             height: auto;
             display: block;
+        }
+
+        .image-gallery {
+            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
         }
     </style>
 </head>
@@ -96,7 +104,7 @@
             </section>
 
             <!-- Team 9698B -->
-            <section class="project-section">
+            <section id="nothing-but-net" class="project-section">
                 <h2 class="section-title">About Team 9698B</h2>
                 <div class="project-content">
                     <p>As team captain, I co-founded Team 9698B with four middle school classmates. Together, we embarked on an ambitious project from initial CAD modeling to final assembly, creating a highly capable mobile platform.</p>
@@ -109,9 +117,8 @@
                     </ul>
                     <h3>Achievements</h3>
                     <ul>
-                        <li>🏆 <strong>2015 VEX Asia-Pacific Robotics Championship - Champion</strong> (Melbourne, Australia)</li>
+                        <li>🏆 <strong>2016 VEX Asia-Pacific Robotics Championship - Champion</strong> (Melbourne, Australia)</li>
                         <li>🏆 <strong>2016 VEX Robotics World Championship - Division Champion</strong> (Louisville, KY, USA)</li>
-                        <li>🏆 <strong>2015 World Adolescent Robot Invitational Tournament - Runner-up</strong> (Beijing, China)</li>
                         <li>🥉 <strong>17th China Adolescent Robotics Competition - Third Prize</strong></li>
                         <li>🥇 <strong>16th China Adolescent Robotics Competition - First Prize</strong> (Elementary Division)</li>
                     </ul>
@@ -119,24 +126,32 @@
             </section>
 
             <!-- 2015-2016 Nothing But Net Season -->
-            <section id="nothing-but-net" class="project-section">
+            <section class="project-section">
                 <h2 class="section-title">2015-2016 Season: Nothing But Net (一网打尽)</h2>
                 <div class="project-content">
                     <p>In this season, the game objective is to shoot balls into high-mounted baskets to score points.</p>
                     
-                    <div class="thumbnail-container">
-                        <img src="vex2.jpg" alt="2016 VEX Nothing But Net season robot">
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="vex2.jpg" alt="Team 9698B robot with orange collection system">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="vex-9698b-1.jpg" alt="Team 9698B working on robot at competition">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="vex-9698b-2.jpg" alt="Team 9698B drive team members">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="vex-9698b-3.jpg" alt="Team 9698B division champions award ceremony">
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <!-- 2019-2022 Tower Takeover Season -->
+            <!-- Team 9666A -->
             <section id="tower-takeover" class="project-section">
-                <h2 class="section-title">2019-2022 Season: Tower Takeover (塔楼接管)</h2>
+                <h2 class="section-title">About Team 9666A</h2>
                 <div class="project-content">
-                    <p>In this season, the game objective is to place cubes into scoring zones and towers to achieve the highest score.</p>
-
-                    <h3>About Team 9666A</h3>
                     <p>As I entered high school, I founded a new robotics club and led Team 9666A. I mentored two complete beginners, guiding them through the entire design and build process.</p>
                     
                     <h3>Our Robot's Capabilities</h3>
@@ -154,9 +169,22 @@
                         <li>🏆 <strong>13th VEX Asia-Pacific Robotics Championship - Gold Award</strong></li>
                         <li>🥉 <strong>13th VEX Asia-Pacific Robotics Championship - Third Place</strong></li>
                     </ul>
+                </div>
+            </section>
+
+            <!-- 2019-2022 Tower Takeover Season -->
+            <section class="project-section">
+                <h2 class="section-title">2019-2022 Season: Tower Takeover (塔楼接管)</h2>
+                <div class="project-content">
+                    <p>In this season, the game objective is to place cubes into scoring zones and towers to achieve the highest score.</p>
                     
-                    <div class="thumbnail-container">
-                        <img src="vex1.jpg" alt="2019 VEX Tower Takeover season robot">
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="vex1.jpg" alt="Team 9666A Tower Takeover robot">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="vex-9666a-worlds.jpg" alt="Team 9666A at VEX Worlds 2016 celebration photo">
+                        </div>
                     </div>
                 </div>
             </section>
