@@ -618,6 +618,42 @@ body {
     line-height: 1.6;
 }
 
+.achievement-list {
+    margin-top: 30px;
+}
+
+.achievement-item {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 4px solid var(--primary-color);
+    margin-bottom: 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.achievement-item h4 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.achievement-item ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.achievement-item ul li {
+    margin-bottom: 8px;
+    color: var(--text-light);
+}
+
+.achievement-item ul li strong {
+    color: var(--text-color);
+}
+
 /* Smooth scroll */
 html {
     scroll-behavior: smooth;
