@@ -151,6 +151,22 @@ body {
     color: rgba(255, 255, 255, 0.6);
 }
 
+/* Education & Experience Section */
+.education-item {
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: var(--shadow-md);
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
 /* Search Section */
 .sidebar-search {
     margin-top: 40px;
