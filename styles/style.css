@@ -113,6 +113,34 @@ body {
     font-size: 1.2rem;
 }
 
+/* Submenu Styles */
+.sidebar-submenu {
+    list-style: none;
+    margin-left: 20px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.sidebar-submenu li {
+    margin-bottom: 3px;
+}
+
+.sidebar-sublink {
+    display: block;
+    padding: 8px 12px;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.sidebar-sublink:hover {
+    background-color: var(--sidebar-hover);
+    color: white;
+    transform: translateX(5px);
+}
+
 /* Search Section */
 .sidebar-search {
     margin-top: 40px;
