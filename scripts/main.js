@@ -64,10 +64,27 @@ console.log('%c Welcome to my website!', 'color: #6366f1; font-size: 20px; font-
 // Collapsible submenu - hide all submenus by default
 document.addEventListener('DOMContentLoaded', function() {
     const allSubmenus = document.querySelectorAll('.sidebar-submenu');
+    const currentPage = window.location.pathname.split('/').pop();
     
     // Hide all submenus initially
     allSubmenus.forEach(submenu => {
         submenu.style.display = 'none';
     });
+    
+    // Only show submenu if we're on the corresponding page
+    const roboticsSubmenu = document.querySelector('a[href="robotics.html"]')?.parentElement?.querySelector('.sidebar-submenu');
+    if (currentPage === 'robotics.html' && roboticsSubmenu) {
+        roboticsSubmenu.style.display = 'block';
+        // Also expand nested VEX submenu
+        const vexSubmenu = roboticsSubmenu.querySelector('a[href*="#vex"]')?.parentElement?.querySelector('.sidebar-submenu');
+        if (vexSubmenu) {
+            vexSubmenu.style.display = 'block';
+        }
+    }
+    
+    const awardsSubmenu = document.querySelector('a[href="awards.html"]')?.parentElement?.querySelector('.sidebar-submenu');
+    if (currentPage === 'awards.html' && awardsSubmenu) {
+        awardsSubmenu.style.display = 'block';
+    }
 });
 
