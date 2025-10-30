@@ -7,38 +7,66 @@
     <title>Robotics Competition - Chuhan ZHANG's Website</title>
     <link rel="stylesheet" href="styles/style.css">
     <style>
-        .thumbnail-container {
-            display: inline-block;
+        .image-gallery {
+            margin: 30px 0;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .carousel-container {
+            display: flex;
+            animation: scroll 30s linear infinite;
+            width: max-content;
+        }
+
+        .image-gallery:hover .carousel-container {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        .carousel-item {
+            flex-shrink: 0;
+            margin: 0 15px;
             width: 120px;
             height: 90px;
-            margin: 10px;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-            vertical-align: top;
-        }
-        
-        .thumbnail-container:hover {
-            transform: scale(3.5);
-            z-index: 100;
             position: relative;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
         }
-        
-        .thumbnail-container img {
+
+        .image-gallery:hover .carousel-item {
+            transform: scale(1);
+        }
+
+        .carousel-item:hover {
+            transform: scale(3.5) !important;
+            z-index: 100;
+        }
+
+        .carousel-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            display: block;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: box-shadow 0.3s ease;
         }
 
-        .image-gallery {
-            margin: 20px 0;
+        .carousel-item:hover img {
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        /* Duplicate images for infinite scroll effect */
+        .carousel-container.duplicate {
             display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
+            animation: scroll 30s linear infinite;
         }
     </style>
 </head>
@@ -132,17 +160,33 @@
                     <p>In this season, the game objective is to shoot balls into high-mounted baskets to score points.</p>
                     
                     <div class="image-gallery">
-                        <div class="thumbnail-container">
-                            <img src="vex2.jpg" alt="Team 9698B robot with orange collection system">
+                        <div class="carousel-container">
+                            <div class="carousel-item">
+                                <img src="vex2.jpg" alt="Team 9698B robot with orange collection system">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9698b-1.jpg" alt="Team 9698B working on robot at competition">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9698b-2.jpg" alt="Team 9698B drive team members">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9698b-3.jpg" alt="Team 9698B division champions award ceremony">
+                            </div>
                         </div>
-                        <div class="thumbnail-container">
-                            <img src="vex-9698b-1.jpg" alt="Team 9698B working on robot at competition">
-                        </div>
-                        <div class="thumbnail-container">
-                            <img src="vex-9698b-2.jpg" alt="Team 9698B drive team members">
-                        </div>
-                        <div class="thumbnail-container">
-                            <img src="vex-9698b-3.jpg" alt="Team 9698B division champions award ceremony">
+                        <div class="carousel-container">
+                            <div class="carousel-item">
+                                <img src="vex2.jpg" alt="Team 9698B robot with orange collection system">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9698b-1.jpg" alt="Team 9698B working on robot at competition">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9698b-2.jpg" alt="Team 9698B drive team members">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9698b-3.jpg" alt="Team 9698B division champions award ceremony">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,11 +222,21 @@
                     <p>In this season, the game objective is to place cubes into scoring zones and towers to achieve the highest score.</p>
                     
                     <div class="image-gallery">
-                        <div class="thumbnail-container">
-                            <img src="vex1.jpg" alt="Team 9666A Tower Takeover robot">
+                        <div class="carousel-container">
+                            <div class="carousel-item">
+                                <img src="vex1.jpg" alt="Team 9666A Tower Takeover robot">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9666a-worlds.jpg" alt="Team 9666A at VEX Worlds celebration">
+                            </div>
                         </div>
-                        <div class="thumbnail-container">
-                            <img src="vex-9666a-worlds.jpg" alt="Team 9666A at VEX Worlds celebration">
+                        <div class="carousel-container">
+                            <div class="carousel-item">
+                                <img src="vex1.jpg" alt="Team 9666A Tower Takeover robot">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="vex-9666a-worlds.jpg" alt="Team 9666A at VEX Worlds celebration">
+                            </div>
                         </div>
                     </div>
                 </div>
