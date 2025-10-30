@@ -37,7 +37,7 @@ body {
 
 /* Sidebar */
 .sidebar {
-    width: 300px;
+    width: 350px;
     background-color: var(--sidebar-bg);
     color: var(--sidebar-text);
     padding: 40px 30px;
@@ -96,7 +96,7 @@ body {
     color: var(--sidebar-text);
     border-radius: 5px;
     transition: all 0.3s ease;
-    font-size: 1rem;
+    font-size: 0.9rem;
 }
 
 .sidebar-link:hover {
@@ -131,7 +131,7 @@ body {
     padding: 8px 12px;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.8);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border-radius: 5px;
     transition: all 0.3s ease;
 }
@@ -148,7 +148,7 @@ body {
 }
 
 .sidebar-submenu .sidebar-submenu .sidebar-sublink {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
     color: rgba(255, 255, 255, 0.6);
 }
 
@@ -222,7 +222,7 @@ body {
 /* Main Content */
 .main-content {
     flex: 1;
-    margin-left: 300px;
+    margin-left: 350px;
     padding: 40px 60px;
     background-color: var(--bg-color);
 }
