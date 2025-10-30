@@ -417,6 +417,14 @@ body {
     .category-title {
         font-size: 1.5rem;
     }
+    
+    .content-header h1 {
+        font-size: 2rem;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 /* Animations */
@@ -514,6 +522,100 @@ body {
     margin-top: 60px;
     padding-top: 30px;
     border-top: 2px solid var(--border-color);
+}
+
+/* Robotics Project Page Styles */
+.project-section {
+    margin-bottom: 80px;
+    padding-bottom: 40px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-section:last-of-type {
+    border-bottom: none;
+}
+
+.content-header {
+    margin-bottom: 60px;
+    padding-bottom: 30px;
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.content-header h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 15px;
+}
+
+.content-header p {
+    font-size: 1.2rem;
+    color: var(--text-light);
+}
+
+.project-content h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--border-color);
+}
+
+.project-content ul {
+    list-style-position: inside;
+    color: var(--text-light);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.project-content ul li {
+    margin-bottom: 10px;
+}
+
+.project-content strong {
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.project-image {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.skill-card {
+    background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.skill-card h3 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.skill-card p {
+    color: var(--text-light);
+    line-height: 1.6;
 }
 
 /* Smooth scroll */
