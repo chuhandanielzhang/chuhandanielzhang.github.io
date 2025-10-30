@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="张楚涵的获奖证书和荣誉展示">
+    <title>获奖证书 - Chuhan ZHANG's Website</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .awards-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .award-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            padding: 25px;
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .award-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .award-title {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+        
+        .award-details {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 8px 20px;
+            margin-bottom: 15px;
+        }
+        
+        .award-label {
+            font-weight: 600;
+            color: var(--text-color);
+            min-width: 80px;
+        }
+        
+        .award-value {
+            color: var(--text-light);
+            line-height: 1.5;
+        }
+        
+        .award-date {
+            text-align: right;
+            font-style: italic;
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+        
+        .awards-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .awards-header h1 {
+            font-size: 2.5rem;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        
+        .awards-header p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+        
+        .category-section {
+            margin-bottom: 50px;
+        }
+        
+        .category-title {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .category-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+        
+        .back-to-home {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .back-to-home .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-home .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .award-details {
+                grid-template-columns: 1fr;
+                gap: 5px;
+            }
+            
+            .award-label {
+                min-width: auto;
+                font-weight: 700;
+            }
+            
+            .awards-header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">Chuhan ZHANG's Website</div>
+            <ul class="nav-menu">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="index.html#about">关于</a></li>
+                <li><a href="index.html#projects">项目</a></li>
+                <li><a href="awards.html">获奖证书</a></li>
+                <li><a href="index.html#contact">联系</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Awards Header -->
+    <section class="awards-header">
+        <div class="container">
+            <h1>获奖证书</h1>
+            <p>展示我的学术成就和荣誉奖项</p>
+        </div>
+    </section>
+
+    <!-- Awards Content -->
+    <div class="awards-container">
+        
+        <!-- 科技创新类 -->
+        <div class="category-section">
+            <h2 class="category-title">科技创新</h2>
+            
+            <div class="award-card">
+                <div class="award-title">第十一届中国青少年科技创新奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">共青团中央、全国青联、全国学联、全国少工委</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2018年8月</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">第二十二届福建省学生信息素养提升实践活动一等奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">作品:</div>
+                    <div class="award-value">《智能黑板》</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">福建省电化教育馆</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2021年5月</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">第二十二届全国学生信息素养提升实践活动参与证书</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">创客项目</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">中央电化教育馆</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2021年9月</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 机器人竞赛类 -->
+        <div class="category-section">
+            <h2 class="category-title">机器人竞赛</h2>
+            
+            <div class="award-card">
+                <div class="award-title">2019年VEX世界锦标赛中国区选拔赛亚军</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵 (队伍: 96666A)</div>
+                    <div class="award-label">学校:</div>
+                    <div class="award-value">福州第八中学</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX EDR 高中组</div>
+                    <div class="award-label">指导老师:</div>
+                    <div class="award-value">章盛智</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">机器人教育与竞赛基金会、阿里体育有限公司</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">2019年VEX世界锦标赛中国区选拔赛一等奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵 (队伍: 96666A)</div>
+                    <div class="award-label">学校:</div>
+                    <div class="award-value">福州第八中学</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX EDR 高中组</div>
+                    <div class="award-label">指导老师:</div>
+                    <div class="award-value">章盛智</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">机器人教育与竞赛基金会、阿里体育有限公司</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">第十三届VEX亚太机器人锦标赛金奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵、陈隽熠、苏皓翔 (队伍: 96666A)</div>
+                    <div class="award-label">学校:</div>
+                    <div class="award-value">福州第八中学</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX EDR 机器人竞赛 (高中组)</div>
+                    <div class="award-label">指导老师:</div>
+                    <div class="award-value">章盛智</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">亚洲机器人联盟</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2019年12月12日</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">第十三届VEX亚太机器人锦标赛季军</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵、陈隽熠、苏皓翔 (队伍: 96666A)</div>
+                    <div class="award-label">学校:</div>
+                    <div class="award-value">福州第八中学</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX EDR 机器人竞赛 (高中组)</div>
+                    <div class="award-label">指导老师:</div>
+                    <div class="award-value">章盛智</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">亚洲机器人联盟</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2019年12月12日</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">2015年VEX亚太机器人锦标赛冠军</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">学校:</div>
+                    <div class="award-value">福州鼓楼第一中心小学</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX锦标赛冠军</div>
+                    <div class="award-label">指导老师:</div>
+                    <div class="award-value">林伟、李峰</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">亚洲机器人联盟</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2015年12月 (澳大利亚墨尔本)</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">2016年VEX机器人世界锦标赛分区冠军</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵、林子桐、黄宁浩、严阳、黄宇轩、郑培妍、林圣元、潘佳怡、刘星宇、李忠庚、高淑妍</div>
+                    <div class="award-label">学校:</div>
+                    <div class="award-value">创未来青少年机器人俱乐部 & 福州鼓楼第一中心小学联合队</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">分区冠军</div>
+                    <div class="award-label">地点:</div>
+                    <div class="award-value">美国肯塔基州路易斯维尔肯塔基展览中心</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">亚洲机器人联盟</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2016年4月</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 钢琴音乐类 -->
+        <div class="category-section">
+            <h2 class="category-title">钢琴音乐</h2>
+            
+            <div class="award-card">
+                <div class="award-title">第七届香港国际文化艺术节福建钢琴比赛二等奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">钢琴专业 (福建儿童组)</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">中国音乐舞蹈艺术家协会</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2016年2月1日</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">第十一届中国艺术特长生教育成果展示活动金奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">钢琴专业 (福建儿童组B)</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">中国教育学会、中国音乐舞蹈艺术家协会、福州文化艺术交流协会、第十一届中国艺术特长生...福建省组委会</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2014年6月</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 综合荣誉类 -->
+        <div class="category-section">
+            <h2 class="category-title">综合荣誉</h2>
+            
+            <div class="award-card">
+                <div class="award-title">福州市新时代好少年</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">中共福州市委文明办</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2019年1月</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">三好学生</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵 (福州鼓楼第一中心小学)</div>
+                    <div class="award-label">学年:</div>
+                    <div class="award-value">2015-2016学年</div>
+                    <div class="award-label">理由:</div>
+                    <div class="award-value">在德智体美劳各方面表现优秀</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">福州市鼓楼区教育局</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2016年5月</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 其他竞赛类 -->
+        <div class="category-section">
+            <h2 class="category-title">其他竞赛</h2>
+            
+            <div class="award-card">
+                <div class="award-title">第十七届中国青少年机器人竞赛三等奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵、谢辰昊、翁楚皓</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX机器人工程挑战赛 (初中组)</div>
+                    <div class="award-label">教练:</div>
+                    <div class="award-value">卢俊、林强、苏燕妮</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">中国科学技术协会</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2017年7月</div>
+                </div>
+            </div>
+
+            <div class="award-card">
+                <div class="award-title">第十六届中国青少年机器人竞赛一等奖</div>
+                <div class="award-details">
+                    <div class="award-label">获奖者:</div>
+                    <div class="award-value">张楚涵、王煜阳、陈柏霖、林予睿</div>
+                    <div class="award-label">项目:</div>
+                    <div class="award-value">VEX机器人工程挑战赛 (小学组)</div>
+                    <div class="award-label">教练:</div>
+                    <div class="award-value">李峰、朱小秀、林强</div>
+                    <div class="award-label">颁发机构:</div>
+                    <div class="award-value">中国科学技术协会</div>
+                    <div class="award-label">时间:</div>
+                    <div class="award-value">2016年7月</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 返回首页 -->
+        <div class="back-to-home">
+            <a href="index.html" class="btn">返回首页</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 Chuhan ZHANG's Website. 保留所有权利.</p>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
