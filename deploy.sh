@@ -2,13 +2,13 @@
 
 # GitHub Pages 部署脚本
 # 使用说明：
-# 1. 将 YOUR_USERNAME 和 REPO_NAME 替换为你的实际 GitHub 用户名和仓库名
+# 1. 将 da7acc2ch 和 REPO_NAME 替换为你的实际 GitHub 用户名和仓库名
 # 2. 运行: chmod +x deploy.sh
 # 3. 运行: ./deploy.sh
 
 # 配置信息（请修改为你的信息）
-GITHUB_USERNAME="YOUR_USERNAME"
-REPO_NAME="YOUR_REPO_NAME"
+GITHUB_USERNAME="da7acc2ch"
+REPO_NAME="chuhanzhang.github.io"
 
 echo "🚀 开始部署 GitHub Pages 网站..."
 
