@@ -1,11 +1,37 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="张楚涵的机器人竞赛项目展示">
-    <title>机器人竞赛 - Chuhan ZHANG's Website</title>
+    <meta name="description" content="Chuhan Zhang's Robotics Competition Projects">
+    <title>Robotics Competition - Chuhan ZHANG's Website</title>
     <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .thumbnail-container {
+            display: inline-block;
+            width: 150px;
+            height: auto;
+            margin: 20px 20px 20px 0;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .thumbnail-container:hover {
+            transform: scale(1.8);
+            z-index: 10;
+            position: relative;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+        
+        .thumbnail-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    </style>
 </head>
 <body>
     <!-- Main Layout with Sidebar -->
@@ -23,31 +49,30 @@
             <!-- Navigation Menu -->
             <div class="sidebar-navigation">
                 <ul class="sidebar-menu">
-                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>首页</a></li>
-                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>获奖证书</a></li>
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
                     <li>
-                        <a href="robotics.html" class="sidebar-link active"><span class="icon">🤖</span>机器人竞赛</a>
+                        <a href="robotics.html" class="sidebar-link active"><span class="icon">🤖</span>Robotics</a>
                         <ul class="sidebar-submenu">
-                            <li><a href="#nothing-but-net" class="sidebar-sublink">2016 一网打尽</a></li>
-                            <li><a href="#tower-takeover" class="sidebar-sublink">2019 塔楼接管</a></li>
-                            <li><a href="#china-competition" class="sidebar-sublink">中国青少年竞赛</a></li>
+                            <li><a href="#nothing-but-net" class="sidebar-sublink">2016 Nothing But Net</a></li>
+                            <li><a href="#tower-takeover" class="sidebar-sublink">2019-2022 Tower Takeover</a></li>
                         </ul>
                     </li>
-                    <li><a href="#education" class="sidebar-link"><span class="icon">🎓</span>教育</a></li>
-                    <li><a href="#publication" class="sidebar-link"><span class="icon">📄</span>发表作品</a></li>
-                    <li><a href="#talks" class="sidebar-link"><span class="icon">🎤</span>演讲</a></li>
-                    <li><a href="#media" class="sidebar-link"><span class="icon">📺</span>媒体报道</a></li>
-                    <li><a href="#research-robotics" class="sidebar-link"><span class="icon">🔬</span>研究：机器人</a></li>
-                    <li><a href="#research-biology" class="sidebar-link"><span class="icon">🧬</span>研究：生物学</a></li>
+                    <li><a href="#education" class="sidebar-link"><span class="icon">🎓</span>Education</a></li>
+                    <li><a href="#publication" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="#talks" class="sidebar-link"><span class="icon">🎤</span>Talks</a></li>
+                    <li><a href="#media" class="sidebar-link"><span class="icon">📺</span>Media Coverage</a></li>
+                    <li><a href="#research-robotics" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="#research-biology" class="sidebar-link"><span class="icon">🧬</span>Research: Biology</a></li>
                 </ul>
             </div>
 
             <!-- Search Section -->
             <div class="sidebar-search">
-                <label class="search-label">搜索</label>
+                <label class="search-label">Search</label>
                 <div class="search-container">
-                    <input type="text" class="search-input" placeholder="搜索...">
-                    <button class="search-btn">搜索</button>
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">Search</button>
                 </div>
             </div>
         </aside>
@@ -56,131 +81,89 @@
         <main class="main-content">
             <!-- Robotics Header -->
             <section class="content-header">
-                <h1>机器人竞赛项目</h1>
-                <p>我在VEX机器人竞赛中的精彩旅程</p>
+                <h1>Robotics Competition</h1>
+                <p>My journey in VEX Robotics Competitions</p>
+            </section>
+
+            <!-- What's VEX? -->
+            <section class="project-section">
+                <h2 class="section-title">What's VEX?</h2>
+                <div class="project-content">
+                    <p>VEX Robotics is the largest and fastest-growing robotics program for middle and high school students worldwide. VEX competitions combine competitive robotics with educational initiatives, encouraging students to apply Science, Technology, Engineering, and Mathematics (STEM) principles in a hands-on, real-world context.</p>
+                    <p>Through VEX, students design, build, and program robots to compete in exciting tournaments that combine the tactical decision-making of a sport with the technical rigor of engineering. Each season presents a new game challenge that tests teams' creativity, problem-solving skills, and ability to work collaboratively under pressure.</p>
+                    <p><a href="https://www.vexrobotics.com/" target="_blank" class="btn btn-outline">Visit VEX Robotics Website →</a></p>
+                </div>
+            </section>
+
+            <!-- Team 9698B -->
+            <section class="project-section">
+                <h2 class="section-title">About Team 9698B</h2>
+                <div class="project-content">
+                    <p>As team captain, I co-founded Team 9698B with four middle school classmates. Together, we embarked on an ambitious project from initial CAD modeling to final assembly, creating a highly capable mobile platform.</p>
+                    <h3>Our Robot's Capabilities</h3>
+                    <ul>
+                        <li><strong>Collection System</strong>: Engineered an efficient mechanism to gather spherical game objects from the playing field</li>
+                        <li><strong>Precision Launching</strong>: Developed a high-accuracy shooting system capable of consistently hitting elevated goals</li>
+                        <li><strong>Dual Control Modes</strong>: Implemented both autonomous programming and manual driver control capabilities</li>
+                        <li><strong>Competitive Performance</strong>: Combined strategic gameplay with technical excellence to excel in tournaments</li>
+                    </ul>
+                    <h3>Achievements</h3>
+                    <ul>
+                        <li>🏆 <strong>2015 VEX Asia-Pacific Robotics Championship - Champion</strong> (Melbourne, Australia)</li>
+                        <li>🏆 <strong>2016 VEX Robotics World Championship - Division Champion</strong> (Louisville, KY, USA)</li>
+                        <li>🏆 <strong>2015 World Adolescent Robot Invitational Tournament - Runner-up</strong> (Beijing, China)</li>
+                        <li>🥉 <strong>17th China Adolescent Robotics Competition - Third Prize</strong></li>
+                        <li>🥇 <strong>16th China Adolescent Robotics Competition - First Prize</strong> (Elementary Division)</li>
+                    </ul>
+                </div>
             </section>
 
             <!-- 2015-2016 Nothing But Net Season -->
             <section id="nothing-but-net" class="project-section">
-                <h2 class="section-title">2015-2016 赛季：Nothing But Net (一网打尽)</h2>
+                <h2 class="section-title">2015-2016 Season: Nothing But Net (一网打尽)</h2>
                 <div class="project-content">
-                    <p>在2016年的VEX机器人世界锦标赛中，我参与了"Nothing But Net"（一网打尽）赛季的比赛。这个赛季的比赛目标是将球投射到高处的篮筐中得分。</p>
+                    <p>In this season, the game objective is to shoot balls into high-mounted baskets to score points.</p>
                     
-                    <h3>比赛规则</h3>
-                    <ul>
-                        <li><strong>投射目标</strong>：机器人需要将球投射到5英尺高的篮筐中</li>
-                        <li><strong>得分方式</strong>：成功投射到高篮筐得1分，投射到球筐得3分</li>
-                        <li><strong>比赛挑战</strong>：考验机器人的投射精度、速度和策略能力</li>
-                        <li><strong>场地特色</strong>：场地中央有一个桥梁，机器人可以在桥上停泊获得额外分数</li>
-                    </ul>
-
-                    <h3>我们的成就</h3>
-                    <ul>
-                        <li>🏆 2016年VEX亚太机器人锦标赛冠军（澳大利亚墨尔本）</li>
-                        <li>🏆 2016年VEX机器人世界锦标赛分区冠军（美国肯塔基州）</li>
-                        <li>✅ 团队成员：张楚涵、林子桐、黄宇轩、周胜利</li>
-                        <li>✅ 队伍编号：福州鼓楼第一中心小学</li>
-                    </ul>
-
-                    <div class="project-image">
-                        <img src="vex2.jpg" alt="2016 VEX Nothing But Net 赛季" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <div class="thumbnail-container">
+                        <img src="vex2.jpg" alt="2016 VEX Nothing But Net season robot">
                     </div>
                 </div>
             </section>
 
-            <!-- 2019-2020 Tower Takeover Season -->
+            <!-- 2019-2022 Tower Takeover Season -->
             <section id="tower-takeover" class="project-section">
-                <h2 class="section-title">2019-2022 赛季：Tower Takeover (塔楼接管)</h2>
+                <h2 class="section-title">2019-2022 Season: Tower Takeover (塔楼接管)</h2>
                 <div class="project-content">
-                    <p>在2019-2020赛季，我参与了VEX EDR高中的"Tower Takeover"（塔楼接管）赛季。这个赛季的比赛目标是将立方体放置在得分区和塔中获得最高分数。</p>
+                    <p>In this season, the game objective is to place cubes into scoring zones and towers to achieve the highest score.</p>
+
+                    <h3>About Team 9666A</h3>
+                    <p>As I entered high school, I founded a new robotics club and led Team 9666A. I mentored two complete beginners, guiding them through the entire design and build process.</p>
                     
-                    <h3>比赛规则</h3>
+                    <h3>Our Robot's Capabilities</h3>
                     <ul>
-                        <li><strong>场地布局</strong>：场地共有66个立方体，分为三种颜色（红、蓝、绿）</li>
-                        <li><strong>得分方式</strong>：每个放在得分区的立方体得1分，放在塔中的立方体根据颜色堆叠增加分数</li>
-                        <li><strong>策略元素</strong>：塔的颜色会变化，考验队伍的战术决策能力</li>
-                        <li><strong>比赛特色</strong>：强调机器人的物体操控、堆叠稳定性和场地导航能力</li>
+                        <li><strong>10-Cube Collection</strong>: Designed a mechanism capable of collecting up to 10 game cubes simultaneously</li>
+                        <li><strong>Tower Stacking</strong>: Engineered a precise stacking system for high-rise tower construction</li>
+                        <li><strong>Programmed Automation</strong>: Developed sophisticated autonomous routines for strategic gameplay</li>
+                        <li><strong>Human-Robot Collaboration</strong>: Seamlessly integrated driver control with autonomous sequences for maximum efficiency</li>
                     </ul>
 
-                    <h3>我们的成就</h3>
+                    <h3>Achievements</h3>
                     <ul>
-                        <li>🥈 2019年VEX世界锦标赛中国区选拔赛亚军</li>
-                        <li>🥇 2019年VEX世界锦标赛中国区选拔赛一等奖</li>
-                        <li>🥇 第十三届VEX亚太机器人锦标赛金奖</li>
-                        <li>🥉 第十三届VEX亚太机器人锦标赛季军</li>
-                        <li>✅ 队伍编号：9698B</li>
-                        <li>✅ 学校：福州第八中学</li>
-                        <li>✅ 指导老师：章盛智</li>
+                        <li>🥈 <strong>2019 VEX World Championship China Qualifier - Runner-up</strong></li>
+                        <li>🥇 <strong>2019 VEX World Championship China Qualifier - First Prize</strong></li>
+                        <li>🏆 <strong>13th VEX Asia-Pacific Robotics Championship - Gold Award</strong></li>
+                        <li>🥉 <strong>13th VEX Asia-Pacific Robotics Championship - Third Place</strong></li>
                     </ul>
-
-                    <div class="project-image">
-                        <img src="vex1.jpg" alt="2019 VEX Tower Takeover 赛季" style="max-width: 100%; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-                    </div>
-                </div>
-            </section>
-
-            <!-- 2016-2017 China Adolescent Robotics Competition -->
-            <section id="china-competition" class="project-section">
-                <h2 class="section-title">2016-2017 中国青少年机器人竞赛</h2>
-                <div class="project-content">
-                    <p>在中国青少年机器人竞赛中，我在不同的学段都取得了优异的成绩，展示了我在机器人领域的持续进步。</p>
                     
-                    <h3>我们的成就</h3>
-                    
-                    <div class="achievement-list">
-                        <div class="achievement-item">
-                            <h4>🥇 第十六届中国青少年机器人竞赛一等奖 (小学组)</h4>
-                            <ul>
-                                <li><strong>获奖者</strong>：张楚涵、王煜阳、陈柏霖、林予睿</li>
-                                <li><strong>项目</strong>：VEX机器人工程挑战赛 (小学组)</li>
-                                <li><strong>教练</strong>：李峰、朱小秀、林强</li>
-                                <li><strong>颁发机构</strong>：中国科学技术协会</li>
-                                <li><strong>时间</strong>：2016年7月</li>
-                            </ul>
-                        </div>
-
-                        <div class="achievement-item">
-                            <h4>🥉 第十七届中国青少年机器人竞赛三等奖 (初中组)</h4>
-                            <ul>
-                                <li><strong>获奖者</strong>：张楚涵、谢辰昊、翁楚皓</li>
-                                <li><strong>项目</strong>：VEX机器人工程挑战赛 (初中组)</li>
-                                <li><strong>教练</strong>：卢俊、林强、苏燕妮</li>
-                                <li><strong>颁发机构</strong>：中国科学技术协会</li>
-                                <li><strong>时间</strong>：2017年7月</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Key Skills and Learning -->
-            <section id="skills" class="project-section">
-                <h2 class="section-title">技能与收获</h2>
-                <div class="project-content">
-                    <div class="skills-grid">
-                        <div class="skill-card">
-                            <h3>🤖 机器人设计</h3>
-                            <p>掌握机械结构设计、传动系统优化、材料选择等核心技能</p>
-                        </div>
-                        <div class="skill-card">
-                            <h3>💻 编程能力</h3>
-                            <p>熟练使用RobotC和VEX编程，实现复杂的自动化和策略执行</p>
-                        </div>
-                        <div class="skill-card">
-                            <h3>🤝 团队协作</h3>
-                            <p>在团队中担任核心角色，协调设计、编程和测试工作</p>
-                        </div>
-                        <div class="skill-card">
-                            <h3>📊 策略规划</h3>
-                            <p>分析比赛规则，制定战术方案，优化机器人性能</p>
-                        </div>
+                    <div class="thumbnail-container">
+                        <img src="vex1.jpg" alt="2019 VEX Tower Takeover season robot">
                     </div>
                 </div>
             </section>
 
             <!-- Back to Home -->
             <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
-                <a href="index.html" class="btn btn-outline">返回首页</a>
+                <a href="index.html" class="btn btn-outline">← Back to Home</a>
             </div>
         </main>
     </div>
@@ -188,4 +171,3 @@
     <script src="scripts/main.js"></script>
 </body>
 </html>
-
