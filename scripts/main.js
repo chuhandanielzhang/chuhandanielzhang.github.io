@@ -86,10 +86,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentPage === 'awards.html' && awardsSubmenu) {
         awardsSubmenu.style.display = 'block';
     }
-    
-    const educationSubmenu = document.querySelector('a[href="education.html"]')?.parentElement?.querySelector('.sidebar-submenu');
-    if ((currentPage === 'education.html' || currentPage === 'course-projects.html') && educationSubmenu) {
-        educationSubmenu.style.display = 'block';
-    }
 });
 
