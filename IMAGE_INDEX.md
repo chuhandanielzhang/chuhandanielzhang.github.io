@@ -46,3 +46,10 @@
 - `basketball-chassis-fatigue.png` - Chassis fatigue analysis results
 - `basketball-launcher-displacement.png` - Launcher static analysis results
 - `basketball-launcher-fatigue.png` - Launcher fatigue analysis results
+
+### Intelligent Tracking & Ambient Control System
+- `tracking-system-1.png` - Tracking system image 1
+- `tracking-system-2.png` - Tracking system image 2
+- `tracking-system-3.png` - Tracking system image 3
+- `tracking-system-4.png` - Tracking system image 4
+- `tracking-system-5.png` - Tracking system image 5

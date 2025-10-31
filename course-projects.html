@@ -118,6 +118,7 @@
                             <li><a href="course-projects.html#unitree-arm" class="sidebar-sublink">Unitree Arm</a></li>
                             <li><a href="course-projects.html#delta-manipulator" class="sidebar-sublink">Delta Manipulator</a></li>
                             <li><a href="course-projects.html#basketball-robot" class="sidebar-sublink">Rebound Robotics</a></li>
+                            <li><a href="course-projects.html#tracking-system" class="sidebar-sublink">Tracking & Control</a></li>
                         </ul>
                     </li>
                     <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
@@ -371,6 +372,64 @@
                         </div>
                         <div class="thumbnail-container">
                             <img src="basketball-launcher-fatigue.png" alt="Launcher Fatigue Analysis">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Intelligent Tracking & Ambient Control System Section -->
+            <section id="tracking-system" class="project-section">
+                <h2 class="section-title">Intelligent Tracking & Ambient Control System</h2>
+                <div class="project-content">
+                    <p>This project integrates computer vision and thermal imaging on an NVIDIA Jetson Nano to build an intelligent tracking gimbal capable of autonomous ambient control. I was responsible for the entire development process, from hardware prototyping and low-level algorithm implementation to high-level software application logic.</p>
+                    
+                    <h3>Core Contribution</h3>
+                    <p>My key contribution was the implementation of a <strong>Bicubic Interpolation</strong> algorithm. This algorithm upsamples low-resolution thermal sensor data (from an AMG8833) into a high-resolution, high-clarity thermal map in real-time. This step was a prerequisite for enabling subsequent human pose recognition and tracking.</p>
+                    
+                    <h3>Core Hardware</h3>
+                    <ul>
+                        <li>NVIDIA Jetson Nano</li>
+                        <li>Dual-Axis (Pan/Tilt) Stepper Motor Gimbal</li>
+                        <li>Webcam</li>
+                        <li>AMG8833 Thermal Imaging Sensor</li>
+                    </ul>
+                    
+                    <h3>Technical Implementation & Core Features</h3>
+                    
+                    <h4>Intelligent Facial Tracking</h4>
+                    <ul>
+                        <li>Ran an OpenCV-based face detection pipeline on the Jetson Nano.</li>
+                        <li>Utilized a Haar-Cascade classifier to identify and locate faces in the real-time video stream.</li>
+                        <li>Wrote stepper motor control scripts to drive the dual-axis gimbal for real-time tracking, keeping the face centered in the frame.</li>
+                    </ul>
+                    
+                    <h4>Interactive Autonomous Modes</h4>
+                    <p>Developed an application state machine that uses sensor data to control the user's environment (e.g., smart lighting).</p>
+                    
+                    <h5>Meditation Mode</h5>
+                    <p>The system detects 5 seconds of stillness to initiate this mode, automatically turning off ambient lights. It then activates thermal face/pose recognition to confirm the user's state. Standing up or making significant movements ends the session.</p>
+                    
+                    <h5>Watch Movie Mode</h5>
+                    <p>The device turns off ambient light for immersion. It actively monitors for movement (like head turns). If distraction is detected, it automatically turns the lights back on to encourage focus.</p>
+                    
+                    <h4>Broader Applications</h4>
+                    <p>This technology was designed for "beyond the office" scenarios, such as guiding a visitor's attention with light in a museum setting or enhancing immersion during interactive live performances.</p>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-1.png" alt="Tracking System 1">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-2.png" alt="Tracking System 2">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-3.png" alt="Tracking System 3">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-4.png" alt="Tracking System 4">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-5.png" alt="Tracking System 5">
                         </div>
                     </div>
                 </div>
