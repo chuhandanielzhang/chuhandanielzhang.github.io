@@ -24,13 +24,11 @@
 
 ## Course Projects
 ### TurtleBot
-- `turtlebot-step1.jpg` - Process step 1
-- `turtlebot-step2.jpg` - Process step 2
-- `turtlebot-step3.jpg` - Process step 3
-- `turtlebot-step4.jpg` - Process step 4
+- `turtlebot-main.jpg` - TurtleBot main photo
 
 ### Unitree Arm
-- `unitree-arm-step1.jpg` - Process step 1
-- `unitree-arm-step2.jpg` - Process step 2
-- `unitree-arm-step3.jpg` - Process step 3
-- `unitree-arm-step4.jpg` - Process step 4
+- `unitree-arm-1.jpg` - Arm photo 1
+- `unitree-arm-2.jpg` - Arm photo 2
+- `unitree-arm-3.jpg` - Arm photo 3
+- `unitree-arm-4.jpg` - Arm photo 4
+- `unitree-arm-5.jpg` - Arm photo 5
