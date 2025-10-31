@@ -112,6 +112,50 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="project-section" style="margin-bottom: 50px; margin-top: 50px;">
+                        <h3 class="subsection-title">University Research: Advanced Robotics Laboratory (Manipulators)</h3>
+                        <div class="project-content">
+                            <p style="margin-bottom: 15px;">As a core component of the <strong>"Advanced Robotics Laboratory"</strong> (034401) at GTIIT, I developed and implemented autonomous trajectory planning and control algorithms for the Unitree Z1, a 6-DOF robotic arm.</p>
+                            
+                            <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem;">Project Objective</h4>
+                            <p style="margin-bottom: 20px;">To master manipulator kinematics and program the arm to perform precise, autonomous tasks, including a "pick-and-place" cycle and high-accuracy path following (drawing).</p>
+                            
+                            <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem;">Technical Implementation & My Work</h4>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="margin-bottom: 8px; font-weight: 600;">Kinematics & Control Spaces</h5>
+                                <p>Mastered the control of the 6-DOF arm by programming in both Joint Space and Task Space (Cartesian). This involved applying Forward and Inverse Kinematics (FK/IK) to command the arm's end-effector to specific 3D coordinates and orientations.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="margin-bottom: 8px; font-weight: 600;">Smooth Trajectory Planning</h5>
+                                <p>Implemented 3rd and 5th-order polynomial trajectories for motion planning. This theoretical approach ensured all motions were smooth (C¹ or C² continuous), starting and ending with zero velocity and acceleration, which is critical for preventing jerky movements and overshoot on the physical hardware.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="margin-bottom: 8px; font-weight: 600;">Autonomous Pick-and-Place</h5>
+                                <p>Developed a complete, autonomous pick-and-place program. I used the Unitree <code>z1_sdk</code> to sequence a series of waypoints, commanding the arm to:</p>
+                                <ul style="margin-top: 10px; margin-left: 20px; margin-bottom: 10px;">
+                                    <li>Move to a pre-grasp position (using <code>MoveJ</code> for efficiency)</li>
+                                    <li>Approach the object (using <code>MoveL</code> for a linear path)</li>
+                                    <li>Actuate the gripper to grasp</li>
+                                    <li>Lift and move to a drop-off location</li>
+                                    <li>Release the object and return to a home position</li>
+                                </ul>
+                            </div>
+                            
+                            <div style="margin-bottom: 20px;">
+                                <h5 style="margin-bottom: 8px; font-weight: 600;">High-Precision Path Following</h5>
+                                <p>Programmed the arm to perform high-precision Cartesian path following by autonomously drawing a perfect square with an end-effector-mounted marker. This required maintaining a constant end-effector orientation (perpendicular to the drawing surface) while executing four precise <code>MoveL</code> (linear) commands.</p>
+                            </div>
+                            
+                            <div style="margin-bottom: 15px;">
+                                <h5 style="margin-bottom: 8px; font-weight: 600;">Simulation & Deployment</h5>
+                                <p>Validated all motion planning and control logic within the ROS/RViz simulation environment before safely deploying and executing the autonomous programs on the physical Unitree Z1 robot.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
 
