@@ -106,9 +106,14 @@
                                 <p>This state executed the "Bug 2" logic. The line-following PID controller was deactivated, and the robot executed a deterministic, open-loop circumnavigation trajectory (e.g., stop, turn 90-degrees, drive parallel to the line, turn back 90-degrees). This maneuver was pre-calculated to clear the typical obstacle size. Simultaneously, the OAK-D camera node continued to run in the background, searching for the line. Once the maneuver was complete and the camera's PID controller re-acquired the line signal, the state machine transitioned back to <code>LINE_FOLLOWING</code> to continue the mission.</p>
                             </div>
                             
-                            <div style="margin-bottom: 15px;">
+                            <div style="margin-bottom: 20px;">
                                 <h5 style="margin-bottom: 8px; font-weight: 600;">System Deployment</h5>
                                 <p>Utilized ROS2 launch files to reliably start and manage all nodes (sensor processing, state machine logic, motion control) for the final system demonstration.</p>
+                            </div>
+
+                            <!-- Process Images -->
+                            <div style="margin-top: 30px;">
+                                <img src="turtlebot-process.jpg" alt="TurtleBot Process" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: var(--shadow-md);">
                             </div>
                         </div>
                     </div>
@@ -150,14 +155,9 @@
                                 <p>Programmed the arm to perform high-precision Cartesian path following by autonomously drawing a perfect square with an end-effector-mounted marker. This required maintaining a constant end-effector orientation (perpendicular to the drawing surface) while executing four precise <code>MoveL</code> (linear) commands.</p>
                             </div>
                             
-                            <div style="margin-bottom: 20px;">
+                            <div style="margin-bottom: 15px;">
                                 <h5 style="margin-bottom: 8px; font-weight: 600;">Simulation & Deployment</h5>
                                 <p>Validated all motion planning and control logic within the ROS/RViz simulation environment before safely deploying and executing the autonomous programs on the physical Unitree Z1 robot.</p>
-                            </div>
-                            
-                            <div style="margin-top: 25px; margin-bottom: 15px;">
-                                <img src="unitree-process.jpg" alt="Unitree Z1 Pick-and-Place Process" style="width: 100%; max-width: 1200px; border-radius: 8px; box-shadow: var(--shadow-md);">
-                                <p style="margin-top: 10px; color: var(--text-light); font-size: 0.9rem; text-align: center;">Pick-and-Place Process: Grasp, Lift, Move, Release</p>
                             </div>
                         </div>
                     </div>
