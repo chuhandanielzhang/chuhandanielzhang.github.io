@@ -39,7 +39,13 @@
                         </ul>
                     </li>
                     <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
-                    <li><a href="course-projects.html" class="sidebar-link active"><span class="icon">🦾</span>Course Projects</a></li>
+                    <li>
+                        <a href="course-projects.html" class="sidebar-link active"><span class="icon">🦾</span>Course Projects</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="course-turtlebot.html" class="sidebar-sublink">TurtleBot</a></li>
+                            <li><a href="course-unitree.html" class="sidebar-sublink">Unitree Arm</a></li>
+                        </ul>
+                    </li>
                     <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
                     <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
                 </ul>
@@ -61,111 +67,18 @@
             <section id="course-projects" class="content-section">
                 <h2 class="section-title">Course Projects</h2>
                 <div class="section-content">
-                    <div class="project-section" style="margin-bottom: 50px;">
-                        <h3 class="subsection-title">University Research: Advanced Robotics Laboratory (TurtleBot)</h3>
-                        <div class="project-content">
-                            <p style="margin-bottom: 15px;">As part of the <strong>"Advanced Robotics Laboratory"</strong> (034401) at GTIIT, I developed a complete autonomous navigation and obstacle avoidance system for the TurtleBot 4 platform using ROS2.</p>
-                            
-                            <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem;">Project Objective</h4>
-                            <p style="margin-bottom: 20px;">To design and implement a robust autonomous system enabling the robot to follow a marked path (line following) and dynamically react to, and navigate around, unforeseen obstacles.</p>
-                            
-                            <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem;">Technical Implementation & My Work</h4>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">ROS2 System Architecture</h5>
-                                <p>Built the entire software stack within the ROS2 Humble framework, creating custom workspaces, packages, and launch files to manage the system's nodes.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Motion Control (Publisher)</h5>
-                                <p>Developed Python-based ROS2 nodes to publish Twist messages to the <code>/cmd_vel</code> topic, implementing motion primitives (like circular paths) and the core line-following controller.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Sensor Integration (Subscriber)</h5>
-                                <p>Implemented ROS2 subscriber nodes processing real-time data from the TurtleBot's OAK-D depth camera (for path detection) and 2D LiDAR (for obstacle detection).</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Autonomous Logic (Behavioral State Machine)</h5>
-                                <p>Engineered the final system using a Behavioral State Machine whose logic was inspired by the "Bug 2" algorithm, a classic robotics path planning strategy. This machine managed the robot's two primary states: <code>LINE_FOLLOWING</code> and <code>AVOIDANCE_MANEUVER</code>.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 15px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Default State (LINE_FOLLOWING)</h5>
-                                <p>A PID controller continuously processed the image data from the OAK-D camera. It calculated the path's center-line error and published the necessary Twist commands to keep the robot perfectly centered on the line.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 15px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">State Transition (Detection)</h5>
-                                <p>While in the <code>LINE_FOLLOWING</code> state, the 2D LiDAR node concurrently scanned a forward "safety corridor." Upon detecting a point-cloud cluster within this safety threshold (i.e., an obstacle), the state machine immediately transitioned to <code>AVOIDANCE_MANEUVER</code>.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 15px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Avoidance State (Maneuver & Re-acquisition)</h5>
-                                <p>This state executed the "Bug 2" logic. The line-following PID controller was deactivated, and the robot executed a deterministic, open-loop circumnavigation trajectory (e.g., stop, turn 90-degrees, drive parallel to the line, turn back 90-degrees). This maneuver was pre-calculated to clear the typical obstacle size. Simultaneously, the OAK-D camera node continued to run in the background, searching for the line. Once the maneuver was complete and the camera's PID controller re-acquired the line signal, the state machine transitioned back to <code>LINE_FOLLOWING</code> to continue the mission.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">System Deployment</h5>
-                                <p>Utilized ROS2 launch files to reliably start and manage all nodes (sensor processing, state machine logic, motion control) for the final system demonstration.</p>
-                            </div>
-
-                            <!-- Process Images -->
-                            <div style="margin-top: 30px;">
-                                <img src="turtlebot-process.jpg" alt="TurtleBot Process" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: var(--shadow-md);">
-                            </div>
+                    <div class="projects-grid">
+                        <div class="project-card">
+                            <div class="project-icon">🚛</div>
+                            <h3>TurtleBot</h3>
+                            <p>Autonomous navigation and obstacle avoidance system for TurtleBot 4 using ROS2, including line following with Bug 2 algorithm.</p>
+                            <a href="course-turtlebot.html" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">View Details</a>
                         </div>
-                    </div>
-
-                    <div class="project-section" style="margin-bottom: 50px; margin-top: 50px;">
-                        <h3 class="subsection-title">University Research: Advanced Robotics Laboratory (Manipulators)</h3>
-                        <div class="project-content">
-                            <p style="margin-bottom: 15px;">As a core component of the <strong>"Advanced Robotics Laboratory"</strong> (034401) at GTIIT, I developed and implemented autonomous trajectory planning and control algorithms for the Unitree Z1, a 6-DOF robotic arm.</p>
-                            
-                            <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem;">Project Objective</h4>
-                            <p style="margin-bottom: 20px;">To master manipulator kinematics and program the arm to perform precise, autonomous tasks, including a "pick-and-place" cycle and high-accuracy path following (drawing).</p>
-                            
-                            <h4 style="margin-top: 25px; margin-bottom: 15px; color: var(--primary-color); font-size: 1.1rem;">Technical Implementation & My Work</h4>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Kinematics & Control Spaces</h5>
-                                <p>Mastered the control of the 6-DOF arm by programming in both Joint Space and Task Space (Cartesian). This involved applying Forward and Inverse Kinematics (FK/IK) to command the arm's end-effector to specific 3D coordinates and orientations.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Smooth Trajectory Planning</h5>
-                                <p>Implemented 3rd and 5th-order polynomial trajectories for motion planning. This theoretical approach ensured all motions were smooth (C¹ or C² continuous), starting and ending with zero velocity and acceleration, which is critical for preventing jerky movements and overshoot on the physical hardware.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Autonomous Pick-and-Place</h5>
-                                <p>Developed a complete, autonomous pick-and-place program. I used the Unitree <code>z1_sdk</code> to sequence a series of waypoints, commanding the arm to:</p>
-                                <ul style="margin-top: 10px; margin-left: 20px; margin-bottom: 10px;">
-                                    <li>Move to a pre-grasp position (using <code>MoveJ</code> for efficiency)</li>
-                                    <li>Approach the object (using <code>MoveL</code> for a linear path)</li>
-                                    <li>Actuate the gripper to grasp</li>
-                                    <li>Lift and move to a drop-off location</li>
-                                    <li>Release the object and return to a home position</li>
-                                </ul>
-                                <div style="margin-top: 20px;">
-                                    <img src="unitree-z1-pickplace.jpg" alt="Unitree Z1 Pick and Place" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: var(--shadow-md);">
-                                </div>
-                            </div>
-                            
-                            <div style="margin-bottom: 20px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">High-Precision Path Following</h5>
-                                <p>Programmed the arm to perform high-precision Cartesian path following by autonomously drawing a perfect square with an end-effector-mounted marker. This required maintaining a constant end-effector orientation (perpendicular to the drawing surface) while executing four precise <code>MoveL</code> (linear) commands.</p>
-                            </div>
-                            
-                            <div style="margin-bottom: 15px;">
-                                <h5 style="margin-bottom: 8px; font-weight: 600;">Simulation & Deployment</h5>
-                                <p>Validated all motion planning and control logic within the ROS/RViz simulation environment before safely deploying and executing the autonomous programs on the physical Unitree Z1 robot.</p>
-                            </div>
-
-                            <div style="margin-top: 20px;">
-                                <img src="unitree-z1-drawing.jpg" alt="Unitree Z1 Drawing" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: var(--shadow-md);">
-                            </div>
+                        <div class="project-card">
+                            <div class="project-icon">🦾</div>
+                            <h3>Unitree Arm</h3>
+                            <p>Trajectory planning and control for Unitree Z1 6-DOF robotic arm, featuring pick-and-place and precision path following.</p>
+                            <a href="course-unitree.html" class="btn btn-outline" style="margin-top: 15px; display: inline-block;">View Details</a>
                         </div>
                     </div>
                 </div>

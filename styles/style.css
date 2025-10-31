@@ -691,6 +691,35 @@ code {
     color: var(--primary-color);
 }
 
+/* Background image styling */
+.project-section-with-bg {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    margin-bottom: 50px;
+}
+
+.project-section-with-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    z-index: 0;
+}
+
+.project-section-with-bg .project-content {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 30px;
+    border-radius: 12px;
+}
+
 /* Smooth scroll */
 html {
     scroll-behavior: smooth;
