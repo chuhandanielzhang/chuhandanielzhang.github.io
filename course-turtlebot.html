@@ -112,14 +112,9 @@
                                 <p>This state executed the "Bug 2" logic. The line-following PID controller was deactivated, and the robot executed a deterministic, open-loop circumnavigation trajectory (e.g., stop, turn 90-degrees, drive parallel to the line, turn back 90-degrees). This maneuver was pre-calculated to clear the typical obstacle size. Simultaneously, the OAK-D camera node continued to run in the background, searching for the line. Once the maneuver was complete and the camera's PID controller re-acquired the line signal, the state machine transitioned back to <code>LINE_FOLLOWING</code> to continue the mission.</p>
                             </div>
                             
-                            <div style="margin-bottom: 20px;">
+                            <div style="margin-bottom: 15px;">
                                 <h5 style="margin-bottom: 8px; font-weight: 600;">System Deployment</h5>
                                 <p>Utilized ROS2 launch files to reliably start and manage all nodes (sensor processing, state machine logic, motion control) for the final system demonstration.</p>
-                            </div>
-
-                            <!-- Process Images -->
-                            <div style="margin-top: 30px;">
-                                <img src="turtlebot-process.jpg" alt="TurtleBot Process" style="width: 100%; max-width: 800px; height: auto; border-radius: 8px; box-shadow: var(--shadow-md);">
                             </div>
                         </div>
                     </div>
