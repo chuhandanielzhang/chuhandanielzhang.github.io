@@ -86,10 +86,5 @@ document.addEventListener('DOMContentLoaded', function() {
     if (currentPage === 'awards.html' && awardsSubmenu) {
         awardsSubmenu.style.display = 'block';
     }
-    
-    const courseProjectsSubmenu = document.querySelector('a[href="course-projects.html"]')?.parentElement?.querySelector('.sidebar-submenu');
-    if ((currentPage === 'course-projects.html' || currentPage === 'course-turtlebot.html' || currentPage === 'course-unitree.html') && courseProjectsSubmenu) {
-        courseProjectsSubmenu.style.display = 'block';
-    }
 });
 
