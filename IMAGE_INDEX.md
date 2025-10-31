@@ -36,7 +36,8 @@
 ### Delta Manipulator
 - `delta-manipulator.gif` - Pick-and-place demonstration
 
-### Basketball Training Robot
+### Rebound Robotics (Basketball Training Robot)
+- `basketball-team.png` - Team photo
 - `basketball-cad.png` - Complete CAD assembly
 - `basketball-mecanum.png` - Mecanum wheel design
 - `basketball-hopper.png` - Internal hopper storage design
