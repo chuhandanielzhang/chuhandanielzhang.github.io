@@ -32,3 +32,6 @@
 - `unitree-arm-3.jpg` - Arm photo 3
 - `unitree-arm-4.jpg` - Arm photo 4
 - `unitree-arm-5.jpg` - Arm photo 5
+
+### Delta Manipulator
+- `delta-manipulator.gif` - Pick-and-place demonstration
