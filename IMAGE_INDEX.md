@@ -35,3 +35,13 @@
 
 ### Delta Manipulator
 - `delta-manipulator.gif` - Pick-and-place demonstration
+
+### Basketball Training Robot
+- `basketball-cad.png` - Complete CAD assembly
+- `basketball-mecanum.png` - Mecanum wheel design
+- `basketball-hopper.png` - Internal hopper storage design
+- `basketball-kinematics.png` - MATLAB kinematics simulation
+- `basketball-chassis-displacement.png` - Chassis static analysis results
+- `basketball-chassis-fatigue.png` - Chassis fatigue analysis results
+- `basketball-launcher-displacement.png` - Launcher static analysis results
+- `basketball-launcher-fatigue.png` - Launcher fatigue analysis results
