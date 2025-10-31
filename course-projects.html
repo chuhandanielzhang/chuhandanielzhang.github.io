@@ -238,6 +238,59 @@
                 </div>
             </section>
 
+            <!-- Delta Manipulator Section -->
+            <section id="delta-manipulator" class="project-section">
+                <h2 class="section-title">Delta Manipulator</h2>
+                <div class="project-content">
+                    <p>This project focused on the control and application of high-speed parallel manipulators. I conducted a comprehensive theoretical review of Delta robot kinematics and advanced control strategies, and then applied this knowledge to program a GTHZ-300B industrial Delta robot for a high-speed pick-and-place task.</p>
+                    
+                    <h3>Project Objective</h3>
+                    <p>To implement and validate a complete, high-speed, and repeatable pick-and-place automation cycle on an industrial-grade parallel robot.</p>
+                    
+                    <h3>Theoretical Background</h3>
+                    <ul>
+                        <li><strong>Kinematics</strong>: Analyzed the 3-DOF parallel kinematic chain of the Delta robot, understanding how it achieves high-speed and high-precision translational movement (X, Y, Z) by constraining rotational degrees of freedom.</li>
+                        <li><strong>Control Strategies</strong>: Researched a wide array of control methods for parallel manipulators, from traditional PID and Force Control to modern Learning-Based (RNN, RL) and Adaptive (SMC, ADRC) controllers.</li>
+                    </ul>
+                    
+                    <h3>Technical Implementation: Pick-and-Place</h3>
+                    <p>My core practical work involved programming the GTHZ-300B robot to autonomously move objects using a pneumatic suction gripper.</p>
+                    
+                    <h4>System Setup</h4>
+                    <ul>
+                        <li>Configured the robot system, including power-on, safety checks, and setting the pneumatic system's air pressure to the required 4 bar for the gripper.</li>
+                    </ul>
+                    
+                    <h4>Teach Pendant Programming</h4>
+                    <ul>
+                        <li>Used a "teach-by-example" workflow. I manually jogged the robot arm to each critical waypoint in the task and recorded their precise Cartesian coordinates (X, Y, Z, RZ).</li>
+                    </ul>
+                    
+                    <h4>Sequential Program Logic</h4>
+                    <p>Developed an autonomous program by sequencing a series of low-level commands. The logic for a single pick-and-place cycle was:</p>
+                    <ul>
+                        <li><strong>Initialize</strong>: SetRobot (ID 1) and AxisHome (Axis 4) to home the system.</li>
+                        <li><strong>Set Speed</strong>: SetFinxedSpeed(0.1) to 10% for safe, repeatable motion.</li>
+                        <li><strong>Move to Pick (Linear)</strong>: MoveDoor to the recorded "Move to pick-up" coordinates (X: 57.7, Y: -26.2, Z: -241.6).</li>
+                        <li><strong>Activate Gripper</strong>: SetOutputBeforeEnd(Channel: 0, Level: True) to engage the pneumatic suction cup.</li>
+                        <li><strong>Lift Object</strong>: MoveDoor to the "Grab the object" coordinates (Z: -202.9) to safely lift it.</li>
+                        <li><strong>Move to Place (Linear)</strong>: MoveDoor to the "Place the object" coordinates (X: -62.4, Y: 93.9, Z: -238.7).</li>
+                        <li><strong>Deactivate Gripper</strong>: SetOutputBeforeEnd(Channel: 0, Level: False) to release the object.</li>
+                        <li><strong>End Cycle</strong>: SetRobotEnd and loop the program.</li>
+                    </ul>
+                    
+                    <h4>Outcome</h4>
+                    <p>Successfully deployed the program, resulting in a continuous, high-speed automation cycle that precisely picked up objects and moved them to the target location. This experiment validated my understanding of industrial robot programming, Cartesian-space control, and sequential logic for automation.</p>
+                    
+                    <div style="margin-top: 30px;">
+                        <video controls style="width: 100%; max-width: 800px; border-radius: 8px; box-shadow: var(--shadow-md);">
+                            <source src="delta-manipulator.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                </div>
+            </section>
+
             <!-- Back to Home -->
             <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
                 <a href="index.html" class="btn btn-outline">← Back to Home</a>
