@@ -1,76 +1,36 @@
-# 📸 Image Index - 图片索引
-
-This document lists all images used on the robotics competition page and their purposes.
-
-本文档列出了机器人竞赛页面使用的所有图片及其用途。
-
----
-
-## Team 9698B (2015-2016 Season: Nothing But Net)
-
-**Location on page**: Under "About Team 9698B (Middle School)"
-
-### Images Used:
-
-1. **vex2.jpg** 
-   - Description: Team 9698B robot with orange collection system
-   - Shows the complete robot design
-
-2. **vex-9698b-1.jpg**
-   - Description: Team 9698B working on robot at competition
-   - Four boys working on the robot at competition venue
-
-3. **vex-9698b-2.jpg**
-   - Description: Team 9698B drive team members
-   - Three members wearing orange "DRIVE TEAM" shirts
-
-4. **vex-9698b-3.jpg**
-   - Description: Team 9698B division champions award ceremony
-   - Award ceremony stage showing "Opportunity Division Champions"
-
-**Total images for Team 9698B**: 4
-
----
-
-## Team 9666A (2019-2022 Season: Tower Takeover)
-
-**Location on page**: Under "About Team 9666A (High School)"
-
-### Images Used:
-
-1. **vex1.jpg**
-   - Description: Team 9666A Tower Takeover robot
-   - The main robot designed for the Tower Takeover season
-
-2. **vex-9666a-worlds.jpg**
-   - Description: Team 9666A at VEX Worlds celebration
-   - Large group photo with banners, medals, and trophies at VEX Worlds 2016
-
-**Total images for Team 9666A**: 2
-
----
+# Image Index
 
 ## Profile Photo
+- `profile-photo.jpg` - Profile picture in sidebar
 
-**Location**: All pages (sidebar)
+## Robotics Competition
+### Team 9698B (VEX - Nothing But Net)
+- `robotics-9698b-main.jpg` - Main robot photo with orange collection system
+- `robotics-9698b-working.jpg` - Team working on robot at competition
+- `robotics-9698b-team.jpg` - Drive team members
+- `robotics-9698b-award.jpg` - Division champions award ceremony
+- `robotics-9698b-worlds.jpg` - Team at VEX Worlds celebration
 
-- **profile-photo.jpg**
-  - Description: Personal headshot photo
-  - Professional portrait against blue background
+### Team 9666A (VEX - Tower Takeover)
+- `robotics-9666a-main.jpg` - Main Tower Takeover robot
+- `robotics-9666a-photo1.jpg` - Team at competition
+- `robotics-9666a-photo2.jpg` - Team working on robot
+- `robotics-9666a-photo3.jpg` - Team photo
+- `robotics-9666a-photo4.jpg` - Additional team photo
 
----
+### RoboMaster RMUL - Kongfu Team
+- `robotics-robomaster-main.jpg` - Main RoboMaster robot
+- `robotics-robomaster-team.jpg` - Team photo
 
-## Summary
+## Course Projects
+### TurtleBot
+- `turtlebot-step1.jpg` - Process step 1
+- `turtlebot-step2.jpg` - Process step 2
+- `turtlebot-step3.jpg` - Process step 3
+- `turtlebot-step4.jpg` - Process step 4
 
-- **Total robotics images**: 6
-- **Profile photo**: 1
-- **Grand total**: 7 images
-
----
-
-## Notes
-
-- All images are displayed as carousel thumbnails (120px × 90px)
-- Hover effect: scale to 3.5x
-- Images scroll continuously, pause on hover
-- Used `object-fit: cover` to crop without whitespace
+### Unitree Arm
+- `unitree-arm-step1.jpg` - Process step 1
+- `unitree-arm-step2.jpg` - Process step 2
+- `unitree-arm-step3.jpg` - Process step 3
+- `unitree-arm-step4.jpg` - Process step 4
