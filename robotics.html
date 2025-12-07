@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Chuhan Zhang's Robotics Competition Projects">
+    <title>Robotics Competition - Chuhan ZHANG's Website</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .image-gallery {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        .thumbnail-container {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            border-radius: 6px;
+        }
+
+        .thumbnail-container:hover {
+            z-index: 100;
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            display: block;
+            cursor: pointer;
+            transform-origin: center center;
+            pointer-events: none;
+        }
+
+        .image-gallery:has(.thumbnail-container:hover) .thumbnail-container:not(:hover) img {
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        .thumbnail-container:hover img {
+            transform: scale(3.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Layout with Sidebar -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <!-- Profile Section -->
+            <div class="sidebar-profile">
+                <div class="profile-picture">
+                    <img src="profile-photo.jpg" alt="Chuhan ZHANG">
+                </div>
+                <h1 class="profile-name">Chuhan ZHANG</h1>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="sidebar-navigation">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
+                    <li>
+                        <a href="robotics.html" class="sidebar-link active"><span class="icon">🤖</span>Robotics Competition</a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="#vex" class="sidebar-sublink">VEX</a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="#nothing-but-net" class="sidebar-sublink">Nothing But Net</a></li>
+                                    <li><a href="#tower-takeover" class="sidebar-sublink">Tower Takeover</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#robomaster" class="sidebar-sublink">RoboMaster RMUL</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
+                    <li>
+                        <a href="course-projects.html" class="sidebar-link"><span class="icon">🦾</span>Course Projects</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="course-projects.html#turtlebot" class="sidebar-sublink">TurtleBot</a></li>
+                            <li><a href="course-projects.html#unitree-arm" class="sidebar-sublink">Unitree Arm</a></li>
+                            <li><a href="course-projects.html#delta-manipulator" class="sidebar-sublink">Delta Manipulator</a></li>
+                            <li><a href="course-projects.html#basketball-robot" class="sidebar-sublink">Rebound Robotics</a></li>
+                            <li><a href="course-projects.html#tracking-system" class="sidebar-sublink">Thermal Gimbal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="interests.html" class="sidebar-link"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                </ul>
+            </div>
+
+            <!-- Search Section -->
+            <div class="sidebar-search">
+                <label class="search-label">Search</label>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Robotics Header -->
+            <section class="content-header">
+                <h1>Robotics Competition</h1>
+                <p>My Robotics Journey: From VEX to RoboMaster</p>
+            </section>
+
+            <!-- Intro Section -->
+            <section class="project-section">
+                <div class="project-content">
+                    <p>My passion for robotics ignited in middle school through VEX Robotics Competitions and evolved throughout high school and university with RoboMaster. These events are more than just contests; they're a hands-on fusion of sport, strategy, and engineering, where students worldwide design, build, and program robots to solve challenges and compete at the highest levels. From strategic game-based competitions to tactical robotics battles, each experience has deepened my expertise in mechanical design, control systems, and team leadership.</p>
+                </div>
+            </section>
+
+            <!-- VEX Section -->
+            <section id="vex" class="project-section">
+                <h2 class="section-title">VEX</h2>
+                <div class="project-content">
+                    <p>VEX Robotics Competition (VRC) is the world's largest and fastest-growing competitive robotics program for middle and high school students. The competition brings together teams from across the globe to design, build, and program robots that compete in an exciting game-based engineering challenge. Each season presents a new game with unique objectives, requiring teams to think creatively, work collaboratively, and continuously refine their designs.</p>
+                    <p>The VEX V5 system provides teams with powerful, consistent materials including motors, sensors, and structural components, leveling the playing field and allowing innovation and engineering excellence to shine. Competitions emphasize not just technical performance, but also teamwork, sportsmanship, and the ability to think strategically under pressure. With divisions at local, regional, and world championship levels, VEX Robotics offers students a pathway to develop valuable STEM skills while participating in an engaging, competitive environment.</p>
+                    <p>Learn more: <a href="https://www.vexrobotics.com/" target="_blank" rel="noopener noreferrer">VEX Robotics Official Website</a></p>
+                </div>
+            </section>
+
+            <!-- Team 9698B (Middle School) -->
+            <section id="nothing-but-net" class="project-section">
+                <h3 class="subsection-title">Nothing But Net - Team 9698B (Middle School)</h3>
+                <div class="project-content">
+                    <p>In this season, the game objective is to shoot balls into high-mounted baskets to score points.</p>
+                    <p>I co-founded and captained Team 9698B, guiding four classmates from initial concept to a fully operational robot. We managed the entire process—brainstorming, CAD design, programming, and integration—as a collaborative team.</p>
+                    
+                    <h3>Our Creation & Key Innovations</h3>
+                    <ul>
+                        <li><strong>Agile Movement</strong>: We built a holonomic drivetrain for superior mobility, allowing our robot to strafe and reposition with ease.</li>
+                        <li><strong>Efficient Collection & Launching</strong>: I designed a wide roller intake system to gather balls, which were then fed into a dual-flywheel launcher. By implementing a PID control loop with encoder feedback, we achieved consistent, high-accuracy shots.</li>
+                        <li><strong>Smart Architecture</strong>: Our "front-intake, front-shooter" design was not only intuitive for drivers but also enabled unique scoring angles, even from directly beneath the goal.</li>
+                        <li><strong>Autonomous Precision</strong>: I programmed a reliable 15-second autonomous routine that scored pre-loaded balls and navigated to a strategic starting position.</li>
+                    </ul>
+
+                    <h3>Achievements (9698B)</h3>
+                    <ul>
+                        <li>🏆 <strong>Champion, 2016 VEX Asia-Pacific Robotics Championship</strong> (Melbourne, Australia)</li>
+                        <li>🏆 <strong>Division Champion, 2016 VEX Robotics World Championship</strong> (Louisville, KY, USA)</li>
+                        <li>🥉 <strong>Third Prize, 17th China Adolescent Robotics Competition</strong></li>
+                        <li>🥇 <strong>First Prize, 16th China Adolescent Robotics Competition</strong></li>
+                    </ul>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="robotics-9698b-main.jpg" alt="Team 9698B robot with orange collection system">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9698b-working.jpg" alt="Team 9698B working on robot at competition">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9698b-team.jpg" alt="Team 9698B drive team members">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9698b-award.jpg" alt="Team 9698B division champions award ceremony">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9698b-worlds.jpg" alt="Team 9698B at VEX Worlds celebration">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Team 9666A (High School) -->
+            <section id="tower-takeover" class="project-section">
+                <h3 class="subsection-title">Tower Takeover - Team 9666A (High School)</h3>
+                <div class="project-content">
+                    <p>In this season, the game objective is to place cubes into scoring zones and towers to achieve the highest score.</p>
+                    <p>Entering high school, I founded a new robotics club and led Team 9666A. This time, I took on a mentorship role, guiding two beginners through their first build. We used project management tools like Notion to structure our workflow, with weekly goals and learning modules to ensure steady progress.</p>
+                    
+                    <h3>Our Robot & Key Features</h3>
+                    <ul>
+                        <li><strong>High-Capacity Handling</strong>: We engineered a tilting tray mechanism that could collect and hold up to 10 cubes, using reversible rollers for precise control.</li>
+                        <li><strong>Articulated Stacking Arm</strong>: I developed a parallelogram lift with an articulating intake. This clever mechanism ensured a clean release of stacked cubes as the robot moved away.</li>
+                        <li><strong>Driver-Friendly Automation</strong>: To simplify the complex stacking task, I coded a 'one-touch stacking' macro. This driver-assist feature automated the lift-and-place sequence, allowing us to execute consistent, high-scoring stacks under pressure.</li>
+                    </ul>
+
+                    <h3>Achievements (9666A)</h3>
+                    <ul>
+                        <li>🥈 <strong>Runner-up, 2019 VEX World Championship China Qualifier</strong></li>
+                        <li>🥇 <strong>First Prize, 2019 VEX World Championship China Qualifier</strong></li>
+                        <li>🏆 <strong>Gold Award, 13th VEX Asia-Pacific Robotics Championship</strong></li>
+                        <li>🥉 <strong>Third Place, 13th VEX Asia-Pacific Robotics Championship</strong></li>
+                    </ul>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="robotics-9666a-main.jpg" alt="Team 9666A Tower Takeover robot">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9666a-photo1.jpg" alt="Team 9666A at competition">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9666a-photo2.jpg" alt="Team 9666A working on robot">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9666a-photo3.jpg" alt="Team 9666A team photo">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-9666a-photo4.jpg" alt="Team 9666A competition photo">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- RoboMaster RMUL Section -->
+            <section id="robomaster" class="project-section">
+                <h2 class="section-title">RoboMaster</h2>
+                <div class="project-content">
+                    <p>RoboMaster is DJI's premier robotics competition that combines engineering innovation with strategic gameplay. University teams from around the world design, build, and program autonomous and manually-controlled robots to compete in an intense 5v5 battle format on a futuristic arena. The competition challenges teams across multiple disciplines: mechanical engineering for robust chassis and firing systems, electrical engineering for power management and sensors, computer vision for autonomous targeting, and software engineering for control algorithms and strategic coordination.</p>
+                    <p>The RoboMaster University League (RMUL) serves as a premier platform for university students to showcase their technical skills, fostering innovation in robotics and providing real-world engineering experience. With over 200 participating teams worldwide, the competition pushes the boundaries of what's possible in tactical robotics and collaborative autonomous systems.</p>
+                    <p>Learn more: <a href="https://www.robomaster.com/" target="_blank" rel="noopener noreferrer">RoboMaster Official Website</a></p>
+                </div>
+
+                <h3 class="subsection-title">RoboMaster University League - Kongfu Team</h3>
+                <div class="project-content">
+                    <p>During my university studies, I co-founded my school's first RoboMaster team—Kongfu Team—and served as the Mechanical Advisor & Co-Founder. Together with like-minded friends, I led the development of our inaugural competition robot, driving innovation from concept to execution.</p>
+                    
+                    <h3>My Role: Mechanical Advisor & Co-Founder</h3>
+                    <ul>
+                        <li><strong>Mechanical Design & FEA Optimization</strong>: Led the complete mechanical design process, from initial CAD modeling to structural optimization. I applied Finite Element Analysis (FEA) to analyze the chassis's torsional rigidity and the gimbal's stability against projectile impacts. This analysis guided material selection and removed redundant material, reducing overall weight while ensuring combat durability.</li>
+                        <li><strong>Chassis & Mobility Strategy</strong>: Engineered a holonomic X-Drive (four omni-wheels mounted at 45°) that enabled a circular chassis profile. This was a key tactical advantage, allowing for rapid "spinning" maneuvers ("小陀螺" mode) without catching corners on walls and maximizing the robot's footprint within competition rules.</li>
+                        <li><strong>All-Terrain Suspension System</strong>: Designed an independent suspension system for each wheel. This was critical for ensuring all four omni-wheels maintained constant ground contact, even when navigating over on-field debris (like spent projectiles), guaranteeing consistent traction and maneuverability for the holonomic drive.</li>
+                        <li><strong>Gimbal & Systems Integration</strong>: Developed the high-stiffness precision gimbal (analyzed via FEA) and coordinated the physical assembly and integration of all mechanical components, ensuring seamless fit and function between the custom chassis, suspension, gimbal, and the robot's electrical and control systems.</li>
+                    </ul>
+
+                    <h3>Team Achievements</h3>
+                    <ul>
+                        <li>🏆 <strong>Top 8 Finish, RoboMaster University League</strong></li>
+                        <li>🎯 Competed against 40+ university teams from across China</li>
+                        <li>🌟 Established GTIIT's inaugural RoboMaster robotics team</li>
+                        <li>🔧 Successfully delivered a fully functional competition robot from concept to arena</li>
+                    </ul>
+
+                    <h3>Competition Details</h3>
+                    <ul>
+                        <li><strong>Event</strong>: RoboMaster University League (RMUL)</li>
+                        <li><strong>Team</strong>: Kongfu Team</li>
+                        <li><strong>Institution</strong>: GTIIT (Guangdong Technion Israel Institute of Technology)</li>
+                        <li><strong>Role</strong>: Mechanical Advisor & Co-Founder</li>
+                        <li><strong>Duration</strong>: October 2024 - March 2025</li>
+                        <li><strong>Location</strong>: China</li>
+                    </ul>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="robotics-robomaster-main.jpg" alt="RoboMaster Kongfu Team robot at competition">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="robotics-robomaster-team.jpg" alt="RoboMaster Kongfu Team robot with omni wheels">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Home -->
+            <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
+                <a href="index.html" class="btn btn-outline">← Back to Home</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

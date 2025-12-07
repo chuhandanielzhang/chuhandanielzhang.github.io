@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Course Projects - Chuhan ZHANG">
+    <title>Course Projects - Chuhan ZHANG</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .image-gallery {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+
+        .thumbnail-container {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            border-radius: 6px;
+        }
+
+        .thumbnail-container:hover {
+            z-index: 100;
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
+            display: block;
+            cursor: pointer;
+            transform-origin: center center;
+            pointer-events: none;
+        }
+
+        .image-gallery:has(.thumbnail-container:hover) .thumbnail-container:not(:hover) img {
+            transform: scale(0.9);
+            opacity: 0.5;
+        }
+
+        .thumbnail-container:hover img {
+            transform: scale(3.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+
+        .subsection-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 25px;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--border-color);
+        }
+
+        .content-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid var(--primary-color);
+        }
+
+        .content-header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .content-header p {
+            font-size: 1.2rem;
+            color: var(--text-light);
+        }
+    </style>
+</head>
+<body>
+    <!-- Main Layout with Sidebar -->
+    <div class="main-layout">
+        <!-- Left Sidebar -->
+        <aside class="sidebar">
+            <!-- Profile Section -->
+            <div class="sidebar-profile">
+                <div class="profile-picture">
+                    <img src="profile-photo.jpg" alt="Chuhan ZHANG">
+                </div>
+                <h1 class="profile-name">Chuhan ZHANG</h1>
+            </div>
+
+            <!-- Navigation Menu -->
+            <div class="sidebar-navigation">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
+                    <li>
+                        <a href="robotics.html" class="sidebar-link"><span class="icon">🤖</span>Robotics Competition</a>
+                        <ul class="sidebar-submenu">
+                            <li>
+                                <a href="robotics.html#vex" class="sidebar-sublink">VEX</a>
+                                <ul class="sidebar-submenu">
+                                    <li><a href="robotics.html#nothing-but-net" class="sidebar-sublink">Nothing But Net</a></li>
+                                    <li><a href="robotics.html#tower-takeover" class="sidebar-sublink">Tower Takeover</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="robotics.html#robomaster" class="sidebar-sublink">RoboMaster RMUL</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
+                    <li>
+                        <a href="course-projects.html" class="sidebar-link active"><span class="icon">🦾</span>Course Projects</a>
+                        <ul class="sidebar-submenu">
+                            <li><a href="course-projects.html#turtlebot" class="sidebar-sublink">TurtleBot</a></li>
+                            <li><a href="course-projects.html#unitree-arm" class="sidebar-sublink">Unitree Arm</a></li>
+                            <li><a href="course-projects.html#delta-manipulator" class="sidebar-sublink">Delta Manipulator</a></li>
+                            <li><a href="course-projects.html#basketball-robot" class="sidebar-sublink">Rebound Robotics</a></li>
+                            <li><a href="course-projects.html#tracking-system" class="sidebar-sublink">Thermal Gimbal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="interests.html" class="sidebar-link"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                </ul>
+            </div>
+
+            <!-- Search Section -->
+            <div class="sidebar-search">
+                <label class="search-label">Search</label>
+                <div class="search-container">
+                    <input type="text" class="search-input" placeholder="Search...">
+                    <button class="search-btn">Search</button>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Course Projects Header -->
+            <section class="content-header">
+                <h1>Course Projects</h1>
+                <p>Academic Projects: Advanced Robotics Laboratory</p>
+            </section>
+
+            <!-- Intro Section -->
+            <section class="project-section">
+                <div class="project-content">
+                    <p>As part of the <strong>"Advanced Robotics Laboratory"</strong> (034401), Instructor: Prof. Damiano Padovani, at GTIIT, I developed three comprehensive robotic systems: a <strong>TurtleBot</strong> mobile navigation robot with ROS2, a <strong>Unitree Z1</strong> 6-DOF robotic arm with trajectory planning, and a <strong>Delta Manipulator</strong> industrial parallel robot. These course projects demonstrate my ability to integrate software, hardware, and control theory to create functional autonomous systems, from mobile navigation robots to precision robotic manipulators.</p>
+                </div>
+            </section>
+
+            <!-- TurtleBot Section -->
+            <section id="turtlebot" class="project-section">
+                <h2 class="section-title">TurtleBot</h2>
+                <div class="project-content">
+                    <p>I developed a complete autonomous navigation and obstacle avoidance system for the TurtleBot 4 platform using ROS2.</p>
+                    
+                    <h3>Project Objective</h3>
+                    <p>To design and implement a robust autonomous system enabling the robot to follow a marked path (line following) and dynamically react to, and navigate around, unforeseen obstacles.</p>
+                    
+                    <h3>Technical Implementation & My Work</h3>
+                    
+                    <h4>ROS2 System Architecture</h4>
+                    <p>Engineered a modular software stack within the <strong>ROS2 Humble</strong> framework, implementing a distributed node architecture for sensor processing and actuation.</p>
+                    
+                    <h4>Motion Control (Publisher)</h4>
+                    <p>Developed Python-based ROS2 nodes to publish <code>Twist</code> messages to the <code>/cmd_vel</code> topic, implementing <strong>closed-loop velocity control</strong> and kinematic motion primitives.</p>
+                    
+                    <h4>Sensor Integration (Subscriber)</h4>
+                    <p>Implemented asynchronous subscriber nodes to process high-bandwidth data streams from the <strong>OAK-D depth camera</strong> and <strong>2D LiDAR</strong>, establishing a real-time perception pipeline.</p>
+                    
+                    <h4>Autonomous Logic (Reactive State Machine)</h4>
+                    <p>Designed a <strong>Finite State Machine (FSM)</strong> to orchestrate autonomous behaviors. The system dynamically transitions between <code>PATH_TRACKING</code> and <code>OBSTACLE_AVOIDANCE</code> modes based on sensor thresholds.</p>
+                    
+                    <h4>Path Tracking (Visual Servoing)</h4>
+                    <p>Implemented a <strong>PID control loop</strong> utilizing computer vision feedback from the OAK-D camera to minimize cross-track error, ensuring robust line following performance.</p>
+                    
+                    <h4>Reactive Avoidance</h4>
+                    <p>Developed a <strong>reactive collision avoidance algorithm</strong> utilizing LiDAR point clouds. Upon detecting obstacles within a dynamic safety corridor, the system executes a deterministic circumnavigation maneuver.</p>
+                    
+                    <h4>System Deployment</h4>
+                    <p>Utilized ROS2 launch files to reliably start and manage all nodes (sensor processing, state machine logic, motion control) for the final system demonstration.</p>
+
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="turtlebot-main.jpg" alt="TurtleBot">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Unitree Arm Section -->
+            <section id="unitree-arm" class="project-section">
+                <h2 class="section-title">Unitree Arm</h2>
+                <div class="project-content">
+                    <p>I developed and implemented autonomous trajectory planning and control algorithms for the Unitree Z1, a 6-DOF robotic arm.</p>
+                    
+                    <h3>Project Objective</h3>
+                    <p>To master manipulator kinematics and program the arm to perform precise, autonomous tasks, including a "pick-and-place" cycle and high-accuracy path following (drawing).</p>
+                    
+                    <h3>Technical Implementation & My Work</h3>
+                    
+                    <h4>Kinematics & Control Spaces</h4>
+                    <p>Implemented dual-space control strategies, utilizing <strong>Inverse Kinematics (IK)</strong> solvers to map Cartesian task-space commands to Joint-space actuation for the 6-DOF manipulator.</p>
+                    
+                    <h4>C2-Continuous Trajectory Planning</h4>
+                    <p>Engineered <strong>5th-order polynomial trajectory generation</strong> algorithms to ensure kinematic continuity (position, velocity, acceleration). This approach minimizes jerk and vibration, critical for high-precision manipulation.</p>
+                    
+                    <h4>Autonomous Manipulation Sequences</h4>
+                    <p>Developed robust pick-and-place logic using the <strong>Unitree SDK state machine</strong>. Integrated <code>MoveJ</code> (joint interpolation) for rapid transit and <code>MoveL</code> (Cartesian linear interpolation) for precise end-effector approach and retraction.</p>
+                    
+                    <h4>High-Precision Path Tracking</h4>
+                    <p>Implemented a Cartesian path following controller to execute geometric trajectories with sub-millimeter repeatability, maintaining constant end-effector orientation constraints.</p>
+                    
+                    <h4>Simulation & Deployment</h4>
+                    <p>Validated all motion planning and control logic within the ROS/RViz simulation environment before safely deploying and executing the autonomous programs on the physical Unitree Z1 robot.</p>
+
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="unitree-arm-1.jpg" alt="Unitree Arm 1">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="unitree-arm-2.jpg" alt="Unitree Arm 2">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="unitree-arm-3.jpg" alt="Unitree Arm 3">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="unitree-arm-4.jpg" alt="Unitree Arm 4">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="unitree-arm-5.jpg" alt="Unitree Arm 5">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Delta Manipulator Section -->
+            <section id="delta-manipulator" class="project-section">
+                <h2 class="section-title">Delta Manipulator</h2>
+                <div class="project-content">
+                    <p>This project focused on the control and application of high-speed parallel manipulators. I conducted a comprehensive theoretical review of Delta robot kinematics and advanced control strategies, and then applied this knowledge to program a GTHZ-300B industrial Delta robot for a high-speed pick-and-place task.</p>
+                    
+                    <h3>Project Objective</h3>
+                    <p>To implement and validate a complete, high-speed, and repeatable pick-and-place automation cycle on an industrial-grade parallel robot.</p>
+                    
+                    <h3>Theoretical Background</h3>
+                    <ul>
+                        <li><strong>Kinematics</strong>: Analyzed the 3-DOF parallel kinematic chain of the Delta robot, understanding how it achieves high-speed and high-precision translational movement (X, Y, Z) by constraining rotational degrees of freedom.</li>
+                        <li><strong>Control Strategies</strong>: Researched a wide array of control methods for parallel manipulators, from traditional PID and Force Control to modern Learning-Based (RNN, RL) and Adaptive (SMC, ADRC) controllers.</li>
+                    </ul>
+                    
+                    <h3>Technical Implementation: Industrial Automation</h3>
+                    <p>Engineered a high-speed pick-and-place automation sequence, optimizing the GTHZ-300B's performance through rigorous parameter tuning and kinematic validation.</p>
+                    
+                    <h4>System Configuration & Calibration</h4>
+                    <ul>
+                        <li>Calibrated the 3-DOF parallel kinematic chain and pneumatic subsystems, ensuring optimal air pressure (4 bar) for reliable gripper actuation.</li>
+                    </ul>
+                    
+                    <h4>Point-to-Point (PTP) Programming</h4>
+                    <ul>
+                        <li>Utilized a "Teach-and-Playback" methodology to define a precise Cartesian workspace, validating kinematic reachability for all critical waypoints.</li>
+                    </ul>
+                    
+                    <h4>Sequential Logic Optimization</h4>
+                    <p>Developed an optimized command sequence using the robot's proprietary instruction set:</p>
+                    <ul>
+                        <li><strong>Initialization</strong>: Executed system homing routines (<code>AxisHome</code>) to establish a global reference frame.</li>
+                        <li><strong>Kinematic Trajectory Execution</strong>: Implemented <code>MoveDoor</code> commands to execute optimized "gate" trajectories, minimizing cycle time between pick and place locations.</li>
+                        <li><strong>Pneumatic Synchronization</strong>: Programmed precise I/O triggers (<code>SetOutputBeforeEnd</code>) to synchronize vacuum actuation with end-effector motion, compensating for pneumatic latency.</li>
+                    </ul>
+                    
+                    <h4>Outcome</h4>
+                    <p>Successfully deployed the program, resulting in a continuous, high-speed automation cycle that precisely picked up objects and moved them to the target location. This experiment validated my understanding of industrial robot programming, Cartesian-space control, and sequential logic for automation.</p>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="delta-manipulator.gif" alt="Delta Manipulator Demo">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Rebound Robotics Section -->
+            <section id="basketball-robot" class="project-section">
+                <h2 class="section-title">Rebound Robotics</h2>
+                <div class="project-content">
+                    <p><strong>Course:</strong> "PROJECT IN DESIGN FOR MANUFACTURING" (034371), Lecturer and Tutor: Dr. Anand Prakash DWIVEDI</p>
+                    <p>As my capstone project, I led a team to design, analyze, and plan the manufacturing of a fully autonomous basketball training robot from scratch. The robot aims to solve the limitations of traditional fixed shooting machines (like "The Gun") by autonomously navigating, collecting balls from the entire court, and passing from multiple angles, providing athletes with dynamic, game-like training.</p>
+                    
+                    <h3>Project Objective</h3>
+                    <p>To design a manufacturable, robust, and autonomous mobile robot capable of navigation, ball collection, and passing to improve the efficiency and realism of basketball training.</p>
+                    
+                    <h3>My Core Role: Lead CAD Designer & Finite Element Analysis (FEA) Engineer</h3>
+                    
+                    <h4>Mechanical System Design (My Lead Design Work)</h4>
+                    <p>I led the entire mechanical system design of the robot, creating detailed 3D models of all subsystems and the corresponding manufacturing drawings in SolidWorks.</p>
+                    
+                    <h5>Omnidirectional Chassis</h5>
+                    <p>Designed an omnidirectional chassis using four Mecanum Wheels. This design allows the robot to instantly translate and rotate on the spot, which is critical for rapid positioning and precise pass alignment on the court.</p>
+                    
+                    <h5>Roller-Conveyor Collection System</h5>
+                    <p>Designed an active collection mechanism. Elastic rollers at the front sweep the ball off the ground and onto a motor-driven conveyor system, which then lifts the ball vertically into the robot's internal storage hopper.</p>
+                    
+                    <h5>Internal Hopper Storage</h5>
+                    <p>Designed an internal funnel-shaped hopper with a 6-ball capacity. Through SolidWorks motion simulation, I optimized the internal guide slopes and geometry to use gravity to feed balls accurately into the launcher inlet and prevent jamming.</p>
+                    
+                    <h5>Dual Friction-Wheel Launcher</h5>
+                    <p>Designed a high-speed, dual-wheel friction launching system. By precisely controlling the speed of the two motors (via PWM), the system can adjust the pass velocity and power (e.g., from a soft chest pass to a high-speed, long-distance pass).</p>
+                    
+                    <h4>Engineering Analysis & Simulation (My Core Analysis Work)</h4>
+                    <p>To ensure the robot's durability and stability under high-intensity training, I conducted a comprehensive Finite Element Analysis (FEA) on critical load-bearing structures.</p>
+                    
+                    <h5>Chassis Static & Fatigue Analysis (FEA)</h5>
+                    <ul>
+                        <li><strong>Static Analysis</strong>: In SolidWorks Simulation, I simulated the stress on the chassis under full load (including batteries, motors, and all basketballs). The maximum von Mises stress was only $2.231 \times 10^8 N/m^2$, resulting in a Safety Factor (SF) of 2.24, far exceeding the 1.5 design requirement.</li>
+                        <li><strong>Fatigue Analysis</strong>: Simulated the cyclic loading on the chassis from long-term, repetitive motion. The simulation showed that the fatigue safety factor in all critical regions was above 1.50, proving its long-term operational reliability.</li>
+                    </ul>
+                    
+                    <h5>Launcher Structural Rigidity Analysis (FEA)</h5>
+                    <ul>
+                        <li><strong>Static Analysis</strong>: Simulated the reaction force on the launcher structure at maximum motor torque. The results showed a maximum displacement of less than $1.61 \times 10^{-5}$ mm, indicating extremely high rigidity. This is crucial for ensuring pass accuracy and consistency.</li>
+                        <li><strong>Fatigue Analysis</strong>: Fatigue analysis showed the launcher's expected life exceeds 1,000,000 cycles, with a fatigue safety factor over 2.00.</li>
+                    </ul>
+                    
+                    <h5>MATLAB Kinematic Simulation</h5>
+                    <p>Simulated the kinematic model of the Mecanum wheel chassis in MATLAB to validate the control algorithms, ensuring the robot could accurately execute omnidirectional commands (translation, rotation).</p>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="basketball-team.png" alt="Rebound Robotics Team">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-cad.png" alt="Basketball Robot CAD">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-mecanum.png" alt="Mecanum Wheel Design">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-hopper.png" alt="Internal Hopper Design">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-kinematics.png" alt="MATLAB Kinematics Simulation">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-chassis-displacement.png" alt="Chassis Displacement Analysis">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-chassis-fatigue.png" alt="Chassis Fatigue Analysis">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-launcher-displacement.png" alt="Launcher Displacement Analysis">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="basketball-launcher-fatigue.png" alt="Launcher Fatigue Analysis">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Intelligent Tracking & Ambient Control System Section -->
+            <section id="tracking-system" class="project-section">
+                <h2 class="section-title">Thermal Imaging Tracking Gimbal</h2>
+                <div class="project-content">
+                    <p>This project integrates computer vision and thermal imaging on an NVIDIA Jetson Nano to build an intelligent tracking gimbal capable of autonomous ambient control. I was responsible for the entire development process, from hardware prototyping and low-level algorithm implementation to high-level software application logic.</p>
+                    
+                    <h3>Core Contribution</h3>
+                    <p>My key contribution was the implementation of a <strong>Bicubic Interpolation</strong> algorithm. This algorithm upsamples low-resolution thermal sensor data (from an AMG8833) into a high-resolution, high-clarity thermal map in real-time. This step was a prerequisite for enabling subsequent human pose recognition and tracking.</p>
+                    
+                    <h3>Core Hardware</h3>
+                    <ul>
+                        <li>NVIDIA Jetson Nano</li>
+                        <li>Dual-Axis (Pan/Tilt) Stepper Motor Gimbal</li>
+                        <li>Webcam</li>
+                        <li>AMG8833 Thermal Imaging Sensor</li>
+                    </ul>
+                    
+                    <h3>Technical Implementation & Core Features</h3>
+                    
+                    <h4>Intelligent Facial Tracking</h4>
+                    <ul>
+                        <li>Ran an OpenCV-based face detection pipeline on the Jetson Nano.</li>
+                        <li>Utilized a Haar-Cascade classifier to identify and locate faces in the real-time video stream.</li>
+                        <li>Wrote stepper motor control scripts to drive the dual-axis gimbal for real-time tracking, keeping the face centered in the frame.</li>
+                    </ul>
+                    
+                    <h4>Interactive Autonomous Modes</h4>
+                    <p>Developed an application state machine that uses sensor data to control the user's environment (e.g., smart lighting).</p>
+                    
+                    <h5>Meditation Mode</h5>
+                    <p>The system detects 5 seconds of stillness to initiate this mode, automatically turning off ambient lights. It then activates thermal face/pose recognition to confirm the user's state. Standing up or making significant movements ends the session.</p>
+                    
+                    <h5>Watch Movie Mode</h5>
+                    <p>The device turns off ambient light for immersion. It actively monitors for movement (like head turns). If distraction is detected, it automatically turns the lights back on to encourage focus.</p>
+                    
+                    <h4>Broader Applications</h4>
+                    <p>This technology was designed for "beyond the office" scenarios, such as guiding a visitor's attention with light in a museum setting or enhancing immersion during interactive live performances.</p>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-1.png" alt="Tracking System 1">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-2.png" alt="Tracking System 2">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-3.png" alt="Tracking System 3">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-4.png" alt="Tracking System 4">
+                        </div>
+                        <div class="thumbnail-container">
+                            <img src="tracking-system-5.png" alt="Tracking System 5">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Back to Home -->
+            <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
+                <a href="index.html" class="btn btn-outline">← Back to Home</a>
+            </div>
+        </main>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>
