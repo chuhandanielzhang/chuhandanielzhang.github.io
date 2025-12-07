@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Unitree Z1 Robotic Arm - Chuhan ZHANG">
+    <title>Unitree Z1 Robotic Arm - Chuhan ZHANG</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .image-gallery {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+        .thumbnail-container {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            border-radius: 6px;
+        }
+        .thumbnail-container:hover { z-index: 100; }
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .thumbnail-container:hover img {
+            transform: scale(3.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-profile">
+                <div class="profile-picture">
+                    <img src="profile-photo.jpg" alt="Chuhan ZHANG">
+                </div>
+                <h1 class="profile-name">Chuhan ZHANG</h1>
+            </div>
+            <div class="sidebar-navigation">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
+                    <li><a href="robotics.html" class="sidebar-link"><span class="icon">🤖</span>Robotics Competition</a></li>
+                    <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
+                    <li>
+                        <a href="course-projects.html" class="sidebar-link active"><span class="icon">🦾</span>Course Projects</a>
+                        <ul class="sidebar-submenu" style="display:block;">
+                            <li><a href="course-turtlebot.html" class="sidebar-sublink">TurtleBot</a></li>
+                            <li><a href="course-unitree.html" class="sidebar-sublink active">Unitree Arm</a></li>
+                            <li><a href="course-delta.html" class="sidebar-sublink">Delta Manipulator</a></li>
+                            <li><a href="course-basketball.html" class="sidebar-sublink">Rebound Robotics</a></li>
+                            <li><a href="course-thermal.html" class="sidebar-sublink">Thermal Gimbal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="interests.html" class="sidebar-link"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-header">
+                <h1>Unitree Z1 Robotic Arm</h1>
+                <p>Advanced Robotics Laboratory, GTIIT, 2024</p>
+            </section>
+
+            <section class="project-section">
+                <div class="project-content">
+                    <p><strong>Course:</strong> Advanced Robotics Laboratory (034401), Prof. Damiano Padovani</p>
+                    <p>Developed autonomous trajectory planning and control algorithms for the Unitree Z1, a 6-DOF robotic arm.</p>
+                    
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li><strong>Kinematics</strong>: Dual-space control with Inverse Kinematics solvers for Cartesian to Joint-space mapping.</li>
+                        <li><strong>Trajectory Planning</strong>: 5th-order polynomial generation for C2-continuous motion.</li>
+                        <li><strong>Autonomous Manipulation</strong>: Pick-and-place logic using MoveJ and MoveL commands.</li>
+                        <li><strong>High-Precision Path Tracking</strong>: Sub-millimeter repeatability with constant orientation constraints.</li>
+                    </ul>
+
+                    <div class="image-gallery">
+                        <div class="thumbnail-container"><img src="unitree-arm-1.jpg" alt="Unitree Arm 1"></div>
+                        <div class="thumbnail-container"><img src="unitree-arm-2.jpg" alt="Unitree Arm 2"></div>
+                        <div class="thumbnail-container"><img src="unitree-arm-3.jpg" alt="Unitree Arm 3"></div>
+                        <div class="thumbnail-container"><img src="unitree-arm-4.jpg" alt="Unitree Arm 4"></div>
+                        <div class="thumbnail-container"><img src="unitree-arm-5.jpg" alt="Unitree Arm 5"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
+                <a href="course-projects.html" class="btn btn-outline">← Back to Course Projects</a>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

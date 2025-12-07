@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Delta Parallel Manipulator - Chuhan ZHANG">
+    <title>Delta Parallel Manipulator - Chuhan ZHANG</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-profile">
+                <div class="profile-picture">
+                    <img src="profile-photo.jpg" alt="Chuhan ZHANG">
+                </div>
+                <h1 class="profile-name">Chuhan ZHANG</h1>
+            </div>
+            <div class="sidebar-navigation">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
+                    <li><a href="robotics.html" class="sidebar-link"><span class="icon">🤖</span>Robotics Competition</a></li>
+                    <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
+                    <li>
+                        <a href="course-projects.html" class="sidebar-link active"><span class="icon">🦾</span>Course Projects</a>
+                        <ul class="sidebar-submenu" style="display:block;">
+                            <li><a href="course-turtlebot.html" class="sidebar-sublink">TurtleBot</a></li>
+                            <li><a href="course-unitree.html" class="sidebar-sublink">Unitree Arm</a></li>
+                            <li><a href="course-delta.html" class="sidebar-sublink active">Delta Manipulator</a></li>
+                            <li><a href="course-basketball.html" class="sidebar-sublink">Rebound Robotics</a></li>
+                            <li><a href="course-thermal.html" class="sidebar-sublink">Thermal Gimbal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="interests.html" class="sidebar-link"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-header">
+                <h1>Delta Parallel Manipulator</h1>
+                <p>Advanced Robotics Laboratory, GTIIT, 2024</p>
+            </section>
+
+            <section class="project-section">
+                <div class="project-content">
+                    <p><strong>Course:</strong> Advanced Robotics Laboratory (034401), Prof. Damiano Padovani</p>
+                    <p>Programmed a GTHZ-300B industrial Delta robot for high-speed pick-and-place automation.</p>
+                    
+                    <h3>Technical Implementation</h3>
+                    <ul>
+                        <li><strong>Kinematics</strong>: Analyzed 3-DOF parallel kinematic chain for high-speed translational movement.</li>
+                        <li><strong>System Calibration</strong>: Calibrated kinematic chain and pneumatic subsystems (4 bar).</li>
+                        <li><strong>PTP Programming</strong>: Teach-and-Playback methodology for precise Cartesian workspace.</li>
+                        <li><strong>Sequential Logic</strong>: Optimized AxisHome, MoveDoor, and SetOutputBeforeEnd commands.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
+                <a href="course-projects.html" class="btn btn-outline">← Back to Course Projects</a>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>

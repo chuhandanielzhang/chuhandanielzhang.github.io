@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="VEX Nothing But Net - Team 9698B - Chuhan ZHANG">
+    <title>VEX Nothing But Net - Chuhan ZHANG</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <style>
+        .image-gallery {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+        .thumbnail-container {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            border-radius: 6px;
+        }
+        .thumbnail-container:hover { z-index: 100; }
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .thumbnail-container:hover img {
+            transform: scale(3.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-profile">
+                <div class="profile-picture">
+                    <img src="profile-photo.jpg" alt="Chuhan ZHANG">
+                </div>
+                <h1 class="profile-name">Chuhan ZHANG</h1>
+            </div>
+            <div class="sidebar-navigation">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
+                    <li>
+                        <a href="robotics.html" class="sidebar-link active"><span class="icon">🤖</span>Robotics Competition</a>
+                        <ul class="sidebar-submenu" style="display:block;">
+                            <li>
+                                <span class="sidebar-sublink" style="font-weight:600;">VEX</span>
+                                <ul class="sidebar-submenu" style="display:block;">
+                                    <li><a href="robotics-9698b.html" class="sidebar-sublink active">Nothing But Net</a></li>
+                                    <li><a href="robotics-9666a.html" class="sidebar-sublink">Tower Takeover</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="robotics-robomaster.html" class="sidebar-sublink">RoboMaster RMUL</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
+                    <li><a href="course-projects.html" class="sidebar-link"><span class="icon">🦾</span>Course Projects</a></li>
+                    <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="interests.html" class="sidebar-link"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-header">
+                <h1>VEX Nothing But Net - Team 9698B</h1>
+                <p>Middle School, 2015-2016 | Team Captain</p>
+            </section>
+
+            <section class="project-section">
+                <div class="project-content">
+                    <p>In this season, the game objective is to shoot balls into high-mounted baskets to score points.</p>
+                    <p>I co-founded and captained Team 9698B, guiding four classmates from initial concept to a fully operational robot.</p>
+                    
+                    <h3>Our Creation & Key Innovations</h3>
+                    <ul>
+                        <li><strong>Agile Movement</strong>: Built a holonomic drivetrain for superior mobility.</li>
+                        <li><strong>Efficient Collection & Launching</strong>: Designed a wide roller intake system with dual-flywheel launcher using PID control.</li>
+                        <li><strong>Smart Architecture</strong>: "Front-intake, front-shooter" design for unique scoring angles.</li>
+                        <li><strong>Autonomous Precision</strong>: Programmed reliable 15-second autonomous routine.</li>
+                    </ul>
+
+                    <h3>Achievements</h3>
+                    <ul>
+                        <li>🏆 <strong>Champion, 2016 VEX Asia-Pacific Robotics Championship</strong> (Melbourne, Australia)</li>
+                        <li>🏆 <strong>Division Champion, 2016 VEX Robotics World Championship</strong> (Louisville, KY, USA)</li>
+                        <li>🥉 <strong>Third Prize, 17th China Adolescent Robotics Competition</strong></li>
+                        <li>🥇 <strong>First Prize, 16th China Adolescent Robotics Competition</strong></li>
+                    </ul>
+                    
+                    <div class="image-gallery">
+                        <div class="thumbnail-container"><img src="robotics-9698b-main.jpg" alt="Team 9698B robot"></div>
+                        <div class="thumbnail-container"><img src="robotics-9698b-working.jpg" alt="Working on robot"></div>
+                        <div class="thumbnail-container"><img src="robotics-9698b-team.jpg" alt="Team photo"></div>
+                        <div class="thumbnail-container"><img src="robotics-9698b-award.jpg" alt="Award ceremony"></div>
+                        <div class="thumbnail-container"><img src="robotics-9698b-worlds.jpg" alt="VEX Worlds"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
+                <a href="robotics.html" class="btn btn-outline">← Back to Robotics Competition</a>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
