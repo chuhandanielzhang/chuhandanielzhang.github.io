@@ -71,22 +71,22 @@
         <main class="main-content">
             <section class="content-header">
                 <h1>TurtleBot Autonomous Navigation</h1>
-                <p>Advanced Robotics Laboratory, GTIIT, 2024</p>
+                <p>Advanced Robotics Laboratory (034401), GTIIT, Spring 2025</p>
             </section>
 
             <section class="project-section">
                 <div class="project-content">
-                    <p><strong>Course:</strong> Advanced Robotics Laboratory (034401), Prof. Damiano Padovani</p>
-                    <p>Developed a complete autonomous navigation and obstacle avoidance system for TurtleBot 4 using ROS2.</p>
+                    <p><strong>Instructor:</strong> Prof. Damiano Padovani</p>
+                    <p>Developed autonomous navigation and obstacle avoidance routines for TurtleBot 4 using ROS2 Humble framework.</p>
                     
                     <h3>Technical Implementation</h3>
                     <ul>
-                        <li><strong>ROS2 System Architecture</strong>: Modular software stack within ROS2 Humble framework.</li>
-                        <li><strong>Motion Control</strong>: Python-based nodes publishing Twist messages with closed-loop velocity control.</li>
-                        <li><strong>Sensor Integration</strong>: Asynchronous processing of OAK-D depth camera and 2D LiDAR data.</li>
-                        <li><strong>Autonomous Logic</strong>: Finite State Machine transitioning between PATH_TRACKING and OBSTACLE_AVOIDANCE.</li>
-                        <li><strong>Path Tracking</strong>: PID control loop with visual servoing for line following.</li>
-                        <li><strong>Reactive Avoidance</strong>: LiDAR-based collision avoidance with circumnavigation maneuvers.</li>
+                        <li><strong>ROS2 Architecture</strong>: Built modular workspace with custom Python nodes for motion control.</li>
+                        <li><strong>Teleoperation</strong>: Implemented keyboard-based teleop publishing Twist messages to <code>cmd_vel</code> topic.</li>
+                        <li><strong>Circular Motion</strong>: Programmed closed-loop velocity control for specified radius trajectory (~30 cm).</li>
+                        <li><strong>Path Following</strong>: Developed timer-based autonomous routines to follow predefined paths.</li>
+                        <li><strong>Obstacle Avoidance</strong>: Integrated 2D LiDAR for real-time collision detection and circumnavigation.</li>
+                        <li><strong>Sensor Fusion</strong>: Studied OAK-D depth camera and LiDAR integration for robust navigation.</li>
                     </ul>
 
                     <div class="image-gallery">

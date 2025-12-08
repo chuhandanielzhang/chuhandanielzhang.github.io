@@ -42,20 +42,22 @@
         <main class="main-content">
             <section class="content-header">
                 <h1>Delta Parallel Manipulator</h1>
-                <p>Advanced Robotics Laboratory, GTIIT, 2024</p>
+                <p>Advanced Robotics Laboratory (034401), GTIIT, Spring 2025</p>
             </section>
 
             <section class="project-section">
                 <div class="project-content">
-                    <p><strong>Course:</strong> Advanced Robotics Laboratory (034401), Prof. Damiano Padovani</p>
-                    <p>Programmed a GTHZ-300B industrial Delta robot for high-speed pick-and-place automation.</p>
+                    <p><strong>Instructor:</strong> Prof. Damiano Padovani</p>
+                    <p>Programmed industrial GTHZ-300B Delta robot for high-speed pick-and-place automation cycles.</p>
                     
                     <h3>Technical Implementation</h3>
                     <ul>
-                        <li><strong>Kinematics</strong>: Analyzed 3-DOF parallel kinematic chain for high-speed translational movement.</li>
-                        <li><strong>System Calibration</strong>: Calibrated kinematic chain and pneumatic subsystems (4 bar).</li>
-                        <li><strong>PTP Programming</strong>: Teach-and-Playback methodology for precise Cartesian workspace.</li>
-                        <li><strong>Sequential Logic</strong>: Optimized AxisHome, MoveDoor, and SetOutputBeforeEnd commands.</li>
+                        <li><strong>Parallel Kinematics</strong>: Studied 3-DOF parallel kinematic chain enabling pure translational motion (X, Y, Z).</li>
+                        <li><strong>Pneumatic System</strong>: Configured vacuum valve control at 4 bar for object grasping.</li>
+                        <li><strong>Motion Programming</strong>: Implemented MoveDoor commands for door-shaped pick-and-place trajectories.</li>
+                        <li><strong>I/O Control</strong>: Applied SetOutputBeforeEnd for precise vacuum timing (0.01s advance trigger).</li>
+                        <li><strong>Teach Mode</strong>: Used manual positioning with LoadPoint for Cartesian coordinate capture.</li>
+                        <li><strong>Safety Protocols</strong>: Configured AxisHome return-to-origin and SetFixedSpeed (50% max) for safe operation.</li>
                     </ul>
 
                     <div class="image-gallery" style="margin:30px 0;display:flex;flex-wrap:wrap;gap:20px;">

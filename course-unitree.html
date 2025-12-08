@@ -71,20 +71,22 @@
         <main class="main-content">
             <section class="content-header">
                 <h1>Unitree Z1 Robotic Arm</h1>
-                <p>Advanced Robotics Laboratory, GTIIT, 2024</p>
+                <p>Advanced Robotics Laboratory (034401), GTIIT, Spring 2025</p>
             </section>
 
             <section class="project-section">
                 <div class="project-content">
-                    <p><strong>Course:</strong> Advanced Robotics Laboratory (034401), Prof. Damiano Padovani</p>
-                    <p>Developed autonomous trajectory planning and control algorithms for the Unitree Z1, a 6-DOF robotic arm.</p>
+                    <p><strong>Instructor:</strong> Prof. Damiano Padovani</p>
+                    <p>Programmed trajectory planning and autonomous manipulation for the <a href="https://www.unitree.com/z1" target="_blank">Unitree Z1</a>, a 6-DOF robotic arm using z1_sdk.</p>
                     
                     <h3>Technical Implementation</h3>
                     <ul>
-                        <li><strong>Kinematics</strong>: Dual-space control with Inverse Kinematics solvers for Cartesian to Joint-space mapping.</li>
-                        <li><strong>Trajectory Planning</strong>: 5th-order polynomial generation for C2-continuous motion.</li>
-                        <li><strong>Autonomous Manipulation</strong>: Pick-and-place logic using MoveJ and MoveL commands.</li>
-                        <li><strong>High-Precision Path Tracking</strong>: Sub-millimeter repeatability with constant orientation constraints.</li>
+                        <li><strong>SDK Integration</strong>: Configured z1_controller and z1_sdk for real-time robot communication.</li>
+                        <li><strong>Motion Control</strong>: Implemented joint-space (JOINTCTRL) and Cartesian-space (CARTESIAN) control modes.</li>
+                        <li><strong>Trajectory Planning</strong>: Applied 3rd and 5th-order polynomial paths for smooth acceleration profiles.</li>
+                        <li><strong>Pick-and-Place</strong>: Developed autonomous manipulation cycles using MoveJ, MoveL, and MoveC commands.</li>
+                        <li><strong>Precision Drawing</strong>: Programmed end-effector path tracking for marker-based drawing tasks.</li>
+                        <li><strong>Teach-and-Playback</strong>: Utilized TEACH mode for trajectory recording and TEACHREPEAT for replay.</li>
                     </ul>
 
                     <div class="image-gallery">
