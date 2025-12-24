@@ -56,16 +56,16 @@
             <section class="project-section">
                 <div class="project-content">
                     <p><strong>Instructor:</strong> Prof. Damiano Padovani</p>
-                    <p>Programmed industrial GTHZ-300B Delta robot for high-speed pick-and-place automation cycles.</p>
+                    <p>Programmed an industrial GTHZ-300B Delta robot for high-speed pick-and-place tasks.</p>
                     
                     <h3>Technical Implementation</h3>
                     <ul>
-                        <li><strong>Parallel Kinematics</strong>: Studied 3-DOF parallel kinematic chain enabling pure translational motion (X, Y, Z).</li>
-                        <li><strong>Pneumatic System</strong>: Configured vacuum valve control at 4 bar for object grasping.</li>
-                        <li><strong>Motion Programming</strong>: Implemented MoveDoor commands for door-shaped pick-and-place trajectories.</li>
-                        <li><strong>I/O Control</strong>: Applied SetOutputBeforeEnd for precise vacuum timing (0.01s advance trigger).</li>
-                        <li><strong>Teach Mode</strong>: Used manual positioning with LoadPoint for Cartesian coordinate capture.</li>
-                        <li><strong>Safety Protocols</strong>: Configured AxisHome return-to-origin and SetFixedSpeed (50% max) for safe operation.</li>
+                        <li><strong>Parallel Kinematics</strong>: Studied the 3-DOF parallel mechanism (translation in X/Y/Z only).</li>
+                        <li><strong>Pneumatics</strong>: Set vacuum control at 4 bar for grasping.</li>
+                        <li><strong>Motion Programming</strong>: Used MoveDoor commands for pick-and-place motion.</li>
+                        <li><strong>I/O Timing</strong>: Used SetOutputBeforeEnd to trigger vacuum 0.01 s before reaching the target.</li>
+                        <li><strong>Teach Mode</strong>: Captured positions with LoadPoint.</li>
+                        <li><strong>Safety</strong>: Used AxisHome and SetFixedSpeed (50%) for safe operation.</li>
                     </ul>
 
                     <div class="image-gallery" style="margin:30px 0;display:flex;flex-wrap:wrap;gap:20px;">
