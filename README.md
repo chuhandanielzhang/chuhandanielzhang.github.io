@@ -1,95 +1,146 @@
-# Chuhan Zhang - Personal Website
+# Chuhan Zhang - Personal Academic Website
 
-个人学术网站，展示研究项目、竞赛经历和教育背景。
+<div align="center">
 
-🌐 **网站地址**: https://chuhandanielzhang.github.io
+![Website](https://img.shields.io/badge/Website-Live-success?style=for-the-badge&logo=github)
+![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-Deployed-blue?style=for-the-badge&logo=githubpages)
+
+🌐 **Live Site**: [chuhandanielzhang.github.io](https://chuhandanielzhang.github.io)
+
+</div>
 
 ---
 
-## 📁 项目结构
+## 📖 About
+
+This is my personal academic website showcasing my research projects, competition experiences, publications, and educational background. The website is built with pure HTML/CSS/JavaScript and deployed via GitHub Pages.
+
+---
+
+## 🎯 Features
+
+- ✅ **Responsive Design** - Works on all devices
+- ✅ **Clean UI** - Modern, professional academic style
+- ✅ **Fast Loading** - Optimized for performance
+- ✅ **SEO Friendly** - Proper meta tags and structure
+- ✅ **Easy to Update** - Simple file structure
+
+---
+
+## 📁 Project Structure
 
 ```
 website/
-├── index.html              # 主页
-├── research.html           # 研究项目
-├── publications.html       # 出版物
-├── awards.html             # 奖项和荣誉
-├── robotics.html           # 机器人竞赛
-├── course-projects.html    # 课程项目
-├── education.html          # 教育背景
-├── interests.html          # 兴趣爱好
+├── index.html              # Homepage
+├── research.html           # Research projects
+├── publications.html       # Publications & papers
+├── awards.html             # Honors & awards
+├── robotics.html           # Robotics competitions
+├── course-projects.html    # Course projects
+├── education.html          # Education background
+├── interests.html          # Interests & hobbies
 ├── styles/
-│   └── style.css          # 样式文件
+│   └── style.css          # Main stylesheet
 └── scripts/
-    └── main.js            # JavaScript文件
+    └── main.js            # JavaScript functionality
 ```
 
 ---
 
-## 🚀 部署说明
+## 🚀 Quick Start
 
-### 自动部署（GitHub Pages）
+### View Locally
 
-这个仓库已经配置为GitHub Pages，每次推送到`main`分支后会自动部署。
+```bash
+# Clone the repository
+git clone https://github.com/chuhandanielzhang/chuhandanielzhang.github.io.git
+cd chuhandanielzhang.github.io
 
-**部署步骤**:
-1. 修改网站文件
-2. 提交更改: `git add . && git commit -m "更新内容"`
-3. 推送到GitHub: `git push origin main`
-4. 等待1-2分钟，网站会自动更新
+# Start a local server
+python3 -m http.server 8000
+# Or
+npx serve
+```
 
-### 检查GitHub Pages设置
+Visit: `http://localhost:8000`
 
-1. 访问仓库: https://github.com/chuhandanielzhang/chuhandanielzhang.github.io
-2. 进入 **Settings** > **Pages**
-3. 确认 **Source** 设置为 `main` 分支
-4. 确认网站地址: https://chuhandanielzhang.github.io
+### Deploy Updates
 
----
+```bash
+# Make changes to files
+git add .
+git commit -m "Update website content"
+git push origin main
+```
 
-## 📝 更新内容
-
-### 更新研究项目
-编辑 `research.html` 文件
-
-### 更新出版物
-编辑 `publications.html` 文件
-
-### 更新奖项
-编辑 `awards.html` 文件
-
-### 更新竞赛经历
-编辑 `robotics.html` 文件
+GitHub Pages will automatically deploy within 1-2 minutes! 🎉
 
 ---
 
-## 🛠️ 本地开发
+## 📝 Content Sections
 
-### 查看网站
-1. 使用本地服务器（推荐）:
-   ```bash
-   # Python 3
-   python3 -m http.server 8000
-   
-   # 或使用 Node.js
-   npx serve
-   ```
+### 🏠 Homepage (`index.html`)
+- Personal introduction
+- Research interests
+- Latest news
+- Selected projects
 
-2. 在浏览器中访问: http://localhost:8000
+### 🔬 Research (`research.html`)
+- Energy-Recycling Bipedal Walker (ICRA 2026)
+- Aero-OMEGA Hopping Robot (BioRob/IROS 2026)
 
-### 编辑样式
-修改 `styles/style.css` 文件
+### 📄 Publications (`publications.html`)
+- Conference papers
+- Journal articles
+- Preprints
+
+### 🏆 Awards (`awards.html`)
+- VEX Robotics World Champion
+- Academic scholarships
+- Innovation awards
+
+### 🤖 Robotics (`robotics.html`)
+- RoboMaster University League
+- VEX Competitions
+- Team projects
 
 ---
 
-## 📧 联系方式
+## 🛠️ Technologies
 
-- **Email**: chuhan.zhang@gtiit.edu.cn
-- **Website**: https://chuhandanielzhang.github.io
-- **GitHub**: https://github.com/chuhandanielzhang
+- **HTML5** - Semantic markup
+- **CSS3** - Modern styling with CSS variables
+- **JavaScript** - Interactive features
+- **GitHub Pages** - Free hosting
 
 ---
 
-## 📄 许可证
+## 📊 Website Stats
 
-个人网站，保留所有权利。
+![GitHub deployments](https://img.shields.io/github/deployments/chuhandanielzhang/chuhandanielzhang.github.io/github-pages?label=Deployments&style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/chuhandanielzhang/chuhandanielzhang.github.io?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/chuhandanielzhang/chuhandanielzhang.github.io?style=flat-square)
+
+---
+
+## 🔗 Links
+
+- 🌐 **Live Website**: [chuhandanielzhang.github.io](https://chuhandanielzhang.github.io)
+- 📧 **Email**: chuhan.zhang@gtiit.edu.cn
+- 🐙 **GitHub**: [@chuhandanielzhang](https://github.com/chuhandanielzhang)
+
+---
+
+## 📄 License
+
+Personal website - All rights reserved.
+
+---
+
+<div align="center">
+
+**Made with ❤️ for academic purposes**
+
+⭐️ *Star this repo if you find it helpful!*
+
+</div>
