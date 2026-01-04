@@ -1,0 +1,24 @@
+# 非网站文件 - 这些文件不应该在网站仓库中
+*.docx
+*.doc
+*.tex
+*.txt
+*.pdf
+*.xlsx
+*.zip
+*.tar.gz
+
+# SOP和PS文件
+*SOP*
+*PS*
+*Personal*Statement*
+*Statement*Purpose*
+
+# 临时文件
+~$*
+*.tmp
+.DS_Store
+
+# 其他文档
+*.md
+!README.md
