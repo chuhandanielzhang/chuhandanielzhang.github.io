@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rebound Robotics - Basketball Training Robot - Chuhan ZHANG">
+    <title>Rebound Robotics - Chuhan ZHANG</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGXV2VP7T0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FGXV2VP7T0');
+    </script>
+    <style>
+        .image-gallery {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+        .thumbnail-container {
+            position: relative;
+            width: 120px;
+            height: 90px;
+            border-radius: 6px;
+        }
+        .thumbnail-container:hover { z-index: 100; }
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .thumbnail-container:hover img {
+            transform: scale(3.5);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+    </style>
+</head>
+<body>
+    <div class="main-layout">
+        <aside class="sidebar">
+            <div class="sidebar-profile">
+                <div class="profile-picture">
+                    <img src="profile-photo.jpg" alt="Chuhan ZHANG">
+                </div>
+                <h1 class="profile-name">Chuhan ZHANG</h1>
+            </div>
+            <div class="sidebar-navigation">
+                <ul class="sidebar-menu">
+                    <li><a href="index.html" class="sidebar-link"><span class="icon">🏠</span>Home</a></li>
+                    <li><a href="awards.html" class="sidebar-link"><span class="icon">🏆</span>Honors & Awards</a></li>
+                    <li><a href="robotics.html" class="sidebar-link"><span class="icon">🤖</span>Robotics Competition</a></li>
+                    <li><a href="education.html" class="sidebar-link"><span class="icon">🎓</span>Education & Experience</a></li>
+                    <li>
+                        <a href="course-projects.html" class="sidebar-link active"><span class="icon">🦾</span>Course Projects</a>
+                        <ul class="sidebar-submenu" style="display:block;">
+                            <li><a href="course-turtlebot.html" class="sidebar-sublink">TurtleBot</a></li>
+                            <li><a href="course-unitree.html" class="sidebar-sublink">Unitree Arm</a></li>
+                            <li><a href="course-delta.html" class="sidebar-sublink">Delta Manipulator</a></li>
+                            <li><a href="course-basketball.html" class="sidebar-sublink active">Rebound Robotics</a></li>
+                            <li><a href="course-thermal.html" class="sidebar-sublink">Thermal Gimbal</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
+                    <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
+                    <li><a href="interests.html" class="sidebar-link"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="content-header">
+                <h1>Rebound Robotics - Basketball Training Robot</h1>
+                <p>Design for Manufacturing, GTIIT, 2024 | Team Lead & CAD Designer</p>
+            </section>
+
+            <section class="project-section">
+                <div class="project-content">
+                    <p><strong>Course:</strong> Design for Manufacturing (034371), Dr. Anand Prakash Dwivedi</p>
+                    <p>Led a team to design a basketball training robot with navigation, ball collection, and passing functions.</p>
+                    
+                    <h3>My Role: Lead CAD Designer & FEA Engineer</h3>
+                    
+                    <h4>Mechanical System Design</h4>
+                    <ul>
+                        <li><strong>Omnidirectional Chassis</strong>: Four mecanum wheels for movement in any direction.</li>
+                        <li><strong>Collection System</strong>: Elastic rollers with a motor-driven conveyor.</li>
+                        <li><strong>Internal Hopper</strong>: Holds up to 6 balls.</li>
+                        <li><strong>Dual Friction-Wheel Launcher</strong>: PWM speed control for adjustable pass speed.</li>
+                    </ul>
+
+                    <h4>FEA Analysis</h4>
+                    <ul>
+                        <li><strong>Chassis (Static)</strong>: Safety factor 2.24 (requirement: ≥ 1.5).</li>
+                        <li><strong>Chassis (Fatigue)</strong>: Fatigue safety factor > 1.50 in critical regions.</li>
+                        <li><strong>Launcher</strong>: Max displacement < 0.016 μm; estimated life > 1,000,000 cycles.</li>
+                    </ul>
+
+                    <div class="image-gallery">
+                        <div class="thumbnail-container"><img src="basketball-team.png" alt="Team"></div>
+                        <div class="thumbnail-container"><img src="basketball-cad.png" alt="CAD"></div>
+                        <div class="thumbnail-container"><img src="basketball-mecanum.png" alt="Mecanum"></div>
+                        <div class="thumbnail-container"><img src="basketball-hopper.png" alt="Hopper"></div>
+                        <div class="thumbnail-container"><img src="basketball-kinematics.png" alt="Kinematics"></div>
+                        <div class="thumbnail-container"><img src="basketball-chassis-displacement.png" alt="Chassis FEA"></div>
+                        <div class="thumbnail-container"><img src="basketball-chassis-fatigue.png" alt="Fatigue"></div>
+                        <div class="thumbnail-container"><img src="basketball-launcher-displacement.png" alt="Launcher FEA"></div>
+                        <div class="thumbnail-container"><img src="basketball-launcher-fatigue.png" alt="Launcher Fatigue"></div>
+                    </div>
+                </div>
+            </section>
+
+            <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
+                <a href="course-projects.html" class="btn btn-outline">← Back to Course Projects</a>
+            </div>
+        </main>
+    </div>
+    <script src="scripts/main.js"></script>
+</body>
+</html>
+
+
+
+
