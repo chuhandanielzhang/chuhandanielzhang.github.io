@@ -45,7 +45,7 @@ body {
     height: 100vh;
     overflow-y: auto;
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    z-index: 100; /* 确保侧边栏在最上层 */
+    z-index: 9999; /* 强制最高层级 */
 }
 
 /* Profile Section */
