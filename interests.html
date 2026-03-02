@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chuhan Zhang's Interests and Hobbies">
-    <title>Interests & Hobbies - Chuhan ZHANG's Website</title>
+    <meta name="description" content="Beyond Academics - Photography and Cycling">
+    <title>Beyond Academics - Chuhan ZHANG's Website</title>
     <link rel="stylesheet" href="styles/style.css">
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGXV2VP7T0"></script>
@@ -15,7 +15,149 @@
       gtag('config', 'G-FGXV2VP7T0');
     </script>
     <style>
-        /* Page-specific overrides if needed */
+        .beyond-hero {
+            position: relative;
+            margin-bottom: 36px;
+            padding: 32px 28px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #e0e7ff 0%, #ede9fe 45%, #f5f3ff 100%);
+            border: 1px solid #ddd6fe;
+            overflow: hidden;
+        }
+
+        .beyond-hero::before,
+        .beyond-hero::after {
+            content: "";
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(8px);
+            opacity: 0.55;
+            pointer-events: none;
+        }
+
+        .beyond-hero::before {
+            width: 200px;
+            height: 200px;
+            right: -40px;
+            top: -60px;
+            background: radial-gradient(circle at center, #818cf8 0%, rgba(129, 140, 248, 0) 70%);
+        }
+
+        .beyond-hero::after {
+            width: 180px;
+            height: 180px;
+            left: -35px;
+            bottom: -70px;
+            background: radial-gradient(circle at center, #c4b5fd 0%, rgba(196, 181, 253, 0) 70%);
+        }
+
+        .beyond-title {
+            position: relative;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+
+        .beyond-subtitle {
+            position: relative;
+            max-width: 780px;
+            font-size: 1.05rem;
+            color: #4b5563;
+        }
+
+        .gallery-section {
+            margin-bottom: 42px;
+            padding: 24px;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            background: linear-gradient(180deg, #ffffff 0%, #fafafe 100%);
+            box-shadow: var(--shadow);
+        }
+
+        .gallery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .gallery-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .gallery-note {
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        .wheel-gallery {
+            overflow-x: auto;
+            overflow-y: hidden;
+            padding-bottom: 8px;
+            scroll-snap-type: x proximity;
+            scrollbar-width: thin;
+            scrollbar-color: #a5b4fc #eef2ff;
+        }
+
+        .wheel-gallery::-webkit-scrollbar {
+            height: 10px;
+        }
+
+        .wheel-gallery::-webkit-scrollbar-track {
+            background: #eef2ff;
+            border-radius: 999px;
+        }
+
+        .wheel-gallery::-webkit-scrollbar-thumb {
+            background: #a5b4fc;
+            border-radius: 999px;
+        }
+
+        .gallery-track {
+            display: flex;
+            gap: 14px;
+            min-width: max-content;
+        }
+
+        .photo-tile {
+            width: 300px;
+            height: 210px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: #f3f4f6;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 6px 20px rgba(31, 41, 55, 0.08);
+            scroll-snap-align: start;
+            flex: 0 0 auto;
+        }
+
+        .photo-tile img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.35s ease;
+        }
+
+        .photo-tile:hover img {
+            transform: scale(1.04);
+        }
+
+        @media (max-width: 768px) {
+            .beyond-title {
+                font-size: 2rem;
+            }
+
+            .photo-tile {
+                width: 250px;
+                height: 180px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -45,25 +187,65 @@
                     </li>
                     <li><a href="publications.html" class="sidebar-link"><span class="icon">📄</span>Publications</a></li>
                     <li><a href="research.html" class="sidebar-link"><span class="icon">🔬</span>Research: Robotics</a></li>
-                    <li><a href="interests.html" class="sidebar-link active"><span class="icon">🎨</span>Interests & Hobbies</a></li>
+                    <li><a href="interests.html" class="sidebar-link active"><span class="icon">🎨</span>Beyond Academics</a></li>
                 </ul>
             </div>
         </aside>
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Interests Header -->
-            <section class="content-header">
-                <h1>Interests & Hobbies</h1>
-                <p>Beyond academics</p>
+            <section class="beyond-hero">
+                <h1 class="beyond-title">Beyond Academics</h1>
+                <p class="beyond-subtitle">
+                    Outside research, I document moments through photography and explore cities by bicycle.
+                    This page is optimized for many images: use your mouse wheel to scroll through the galleries.
+                </p>
             </section>
 
-            <!-- Interests Content -->
-            <div style="max-width: 900px; margin: 0 auto; padding: 20px;">
-                <p style="text-align: center; color: var(--text-light); font-size: 1.1rem; padding: 40px 20px;">
-                    Content coming soon...
-                </p>
-            </div>
+            <section class="gallery-section">
+                <div class="gallery-header">
+                    <h2 class="gallery-title">Photography</h2>
+                    <span class="gallery-note">17 photos · wheel to browse</span>
+                </div>
+                <div class="wheel-gallery" aria-label="Photography gallery">
+                    <div class="gallery-track">
+                        <div class="photo-tile"><img src="photography/04e59298b2809a004d551d49586394e4.jpg" alt="Photography image 1" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/32f05c337056df005efdf9e6b5474a44.jpg" alt="Photography image 2" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/33f8169e3b4c649369131c6ec3718aee.jpg" alt="Photography image 3" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/3b72301ce9cef1c2aca37540b0300bc5.jpg" alt="Photography image 4" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/4e9121647e350259e37639cabe2ad4c3.jpg" alt="Photography image 5" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/51d59a0a2a1041654f0082992db9bf28.jpg" alt="Photography image 6" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/71c7489c3153820e06b9a7fdcc2cea26.jpg" alt="Photography image 7" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/8dbcdd543a3a2f983910e788e5c3b2d0.jpg" alt="Photography image 8" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/9fc45d6d50df4b6fd04158f7410671db.jpg" alt="Photography image 9" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/b5b7069593e2c53b54df5fd49e3762f6.jpg" alt="Photography image 10" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/b85704230eaebe95ebe0f5fbc09e9d05.jpg" alt="Photography image 11" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/c01d6854e2283d63f0620a1040dfd9ef.jpg" alt="Photography image 12" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/d7909d6e26edc8b8bce47cad0746b26a.jpg" alt="Photography image 13" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/db89bb3f9047d310c44563ad2faab3e9.jpg" alt="Photography image 14" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/e72dffd787b0a183d7269c092200daf7.jpg" alt="Photography image 15" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/e75ea2f798e2ade4f3512b6c7f4bcecf.jpg" alt="Photography image 16" loading="lazy"></div>
+                        <div class="photo-tile"><img src="photography/fe3acd5b93cad661a660a96dd1cca683.jpg" alt="Photography image 17" loading="lazy"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery-section">
+                <div class="gallery-header">
+                    <h2 class="gallery-title">Bicycle</h2>
+                    <span class="gallery-note">6 photos · wheel to browse</span>
+                </div>
+                <div class="wheel-gallery" aria-label="Bicycle gallery">
+                    <div class="gallery-track">
+                        <div class="photo-tile"><img src="bicycle/207206c5234332037a8708c8f08809b0.jpg" alt="Bicycle image 1" loading="lazy"></div>
+                        <div class="photo-tile"><img src="bicycle/70d8a1c7878e78fa188292d611ba83e1.jpg" alt="Bicycle image 2" loading="lazy"></div>
+                        <div class="photo-tile"><img src="bicycle/736ce80bb73f31efad9edd2badbfdd12.jpg" alt="Bicycle image 3" loading="lazy"></div>
+                        <div class="photo-tile"><img src="bicycle/94ce288e10fc5a6bf599d91f8822ef4d.jpg" alt="Bicycle image 4" loading="lazy"></div>
+                        <div class="photo-tile"><img src="bicycle/a1220816848330a5dc5edcc98dcac64c.jpg" alt="Bicycle image 5" loading="lazy"></div>
+                        <div class="photo-tile"><img src="bicycle/f0154acf56b673ae82929c12be11d128.jpg" alt="Bicycle image 6" loading="lazy"></div>
+                    </div>
+                </div>
+            </section>
 
             <!-- Back to Home -->
             <div style="text-align: center; margin-top: 60px; padding-top: 30px; border-top: 2px solid var(--border-color);">
@@ -73,6 +255,16 @@
     </div>
 
     <script src="scripts/main.js"></script>
+    <script>
+        document.querySelectorAll('.wheel-gallery').forEach(function (gallery) {
+            gallery.addEventListener('wheel', function (event) {
+                if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
+                    event.preventDefault();
+                    gallery.scrollLeft += event.deltaY;
+                }
+            }, { passive: false });
+        });
+    </script>
 </body>
 </html>
 
