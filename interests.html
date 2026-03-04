@@ -281,12 +281,47 @@
     <script src="scripts/main.js"></script>
     <script>
         document.querySelectorAll('.wheel-gallery').forEach(function (gallery) {
+            // 1. 滚轮滑动逻辑
             gallery.addEventListener('wheel', function (event) {
                 if (Math.abs(event.deltaY) > Math.abs(event.deltaX)) {
                     event.preventDefault();
                     gallery.scrollLeft += event.deltaY;
                 }
             }, { passive: false });
+
+            // 2. 鼠标靠近边缘自动滑动逻辑
+            let scrollInterval;
+            
+            gallery.addEventListener('mousemove', function(e) {
+                const rect = gallery.getBoundingClientRect();
+                const x = e.clientX - rect.left; // 鼠标在画廊内的相对X坐标
+                const width = rect.width;
+                
+                // 定义边缘触发区域（距离左右边缘 15% 的宽度内）
+                const edgeThreshold = width * 0.15;
+                const maxScrollSpeed = 15; // 最大滑动速度
+                
+                clearInterval(scrollInterval);
+                
+                if (x < edgeThreshold) {
+                    // 鼠标在左侧边缘
+                    const speed = maxScrollSpeed * (1 - x / edgeThreshold);
+                    scrollInterval = setInterval(() => {
+                        gallery.scrollLeft -= speed;
+                    }, 16); // 约 60fps
+                } else if (x > width - edgeThreshold) {
+                    // 鼠标在右侧边缘
+                    const speed = maxScrollSpeed * (1 - (width - x) / edgeThreshold);
+                    scrollInterval = setInterval(() => {
+                        gallery.scrollLeft += speed;
+                    }, 16);
+                }
+            });
+
+            // 鼠标离开画廊时停止滑动
+            gallery.addEventListener('mouseleave', function() {
+                clearInterval(scrollInterval);
+            });
         });
     </script>
 </body>
