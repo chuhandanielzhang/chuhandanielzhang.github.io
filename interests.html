@@ -137,6 +137,8 @@
             box-shadow: 0 6px 20px rgba(31, 41, 55, 0.08);
             scroll-snap-align: start;
             flex: 0 0 auto;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         .photo-tile img {
@@ -144,11 +146,20 @@
             height: 100%;
             object-fit: cover;
             display: block;
-            transition: transform 0.35s ease;
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* 悬浮展开效果 */
+        .photo-tile:hover {
+            width: 450px; /* 展开后的宽度 */
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(31, 41, 55, 0.15);
         }
 
         .photo-tile:hover img {
-            transform: scale(1.04);
+            object-fit: contain; /* 展开后显示完整图片 */
+            background-color: #1a1a1a; /* 竖屏图片两侧的背景色 */
+            transform: scale(1.02);
         }
 
         @media (max-width: 768px) {
