@@ -368,6 +368,8 @@ body {
         position: relative;
         width: 100%;
         height: auto;
+        padding: 30px 20px;
+        z-index: 100;
     }
     
     .main-content {
@@ -386,12 +388,30 @@ body {
     }
     
     .profile-picture {
-        width: 100px;
-        height: 100px;
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
     }
     
     .profile-name {
-        font-size: 1.2rem;
+        font-size: 1.4rem;
+    }
+    
+    .sidebar-menu {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 8px;
+    }
+    
+    .sidebar-link {
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+    
+    .sidebar-link .icon {
+        margin-right: 8px;
     }
     
     .main-content {
@@ -419,17 +439,6 @@ body {
         text-align: center;
     }
     
-    .sidebar-menu {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-    
-    .sidebar-menu li {
-        flex: 1 1 auto;
-        min-width: 120px;
-    }
-    
     .awards-header h1 {
         font-size: 2rem;
     }
@@ -443,6 +452,7 @@ body {
         min-width: auto;
         font-weight: 700;
         margin-top: 10px;
+        color: var(--primary-color);
     }
     
     .category-title {
@@ -455,6 +465,73 @@ body {
     
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+
+    /* Mobile adjustments for Research Items */
+    .research-item {
+        flex-direction: column;
+        gap: 15px;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+    }
+    
+    .research-thumbnail {
+        width: 100%;
+        height: 200px;
+    }
+    
+    .news-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .news-date {
+        min-width: auto;
+        color: var(--primary-color);
+    }
+    
+    .edu-item {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .edu-year {
+        min-width: auto;
+        color: var(--primary-color);
+    }
+    
+    .name-title {
+        font-size: 2rem;
+    }
+    
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Mobile adjustments for Beyond Academics Gallery */
+    .gallery-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .photo-tile {
+        width: 260px;
+        height: 180px;
+    }
+    
+    /* Disable hover expand effect on mobile touch screens */
+    @media (hover: none) {
+        .photo-tile:hover {
+            width: 260px;
+            z-index: 1;
+            box-shadow: 0 6px 20px rgba(31, 41, 55, 0.08);
+        }
+        .photo-tile:hover img {
+            object-fit: cover;
+            transform: none;
+        }
     }
 }
 
