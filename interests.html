@@ -6,6 +6,11 @@
     <meta name="description" content="Beyond Academics - Photography and Cycling">
     <title>Beyond Academics - Chuhan ZHANG's Website</title>
     <link rel="stylesheet" href="styles/style.css">
+    <!-- jsVectorMap for Interactive Map -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jsvectormap/dist/css/jsvectormap.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsvectormap/dist/maps/world.js"></script>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-FGXV2VP7T0"></script>
     <script>
@@ -216,7 +221,27 @@
                 </p>
             </section>
 
-                        <section class="gallery-section">
+            <!-- Interactive Map Section -->
+            <section class="gallery-section map-section" style="padding-bottom: 30px;">
+                <div class="gallery-header">
+                    <h2 class="gallery-title">Travel Footprints</h2>
+                    <span class="gallery-note">Hover over highlighted countries to see memories</span>
+                </div>
+                
+                <div style="position: relative; width: 100%; height: 450px; background: #f8fafc; border-radius: 12px; overflow: hidden; border: 1px solid #e2e8f0;">
+                    <!-- Map Container -->
+                    <div id="world-map" style="width: 100%; height: 100%;"></div>
+                    
+                    <!-- Photo Disc -->
+                    <div id="photo-disc" style="width: 220px; height: 220px; border-radius: 50%; border: 4px solid #fff; box-shadow: 0 10px 25px rgba(0,0,0,0.15); overflow: hidden; position: absolute; right: 30px; top: 50%; transform: translateY(-50%) scale(0.9); opacity: 0; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); pointer-events: none; background: #e5e7eb; z-index: 10;">
+                        <img id="disc-image" src="" alt="Travel Photo" style="width: 100%; height: 100%; object-fit: cover;">
+                        <div style="position: absolute; bottom: 0; left: 0; width: 100%; height: 50%; background: linear-gradient(to top, rgba(0,0,0,0.7), transparent); z-index: 1;"></div>
+                        <div id="disc-title" style="position: absolute; bottom: 25px; left: 0; width: 100%; text-align: center; color: white; font-weight: 600; text-shadow: 0 2px 4px rgba(0,0,0,0.8); font-size: 1.1rem; z-index: 2; letter-spacing: 0.5px;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="gallery-section">
                 <div class="gallery-header">
                     <h2 class="gallery-title">Photography</h2>
                     <span class="gallery-note">18 photos · wheel to browse</span>
@@ -322,6 +347,69 @@
             gallery.addEventListener('mouseleave', function() {
                 clearInterval(scrollInterval);
             });
+        });
+
+        // Initialize Interactive Map
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mapping of ISO country codes to photos and names
+            const countryPhotos = {
+                'CN': { name: 'China', img: 'travel/中国/photo.jpg' },
+                'HK': { name: 'Hong Kong', img: 'travel/中国香港/photo.jpg' },
+                'US': { name: 'United States', img: 'travel/美国/photo.jpg' },
+                'JP': { name: 'Japan', img: 'travel/日本/photo.jpg' }
+            };
+
+            const activeCodes = Object.keys(countryPhotos);
+            const disc = document.getElementById('photo-disc');
+            const discImg = document.getElementById('disc-image');
+            const discTitle = document.getElementById('disc-title');
+
+            if (document.getElementById('world-map')) {
+                const map = new jsVectorMap({
+                    selector: '#world-map',
+                    map: 'world',
+                    zoomOnScroll: false,
+                    zoomButtons: true,
+                    regionStyle: {
+                        initial: {
+                            fill: '#cbd5e1',
+                            fillOpacity: 1,
+                            stroke: 'none',
+                            strokeWidth: 0,
+                            strokeOpacity: 1
+                        },
+                        hover: {
+                            fill: '#94a3b8',
+                            fillOpacity: 1,
+                            cursor: 'pointer'
+                        },
+                        selected: {
+                            fill: '#a5b4fc' // Highlight color for countries with photos
+                        },
+                        selectedHover: {
+                            fill: '#6366f1' // Darker highlight on hover
+                        }
+                    },
+                    selectedRegions: activeCodes,
+                    onRegionTooltipShow(event, tooltip, code) {
+                        if (!countryPhotos[code]) {
+                            event.preventDefault(); // Hide tooltip if no photo
+                        }
+                    },
+                    onRegionOver(event, code) {
+                        if (countryPhotos[code]) {
+                            discImg.src = countryPhotos[code].img;
+                            discTitle.textContent = countryPhotos[code].name;
+                            disc.style.opacity = '1';
+                            disc.style.transform = 'translateY(-50%) scale(1)';
+                        }
+                    },
+                    onRegionOut(event, code) {
+                        disc.style.opacity = '0';
+                        disc.style.transform = 'translateY(-50%) scale(0.9)';
+                    }
+                });
+            }
         });
     </script>
 </body>
