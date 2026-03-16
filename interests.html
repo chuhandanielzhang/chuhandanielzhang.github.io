@@ -351,15 +351,38 @@
 
         // Initialize Interactive Map
         document.addEventListener('DOMContentLoaded', function() {
-            // Mapping of ISO country codes to photos and names
+            // Mapping of ISO country codes to photos, names, and colors
             const countryPhotos = {
-                'CN': { name: 'China', img: 'travel/中国/photo.jpg' },
-                'HK': { name: 'Hong Kong', img: 'travel/中国香港/photo.jpg' },
-                'US': { name: 'United States', img: 'travel/美国/photo.jpg' },
-                'JP': { name: 'Japan', img: 'travel/日本/photo.jpg' }
+                'CN': { name: 'China (Mainland)', img: 'travel/中国/photo.jpg', color: '#f87171' }, // Red
+                'HK': { name: 'Hong Kong SAR', img: 'travel/中国香港/photo.jpg', color: '#fb923c', isMarker: true, coords: [22.3193, 114.1694] }, // Orange, marker
+                'TW': { name: 'Taiwan Region', img: 'travel/中国台湾/photo.jpg', color: '#facc15' }, // Yellow
+                'US': { name: 'United States', img: 'travel/美国/photo.jpg', color: '#60a5fa' }, // Blue
+                'JP': { name: 'Japan', img: 'travel/日本/photo.jpg', color: '#f472b6' }, // Pink
+                'CA': { name: 'Canada', img: 'travel/加拿大/photo.jpg', color: '#38bdf8' }, // Light Blue
+                'AU': { name: 'Australia', img: 'travel/澳大利亚/photo.jpg', color: '#a78bfa' }, // Purple
+                'KR': { name: 'South Korea', img: 'travel/韩国/photo.jpg', color: '#fb7185' }, // Rose
+                'TH': { name: 'Thailand', img: 'travel/泰国/photo.jpg', color: '#34d399' }, // Emerald
+                'SG': { name: 'Singapore', img: 'travel/新加坡/photo.jpg', color: '#2dd4bf', isMarker: true, coords: [1.3521, 103.8198] }, // Teal, marker
+                'MY': { name: 'Malaysia', img: 'travel/马来西亚/photo.jpg', color: '#4ade80' } // Green
             };
 
-            const activeCodes = Object.keys(countryPhotos);
+            const regionColors = {};
+            const markers = [];
+            
+            Object.keys(countryPhotos).forEach(code => {
+                const data = countryPhotos[code];
+                if (data.isMarker) {
+                    markers.push({
+                        name: data.name,
+                        coords: data.coords,
+                        code: code,
+                        style: { fill: data.color }
+                    });
+                } else {
+                    regionColors[code] = data.color;
+                }
+            });
+
             const disc = document.getElementById('photo-disc');
             const discImg = document.getElementById('disc-image');
             const discTitle = document.getElementById('disc-title');
@@ -379,25 +402,40 @@
                             strokeOpacity: 1
                         },
                         hover: {
-                            fill: '#94a3b8',
-                            fillOpacity: 1,
+                            fillOpacity: 0.7,
                             cursor: 'pointer'
-                        },
-                        selected: {
-                            fill: '#a5b4fc' // Highlight color for countries with photos
-                        },
-                        selectedHover: {
-                            fill: '#6366f1' // Darker highlight on hover
                         }
                     },
-                    selectedRegions: activeCodes,
+                    series: {
+                        regions: [{
+                            attribute: 'fill',
+                            values: regionColors
+                        }]
+                    },
+                    markers: markers,
+                    markerStyle: {
+                        initial: {
+                            r: 6,
+                            fillOpacity: 1,
+                            stroke: '#fff',
+                            strokeWidth: 2,
+                            strokeOpacity: 1
+                        },
+                        hover: {
+                            r: 8,
+                            strokeWidth: 3,
+                            cursor: 'pointer'
+                        }
+                    },
                     onRegionTooltipShow(event, tooltip, code) {
-                        if (!countryPhotos[code]) {
+                        if (!countryPhotos[code] || countryPhotos[code].isMarker) {
                             event.preventDefault(); // Hide tooltip if no photo
+                        } else {
+                            tooltip.text(countryPhotos[code].name);
                         }
                     },
                     onRegionOver(event, code) {
-                        if (countryPhotos[code]) {
+                        if (countryPhotos[code] && !countryPhotos[code].isMarker) {
                             discImg.src = countryPhotos[code].img;
                             discTitle.textContent = countryPhotos[code].name;
                             disc.style.opacity = '1';
@@ -405,6 +443,22 @@
                         }
                     },
                     onRegionOut(event, code) {
+                        disc.style.opacity = '0';
+                        disc.style.transform = 'translateY(-50%) scale(0.9)';
+                    },
+                    onMarkerTooltipShow(event, tooltip, index) {
+                        tooltip.text(markers[index].name);
+                    },
+                    onMarkerOver(event, index) {
+                        const code = markers[index].code;
+                        if (countryPhotos[code]) {
+                            discImg.src = countryPhotos[code].img;
+                            discTitle.textContent = countryPhotos[code].name;
+                            disc.style.opacity = '1';
+                            disc.style.transform = 'translateY(-50%) scale(1)';
+                        }
+                    },
+                    onMarkerOut(event, index) {
                         disc.style.opacity = '0';
                         disc.style.transform = 'translateY(-50%) scale(0.9)';
                     }
