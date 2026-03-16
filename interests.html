@@ -22,7 +22,7 @@
     <style>
         /* Map Hover Transitions */
         .jvm-region {
-            transition: opacity 0.3s ease;
+            transition: opacity 0.3s ease, fill 0.3s ease;
         }
         
         .beyond-hero {
@@ -356,27 +356,23 @@
 
         // Initialize Interactive Map
         document.addEventListener('DOMContentLoaded', function() {
-            // Mapping of ISO country codes to photos, names, and colors
+            // Mapping of ISO country codes to photos and names
             const countryPhotos = {
-                'CN': { name: 'China', img: 'travel/中国/photo.jpg', color: '#f87171' }, // Red
-                'HK': { name: 'Hong Kong SAR, China', img: 'travel/中国香港/photo.jpg', color: '#f87171' }, // Same as China
-                'MO': { name: 'Macao SAR, China', img: 'travel/中国/photo.jpg', color: '#f87171' }, // Same as China
-                'TW': { name: 'Taiwan, China', img: 'travel/中国台湾/photo.jpg', color: '#f87171' }, // Same as China
-                'US': { name: 'United States', img: 'travel/美国/photo.jpg', color: '#60a5fa' }, // Blue
-                'JP': { name: 'Japan', img: 'travel/日本/photo.jpg', color: '#f472b6' }, // Pink
-                'CA': { name: 'Canada', img: 'travel/加拿大/photo.jpg', color: '#38bdf8' }, // Light Blue
-                'AU': { name: 'Australia', img: 'travel/澳大利亚/photo.jpg', color: '#a78bfa' }, // Purple
-                'KR': { name: 'South Korea', img: 'travel/韩国/photo.jpg', color: '#fb7185' }, // Rose
-                'TH': { name: 'Thailand', img: 'travel/泰国/photo.jpg', color: '#34d399' }, // Emerald
-                'SG': { name: 'Singapore', img: 'travel/新加坡/photo.jpg', color: '#2dd4bf' }, // Teal
-                'MY': { name: 'Malaysia', img: 'travel/马来西亚/photo.jpg', color: '#4ade80' } // Green
+                'CN': { name: 'China', img: 'travel/中国/photo.jpg' },
+                'HK': { name: 'Hong Kong SAR, China', img: 'travel/中国香港/photo.jpg' },
+                'MO': { name: 'Macao SAR, China', img: 'travel/中国/photo.jpg' },
+                'TW': { name: 'Taiwan, China', img: 'travel/中国台湾/photo.jpg' },
+                'US': { name: 'United States', img: 'travel/美国/photo.jpg' },
+                'JP': { name: 'Japan', img: 'travel/日本/photo.jpg' },
+                'CA': { name: 'Canada', img: 'travel/加拿大/photo.jpg' },
+                'AU': { name: 'Australia', img: 'travel/澳大利亚/photo.jpg' },
+                'KR': { name: 'South Korea', img: 'travel/韩国/photo.jpg' },
+                'TH': { name: 'Thailand', img: 'travel/泰国/photo.jpg' },
+                'SG': { name: 'Singapore', img: 'travel/新加坡/photo.jpg' },
+                'MY': { name: 'Malaysia', img: 'travel/马来西亚/photo.jpg' }
             };
 
-            const regionColors = {};
-            
-            Object.keys(countryPhotos).forEach(code => {
-                regionColors[code] = countryPhotos[code].color;
-            });
+            const activeCodes = Object.keys(countryPhotos);
 
             const disc = document.getElementById('photo-disc');
             const discImg = document.getElementById('disc-image');
@@ -388,24 +384,26 @@
                     map: 'world',
                     zoomOnScroll: false,
                     zoomButtons: true,
+                    selectedRegions: activeCodes,
                     regionStyle: {
                         initial: {
-                            fill: '#cbd5e1',
+                            fill: '#e2e8f0', // Unvisited: Light gray
                             fillOpacity: 1,
-                            stroke: 'none',
-                            strokeWidth: 0,
+                            stroke: '#ffffff',
+                            strokeWidth: 0.5,
                             strokeOpacity: 1
                         },
+                        selected: {
+                            fill: '#94a3b8' // Visited: Darker gray
+                        },
                         hover: {
+                            fill: '#818cf8', // Hovered: Indigo highlight
                             fillOpacity: 1,
                             cursor: 'pointer'
+                        },
+                        selectedHover: {
+                            fill: '#818cf8' // Hovered: Indigo highlight
                         }
-                    },
-                    series: {
-                        regions: [{
-                            attribute: 'fill',
-                            values: regionColors
-                        }]
                     },
                     onRegionTooltipShow(event, tooltip, code) {
                         if (!countryPhotos[code]) {
@@ -429,6 +427,8 @@
                                         el.style.opacity = '0.3';
                                     } else {
                                         el.style.opacity = '1';
+                                        // Force hover color for the whole group
+                                        el.style.fill = '#818cf8';
                                     }
                                 } else {
                                     // Normal behavior for other countries
@@ -448,9 +448,16 @@
                         }
                     },
                     onRegionOut(event, code) {
-                        // Restore opacity for all regions
+                        // Restore opacity and fill for all regions
                         document.querySelectorAll('.jvm-region').forEach(el => {
                             el.style.opacity = '1';
+                            const elCode = el.getAttribute('data-code');
+                            // Restore fill color
+                            if (activeCodes.includes(elCode)) {
+                                el.style.fill = '#94a3b8';
+                            } else {
+                                el.style.fill = '#e2e8f0';
+                            }
                         });
                         
                         // Hide photo disc
