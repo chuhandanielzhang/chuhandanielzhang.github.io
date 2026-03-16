@@ -359,9 +359,9 @@
             // Mapping of ISO country codes to photos and names
             const countryPhotos = {
                 'CN': { name: 'China', img: 'travel/中国/photo.jpg' },
-                'HK': { name: 'Hong Kong SAR, China', img: 'travel/中国香港/photo.jpg' },
-                'MO': { name: 'Macao SAR, China', img: 'travel/中国/photo.jpg' },
-                'TW': { name: 'Taiwan, China', img: 'travel/中国台湾/photo.jpg' },
+                'HK': { name: 'Hong Kong SAR', img: 'travel/中国香港/photo.jpg' },
+                'MO': { name: 'Macao SAR', img: 'travel/中国/photo.jpg' },
+                'TW': { name: 'Taiwan Region', img: 'travel/中国台湾/photo.jpg' },
                 'US': { name: 'United States', img: 'travel/美国/photo.jpg' },
                 'JP': { name: 'Japan', img: 'travel/日本/photo.jpg' },
                 'CA': { name: 'Canada', img: 'travel/加拿大/photo.jpg' },
@@ -397,12 +397,13 @@
                             fill: '#94a3b8' // Visited: Darker gray
                         },
                         hover: {
-                            fill: '#818cf8', // Hovered: Indigo highlight
+                            fill: '#e2e8f0', // Unvisited hover: keep light gray (no highlight)
                             fillOpacity: 1,
-                            cursor: 'pointer'
+                            cursor: 'default' // Default cursor for unvisited
                         },
                         selectedHover: {
-                            fill: '#818cf8' // Hovered: Indigo highlight
+                            fill: '#818cf8', // Visited hover: Indigo highlight
+                            cursor: 'pointer' // Pointer cursor for visited
                         }
                     },
                     onRegionTooltipShow(event, tooltip, code) {
