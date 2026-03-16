@@ -416,10 +416,27 @@
                     },
                     onRegionOver(event, code) {
                         if (countryPhotos[code]) {
+                            // Define the China group
+                            const chinaGroup = ['CN', 'HK', 'MO', 'TW'];
+                            const isChinaGroup = chinaGroup.includes(code);
+                            
                             // Highlight effect: make other regions slightly transparent
                             document.querySelectorAll('.jvm-region').forEach(el => {
-                                if (el.getAttribute('data-code') !== code) {
-                                    el.style.opacity = '0.3';
+                                const elCode = el.getAttribute('data-code');
+                                if (isChinaGroup) {
+                                    // If hovering over any part of China, keep the whole group highlighted
+                                    if (!chinaGroup.includes(elCode)) {
+                                        el.style.opacity = '0.3';
+                                    } else {
+                                        el.style.opacity = '1';
+                                    }
+                                } else {
+                                    // Normal behavior for other countries
+                                    if (elCode !== code) {
+                                        el.style.opacity = '0.3';
+                                    } else {
+                                        el.style.opacity = '1';
+                                    }
                                 }
                             });
                             
