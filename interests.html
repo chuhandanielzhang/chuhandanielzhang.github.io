@@ -20,6 +20,11 @@
       gtag('config', 'G-FGXV2VP7T0');
     </script>
     <style>
+        /* Map Hover Transitions */
+        .jvm-region {
+            transition: opacity 0.3s ease;
+        }
+        
         .beyond-hero {
             position: relative;
             margin-bottom: 36px;
@@ -402,7 +407,7 @@
                             strokeOpacity: 1
                         },
                         hover: {
-                            fillOpacity: 0.7,
+                            fillOpacity: 1,
                             cursor: 'pointer'
                         }
                     },
@@ -436,6 +441,14 @@
                     },
                     onRegionOver(event, code) {
                         if (countryPhotos[code] && !countryPhotos[code].isMarker) {
+                            // Highlight effect: make other regions slightly transparent
+                            document.querySelectorAll('.jvm-region').forEach(el => {
+                                if (el.getAttribute('data-code') !== code) {
+                                    el.style.opacity = '0.3';
+                                }
+                            });
+                            
+                            // Show photo disc
                             discImg.src = countryPhotos[code].img;
                             discTitle.textContent = countryPhotos[code].name;
                             disc.style.opacity = '1';
@@ -443,6 +456,12 @@
                         }
                     },
                     onRegionOut(event, code) {
+                        // Restore opacity for all regions
+                        document.querySelectorAll('.jvm-region').forEach(el => {
+                            el.style.opacity = '1';
+                        });
+                        
+                        // Hide photo disc
                         disc.style.opacity = '0';
                         disc.style.transform = 'translateY(-50%) scale(0.9)';
                     },
@@ -452,6 +471,12 @@
                     onMarkerOver(event, index) {
                         const code = markers[index].code;
                         if (countryPhotos[code]) {
+                            // Highlight effect for markers: make regions transparent
+                            document.querySelectorAll('.jvm-region').forEach(el => {
+                                el.style.opacity = '0.3';
+                            });
+                            
+                            // Show photo disc
                             discImg.src = countryPhotos[code].img;
                             discTitle.textContent = countryPhotos[code].name;
                             disc.style.opacity = '1';
@@ -459,6 +484,12 @@
                         }
                     },
                     onMarkerOut(event, index) {
+                        // Restore opacity for all regions
+                        document.querySelectorAll('.jvm-region').forEach(el => {
+                            el.style.opacity = '1';
+                        });
+                        
+                        // Hide photo disc
                         disc.style.opacity = '0';
                         disc.style.transform = 'translateY(-50%) scale(0.9)';
                     }
