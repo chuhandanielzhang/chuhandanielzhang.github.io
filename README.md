@@ -22,7 +22,7 @@ Built with HTML5, CSS3, and JavaScript. Deployed via GitHub Pages.
 ## Contact
 
 Email: chuhan.zhang@gtiit.edu.cn  
-Institution: Technion - Israel Institute of Technology (China)
+Institution: Technion - Israel Institute of Technology
 
 ---
 
