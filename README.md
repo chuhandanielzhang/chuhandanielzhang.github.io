@@ -13,7 +13,7 @@ This website presents my research work in robotics, focusing on embodied intelli
 ## Research Projects
 
 - **Energy-Recycling Bipedal Walker** (ICRA 2026, Under Review)
-- **Aero-OMEGA Hopping Robot** (BioRob/IROS 2026, In Preparation)
+- **Propeller-Assisted 3D Hopper** (IEEE CASE 2026, Submitted)
 
 ## Technologies
 
