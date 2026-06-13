@@ -100,6 +100,11 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                             LinkedIn
                         </a>
+                        <span style="color: #ccc;">|</span>
+                        <a href="https://scholar.google.com/citations?user=CFLZ7l8AAAAJ&hl=en" target="_blank" style="color: var(--primary-color); display: flex; align-items: center; gap: 5px; text-decoration: none;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 7.5l4.838 3.562A8.003 8.003 0 0 1 12 13a8.003 8.003 0 0 1 7.162-1.938L24 7.5 12 0z"/></svg>
+                            Google Scholar
+                        </a>
                     </p>
                     <p style="color: var(--text-light); display: flex; align-items: flex-start; gap: 8px; font-size: 0.95rem; line-height: 1.5;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-top: 2px; flex-shrink: 0;"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
@@ -130,7 +135,7 @@
                     </div>
                     <div class="news-item">
                         <span class="news-date">[May 2025]</span>
-                        <span class="news-content">Our Kongfu RoboMaster team finished Top 8 in RMUL.</span>
+                        <span class="news-content">Our Kongfu RoboMaster team won Second Prize (二等奖) in RMUL.</span>
                     </div>
                     <div class="news-item">
                         <span class="news-date">[2023]</span>
@@ -148,22 +153,21 @@
                         <img src="aero_hopper.gif" alt="Propeller-Assisted 3D Hopper" style="width:100%;height:100%;object-fit:cover;">
                     </div>
                     <div class="research-info">
-                        <h3 class="research-title">Propeller-Assisted 3D Hopper: Hierarchical Force Allocation</h3>
-                        <p class="research-venue">Research Assistant @ CUHK, Jul 2025 – Present</p>
+                        <h3 class="research-title"><a href="https://arxiv.org/pdf/2606.08186" target="_blank" style="color: var(--text-color); text-decoration: none;">Propeller-Assisted 3D Hopper: Hierarchical Force Allocation</a></h3>
+                        <p class="research-venue">Research Assistant @ CUHK, Jul 2025 – Jun 1, 2026</p>
                         <p class="research-desc">Developed an SRB-based Hierarchical Force Allocation (HFA) stack for a 3-RSR parallel-leg hopper, prioritizing leg contact forces and using tri-rotor thrust as residual authority. Built the real-time LCM control middleware and inverse-kinematics pipeline, enabling continuous 3D hopping and outdoor disturbance recovery.</p>
-                        <p class="research-desc" style="font-style: italic; color: var(--text-light); margin-top: 8px;">* First-authored paper accepted by IEEE CASE 2026.</p>
+                        <p class="research-desc" style="font-style: italic; color: var(--text-light); margin-top: 8px;">* First-authored paper accepted by IEEE CASE 2026. <a href="https://arxiv.org/pdf/2606.08186" target="_blank" style="color: var(--primary-color); text-decoration: none;">arXiv</a></p>
                     </div>
                 </div>
 
                 <div class="research-item">
                     <div class="research-thumbnail" style="background-color: white;">
-                        <img src="v4_walkstop_sim.gif" alt="Style-Conditioned RL over HFA-QP" style="width:100%;height:100%;object-fit:contain; transform: scale(1.1);">
+                        <img src="hop_policy.gif" alt="Reinforcement Learning for Parallel-Mechanism Hopping" style="width:100%;height:100%;object-fit:contain;">
                     </div>
                     <div class="research-info">
-                        <h3 class="research-title">Style-Conditioned RL over HFA-QP</h3>
+                        <h3 class="research-title">Reinforcement Learning for Parallel-Mechanism Hopping</h3>
                         <p class="research-venue">Research Assistant @ CUHK & Technion, Nov 2025 – Present</p>
-                        <p class="research-desc">Developing a PPO/RMA reinforcement learning framework where the policy outputs a low-dimensional force-allocation style vector for a parallel-leg hopper. Built a pure-PyTorch Single-Rigid-Body (SRB) training environment to study leg-dominant versus thrust-dominant contact regimes and facilitate sim-to-real transfer.</p>
-                        <p class="research-desc" style="font-style: italic; color: var(--text-light); margin-top: 8px;">* Targeting ISRR.</p>
+                        <p class="research-desc">Training PPO hopping policies for a 3-RSR parallel-leg robot in Isaac Gym and MuJoCo MJX, comparing serial-leg and native closed-chain simulation for sim-to-real transfer. Built encoder-decoder policies for flight-phase underactuation, scaled GPU training across thousands of parallel environments, and validated against a model-based QP controller on real-robot logs with domain randomization and actuator-delay modeling.</p>
                     </div>
                 </div>
 
