@@ -944,6 +944,14 @@ html {
     transform: scale(1.18);
 }
 
+.research-thumbnail.zoom-fill img {
+    transform: scale(1.2);
+}
+
+.research-thumbnail.zoom-fill:hover img {
+    transform: scale(1.4);
+}
+
 .research-info {
     flex: 1;
 }
