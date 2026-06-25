@@ -61,6 +61,47 @@ document.querySelectorAll('.project-card, .about-text').forEach(el => {
 // Console message
 console.log('%c Welcome to my website!', 'color: #6366f1; font-size: 20px; font-weight: bold;');
 
+// Click-to-enlarge image lightbox (full image view)
+document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.createElement('div');
+    overlay.className = 'lightbox-overlay';
+    overlay.innerHTML = '<span class="lightbox-close" aria-label="Close">&times;</span><img class="lightbox-img" alt="">';
+    document.body.appendChild(overlay);
+
+    const lbImg = overlay.querySelector('.lightbox-img');
+
+    function openLightbox(src, alt) {
+        lbImg.src = src;
+        lbImg.alt = alt || '';
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    overlay.addEventListener('click', closeLightbox);
+    lbImg.addEventListener('click', function (e) { e.stopPropagation(); });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeLightbox();
+    });
+
+    // Make every content image clickable to view full size (exclude sidebar profile)
+    Array.from(document.images).forEach(function (img) {
+        if (img.closest('.sidebar') || img.classList.contains('lightbox-img') || img.classList.contains('no-zoom')) {
+            return;
+        }
+        img.classList.add('zoomable');
+        img.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openLightbox(img.currentSrc || img.src, img.alt);
+        });
+    });
+});
+
 // Collapsible submenu - hide all submenus by default
 document.addEventListener('DOMContentLoaded', function() {
     const allSubmenus = document.querySelectorAll('.sidebar-submenu');

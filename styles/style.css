@@ -952,6 +952,55 @@ html {
     transform: scale(1.4);
 }
 
+/* Click-to-enlarge image lightbox */
+.zoomable {
+    cursor: zoom-in;
+}
+
+.lightbox-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    cursor: zoom-out;
+    padding: 30px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.lightbox-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-img {
+    max-width: 95vw;
+    max-height: 95vh;
+    object-fit: contain;
+    border-radius: 6px;
+    box-shadow: 0 12px 48px rgba(0, 0, 0, 0.55);
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 18px;
+    right: 26px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    font-weight: 300;
+    cursor: pointer;
+    user-select: none;
+    opacity: 0.85;
+}
+
+.lightbox-close:hover {
+    opacity: 1;
+}
+
 .research-info {
     flex: 1;
 }
