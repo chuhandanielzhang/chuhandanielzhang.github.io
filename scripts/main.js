@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Make every content image clickable to view full size (exclude sidebar profile)
     Array.from(document.images).forEach(function (img) {
-        if (img.closest('.sidebar') || img.classList.contains('lightbox-img') || img.classList.contains('no-zoom')) {
+        if (img.closest('.sidebar') || img.classList.contains('lightbox-img') || img.classList.contains('no-zoom') || img.hasAttribute('onclick') || img.closest('a')) {
             return;
         }
         img.classList.add('zoomable');
