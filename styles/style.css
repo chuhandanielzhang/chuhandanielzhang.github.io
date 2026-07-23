@@ -843,52 +843,84 @@ html {
     text-decoration: underline;
 }
 
-.home-contact {
-    margin-top: 22px;
+.hero-academic .home-contact {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 16px;
 }
 
-.home-email {
-    color: var(--text-color);
+.hero-academic .home-email,
+.hero-academic .home-email:link,
+.hero-academic .home-email:visited {
+    color: #1f2937;
     text-decoration: none;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 500;
     width: fit-content;
 }
 
-.home-email:hover {
+.hero-academic .home-email:hover {
     color: var(--primary-color);
+    text-decoration: none;
 }
 
-.home-links {
+.hero-academic .home-links {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px 18px;
     align-items: center;
+    gap: 0;
+    row-gap: 10px;
 }
 
-.home-links a {
-    color: var(--text-light);
+.hero-academic .home-links a,
+.hero-academic .home-links a:link,
+.hero-academic .home-links a:visited {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: #6b7280;
     text-decoration: none;
-    font-size: 0.95rem;
-    border-bottom: 1px solid transparent;
-    padding-bottom: 1px;
-    transition: color 0.2s ease, border-color 0.2s ease;
-}
-
-.home-links a:hover {
-    color: var(--primary-color);
-    border-bottom-color: var(--primary-color);
-}
-
-.home-address {
-    margin: 4px 0 0;
-    color: var(--text-light);
     font-size: 0.9rem;
-    line-height: 1.55;
-    max-width: 42rem;
+    font-weight: 500;
+    padding: 0 14px 0 0;
+    margin-right: 14px;
+    border-right: 1px solid #e5e7eb;
+    line-height: 1.2;
+    transition: color 0.15s ease;
+}
+
+.hero-academic .home-links a:last-child {
+    border-right: none;
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.hero-academic .home-links a svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    opacity: 0.85;
+}
+
+.hero-academic .home-links a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.hero-academic .home-links a.home-cv {
+    color: #374151;
+    font-weight: 600;
+}
+
+.hero-academic .home-address {
+    margin: 0;
+    color: #9ca3af;
+    font-size: 0.82rem;
+    line-height: 1.5;
+    letter-spacing: 0.01em;
 }
 
 .research-interests {
