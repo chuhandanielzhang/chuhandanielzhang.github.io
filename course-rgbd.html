@@ -14,6 +14,35 @@
       gtag('js', new Date());
       gtag('config', 'G-FGXV2VP7T0');
     </script>
+    <style>
+        .image-gallery {
+            margin: 30px 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: flex-start;
+        }
+        .thumbnail-container {
+            position: relative;
+            width: 160px;
+            height: 120px;
+            border-radius: 6px;
+        }
+        .thumbnail-container:hover { z-index: 100; }
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .thumbnail-container:hover img {
+            transform: scale(2.8);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
+    </style>
 </head>
 <body>
     <div class="main-layout">
@@ -44,32 +73,42 @@
 
         <main class="main-content">
             <section class="content-header">
-                <h1>Depth-Map Denoising for RGB-D Reconstruction &amp; Tracking</h1>
-                <p>DISP Final Project, Technion · Group 2</p>
+                <h1>Depth-Map Denoising and Restoration for RGB-D 3-D Reconstruction and Tracking</h1>
+                <p>DISP Final Project, Technion</p>
             </section>
 
             <section class="project-section">
                 <div class="project-content">
-                    <p><strong>My role (Member A):</strong> robot-arm capture platform, RealSense D435 sensor-noise analysis, and camera-tracking evaluation.</p>
-                    <p><strong>Teammates:</strong> Jianting WU (2-D classical restoration) · Junzhe XU (3-D geometry &amp; reconstruction)</p>
+                    <p><strong>Author:</strong> Chuhan ZHANG</p>
+                    <p>
+                        <a href="papers/depth-map-denoising-rgbd.pdf" class="research-link" target="_blank" rel="noopener">PDF (full report)</a>
+                    </p>
 
-                    <p>Consumer RGB-D depth maps are noisy and incomplete, which hurts both dense reconstruction and pose tracking. This group project compared classical depth filters on real Intel RealSense D435 data, then measured how the 2-D restoration ranking affects 3-D fusion and camera-pose accuracy.</p>
+                    <p>Consumer RGB-D depth maps are noisy and incomplete, which hurts both dense reconstruction and camera tracking. I built a full pipeline on an Intel RealSense D435 mounted on an OpenManipulator-X robot arm, compared six classical depth filters, and measured how the 2-D restoration ranking affects 3-D fusion and pose accuracy.</p>
 
-                    <h3>My Contributions</h3>
+                    <h3>What I Did</h3>
                     <ul>
                         <li><strong>Hardware platform:</strong> Mounted a RealSense D435 (640×480 @ 30 Hz, SDK post-processing off) on an OpenManipulator-X arm; separated motor/sensor power and wired Arduino + DYNAMIXEL control.</li>
                         <li><strong>Scan execution:</strong> Planned task-space trajectories, ran inverse kinematics at 20 Hz, and used calibrated MuJoCo forward kinematics as the motion reference.</li>
-                        <li><strong>Dataset:</strong> Captured a 70 s robot-arm sequence (1798 RGB-D frames) of a desktop battery scene for the shared 2-D / 3-D / tracking pipeline.</li>
+                        <li><strong>Dataset:</strong> Captured a 70 s robot-arm sequence (1798 RGB-D frames) of a desktop battery scene, plus auxiliary scenes for generalization checks.</li>
                         <li><strong>Sensor noise model:</strong> Verified depth-dependent noise σ(Z)=σ₀+αZ on a static countdown segment; measured std rising from ~3 mm at 0.85 m to 13.5 mm at 1.55 m (linear fit R²=0.98), fixing the study operating point near σ₀≈18 mm.</li>
-                        <li><strong>Tracking study:</strong> Compared filter choices under Gaussian, salt-and-pepper, and speckle noise using relative pose error (RPE) against an oracle trajectory.</li>
+                        <li><strong>2-D restoration:</strong> Implemented and compared mean, Gaussian, median, frequency-domain Gaussian / Butterworth low-pass, and bilateral filtering under multiple noise levels, noise types, and missing-data conditions.</li>
+                        <li><strong>3-D &amp; tracking:</strong> Back-projected restored depth, ran ICP + TSDF fusion, and evaluated tracking drift (ATE/RPE) against an oracle trajectory and arm forward kinematics.</li>
                     </ul>
 
-                    <h3>Key Results (Group Pipeline)</h3>
+                    <h3>Key Results</h3>
                     <ul>
                         <li>At the D435 operating point, bilateral filtering is the best default 2-D restoration (multi-frame PSNR 41.9±1.8 dB, ~94% edge retention); median wins under impulse noise, mean under speckle.</li>
                         <li>Hole-filling + bilateral recovers maps with ~16% missing pixels (PSNR 11.9 → 37.8 dB).</li>
                         <li>Tracking: bilateral gives the lowest RPE under Gaussian noise; median is best under salt-and-pepper and speckle.</li>
                     </ul>
+
+                    <h3>Figures</h3>
+                    <div class="image-gallery">
+                        <div class="thumbnail-container"><img src="rgbd-hardware.jpg" alt="Hardware platform wiring"></div>
+                        <div class="thumbnail-container"><img src="rgbd-timeline.jpg" alt="Scan timeline storyboard"></div>
+                        <div class="thumbnail-container"><img src="rgbd-restoration.jpg" alt="Depth restoration comparison"></div>
+                    </div>
 
                     <h3>Stack</h3>
                     <p>Python · OpenCV / NumPy · pyrealsense2 · Open3D · MuJoCo · OpenManipulator-X · Intel RealSense D435</p>
