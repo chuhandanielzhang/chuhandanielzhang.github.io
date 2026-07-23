@@ -16,5 +16,5 @@
   <text x="462" y="150" text-anchor="middle" fill="#e0f2fe" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Depth</text>
   <path d="M120 320 L180 320 L180 360 L280 360 L280 300 L340 300 L340 380 L420 380 L420 340 L520 340" fill="none" stroke="#67e8f9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
   <circle cx="520" cy="340" r="18" fill="#fbbf24"/>
-  <text x="320" y="440" text-anchor="middle" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="20">RealSense D435 · OpenManipulator-X</text>
+  <text x="320" y="440" text-anchor="middle" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="20">RealSense D435 ï¿½ OpenManipulator-X</text>
 </svg>
