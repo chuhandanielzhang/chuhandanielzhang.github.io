@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="480" viewBox="0 0 640 480">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#1e3a5f"/>
+    </linearGradient>
+    <linearGradient id="depth" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <rect x="48" y="56" width="260" height="200" rx="10" fill="#111827" stroke="#334155" stroke-width="3"/>
+  <text x="178" y="150" text-anchor="middle" fill="#94a3b8" font-family="Helvetica, Arial, sans-serif" font-size="22">RGB</text>
+  <rect x="332" y="56" width="260" height="200" rx="10" fill="url(#depth)" opacity="0.95"/>
+  <text x="462" y="150" text-anchor="middle" fill="#e0f2fe" font-family="Helvetica, Arial, sans-serif" font-size="22" font-weight="700">Depth</text>
+  <path d="M120 320 L180 320 L180 360 L280 360 L280 300 L340 300 L340 380 L420 380 L420 340 L520 340" fill="none" stroke="#67e8f9" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="520" cy="340" r="18" fill="#fbbf24"/>
+  <text x="320" y="440" text-anchor="middle" fill="#cbd5e1" font-family="Helvetica, Arial, sans-serif" font-size="20">RealSense D435 · OpenManipulator-X</text>
+</svg>
