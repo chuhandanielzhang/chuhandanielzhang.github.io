@@ -12,6 +12,11 @@
 !papers/
 !papers/*.pdf
 
+# 例外：个人 CV
+!CV.pdf
+!cv/
+!cv/*.pdf
+
 # SOP和PS文件
 *SOP*
 *PS*
