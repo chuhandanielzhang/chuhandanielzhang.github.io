@@ -12,6 +12,10 @@
 !papers/
 !papers/*.pdf
 
+# 例外：海报
+!posters/
+!posters/**
+
 # 例外：个人 CV
 !CV.pdf
 !cv/

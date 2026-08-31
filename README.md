@@ -21,7 +21,7 @@ Built with HTML5, CSS3, and JavaScript. Deployed via GitHub Pages.
 
 ## Contact
 
-Email: chuhan.zhang@gtiit.edu.cn  
+Email: czhang.daniel@gmail.com  
 Institution: Technion - Israel Institute of Technology
 
 ---

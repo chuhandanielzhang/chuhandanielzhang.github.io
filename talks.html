@@ -58,6 +58,9 @@
             cursor: pointer;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .poster-thumb.landscape {
+            max-width: 240px;
+        }
         .poster-thumb:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
@@ -106,6 +109,22 @@
             <section class="content-section">
                 <h2 class="section-title">Talks & Presentations</h2>
                 
+                <div class="research-item">
+                    <div class="research-thumbnail" style="flex: 0 0 240px; height: 155px; margin-right: 20px; background: none;">
+                        <img src="posters/Zhang_C2C_ProOMEGA2_56x36.jpg" alt="Connect to Campus poster" class="poster-thumb landscape" style="object-fit: contain; width: 100%; height: 100%;" onclick="openModal(this.src)">
+                    </div>
+                    <div class="research-info" style="width: 100%;">
+                        <h3 class="research-title">Connect to Campus Conference — Pro-OMEGA2 Poster</h3>
+                        <p class="research-venue">Johns Hopkins University, Whiting School of Engineering · September 19, 2026</p>
+                        <p class="research-desc">56″ × 36″ landscape poster on propeller-assisted 3D hopping and Hierarchical Force Allocation. Accepted IEEE CASE 2026 paper (Best Student Paper Award Finalist).</p>
+                        <div class="research-links" style="margin-top: 8px;">
+                            <a href="posters/Zhang_C2C_ProOMEGA2_56x36.pdf" class="research-link" target="_blank">Poster PDF</a>
+                            <a href="papers/Zhang_CASE2026_HFA.pdf" class="research-link" target="_blank">Paper PDF</a>
+                            <a href="https://arxiv.org/abs/2606.08186" class="research-link" target="_blank">arXiv</a>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="research-item">
                     <div class="research-thumbnail" style="flex: 0 0 150px; height: 200px; margin-right: 20px; background: none;">
                         <img src="GTIIT_Poster_Sharing_2026.jpg" alt="Poster Thumbnail" class="poster-thumb" style="object-fit: contain; width: 100%; height: 100%;" onclick="openModal(this.src)">

@@ -126,7 +126,7 @@ GitHub Pages will automatically deploy within 1-2 minutes! 🎉
 ## 🔗 Links
 
 - 🌐 **Live Website**: [chuhandanielzhang.github.io](https://chuhandanielzhang.github.io)
-- 📧 **Email**: chuhan.zhang@gtiit.edu.cn
+- 📧 **Email**: czhang.daniel@gmail.com
 - 🐙 **GitHub**: [@chuhandanielzhang](https://github.com/chuhandanielzhang)
 
 ---

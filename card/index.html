@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Chuhan ZHANG · Business Card</title>
+  <style>
+    :root {
+      --ink: #1f2937;
+      --charcoal: #2c2c2c;
+      --muted: #9ca3af;
+      --paper: #f7f6f3;
+      --indigo: #6366f1;
+      --indigo-soft: #818cf8;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+      background: #eceae4;
+      color: var(--ink);
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 40px 24px 72px;
+    }
+
+    .intro {
+      margin-bottom: 28px;
+    }
+
+    .intro h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .intro p {
+      margin-top: 8px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .actions button, .actions a {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 13px;
+      border: 0;
+      border-radius: 6px;
+      padding: 8px 14px;
+      cursor: pointer;
+      text-decoration: none;
+      background: var(--charcoal);
+      color: #fff;
+    }
+
+    .actions .ghost {
+      background: transparent;
+      color: var(--charcoal);
+      border: 1px solid #c7c4bb;
+    }
+
+    .stage {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .card {
+      width: 90mm;
+      height: 54mm;
+      border-radius: 2.5mm;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 18px 40px rgba(28, 25, 23, 0.14);
+    }
+
+    .front {
+      background: var(--charcoal);
+      color: #f8f7f4;
+    }
+
+    .back {
+      background: var(--paper);
+      color: var(--ink);
+    }
+
+    .accent {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 3.2mm;
+      height: 100%;
+      background: var(--indigo);
+    }
+
+    .front-inner, .back-inner {
+      height: 100%;
+      padding: 7.2mm 7mm 6.5mm 8.2mm;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .en-name {
+      font-size: 17.5pt;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      line-height: 1.05;
+    }
+
+    .cn-name {
+      margin-top: 1.5mm;
+      font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+      font-size: 10pt;
+      color: #d1d5db;
+      letter-spacing: 0.28em;
+    }
+
+    .rule {
+      width: 14mm;
+      height: 0.35mm;
+      background: var(--indigo);
+      margin: 4.2mm 0 3.6mm;
+    }
+
+    .role {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 8pt;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--indigo-soft);
+      font-weight: 600;
+    }
+
+    .focus {
+      margin-top: 1.4mm;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 8pt;
+      color: #c4c4c4;
+    }
+
+    .affil {
+      margin-top: auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 6.7pt;
+      color: #b0b0b0;
+      line-height: 1.45;
+    }
+
+    .affil b {
+      color: #ececec;
+      font-weight: 560;
+    }
+
+    .back-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 6mm;
+      height: 100%;
+    }
+
+    .contacts {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2.3mm;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 7.3pt;
+      line-height: 1.25;
+    }
+
+    .contacts .label {
+      color: #8b8b86;
+      font-size: 6pt;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 0.3mm;
+    }
+
+    .contacts a, .contacts span.line {
+      color: var(--ink);
+      text-decoration: none;
+    }
+
+    .qr-wrap {
+      width: 22mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 1.4mm;
+    }
+
+    .qr-wrap img {
+      width: 20mm;
+      height: 20mm;
+      display: block;
+    }
+
+    .qr-wrap small {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 5.6pt;
+      letter-spacing: 0.16em;
+      color: var(--indigo);
+    }
+
+    .note {
+      margin-top: 22px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 12px;
+      color: #6b7280;
+      line-height: 1.6;
+    }
+
+    @media print {
+      @page { size: 90mm 54mm; margin: 0; }
+      body { background: #fff; }
+      .page { padding: 0; max-width: none; }
+      .intro, .note, .actions, .stage .card + .card { display: none; }
+      .stage { gap: 0; }
+      .card {
+        box-shadow: none;
+        border-radius: 0;
+        page-break-after: always;
+      }
+      .stage .card + .card { display: block; }
+      body.print-back .stage .card:first-child { display: none; }
+      body.print-back .stage .card + .card { display: block; }
+      body.print-front .stage .card + .card { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="intro">
+      <h1>Business card</h1>
+      <p>90 × 54 mm, matched to the site: charcoal, indigo, serif name. Front for handing over; back for scan and contact. Print double-sided, flip on the long edge.</p>
+      <div class="actions">
+        <button type="button" onclick="printSide('front')">Print front</button>
+        <button type="button" class="ghost" onclick="printSide('back')">Print back</button>
+        <a class="ghost" href="../index.html">Back to site</a>
+      </div>
+    </div>
+
+    <div class="stage">
+      <article class="card front" aria-label="Card front">
+        <div class="accent"></div>
+        <div class="front-inner">
+          <div class="en-name">Chuhan ZHANG</div>
+          <div class="cn-name">张楚涵</div>
+          <div class="rule"></div>
+          <div class="role">Robotics Researcher</div>
+          <div class="focus">Legged locomotion · Hybrid hopping</div>
+          <div class="affil">
+            <div><b>Johns Hopkins University</b> · M.S.E. Robotics</div>
+            <div>The Chinese University of Hong Kong · Research Assistant</div>
+            <div>Technion / GTIIT · B.Sc. Mechanical Engineering</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="card back" aria-label="Card back">
+        <div class="accent"></div>
+        <div class="back-inner">
+          <div class="back-top">
+            <div class="contacts">
+              <div>
+                <div class="label">Web</div>
+                <a href="https://chuhandanielzhang.github.io">chuhandanielzhang.github.io</a>
+              </div>
+              <div>
+                <div class="label">Email</div>
+                <a href="mailto:czhang.daniel@gmail.com">czhang.daniel@gmail.com</a>
+              </div>
+              <div>
+                <div class="label">GitHub</div>
+                <span class="line">github.com/chuhandanielzhang</span>
+              </div>
+              <div>
+                <div class="label">LinkedIn</div>
+                <span class="line">linkedin.com/in/chuhandanielzhang</span>
+              </div>
+            </div>
+            <div class="qr-wrap">
+              <img src="qr-site.png" alt="QR code to personal website">
+              <small>SITE</small>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <p class="note">
+      Local file: <code>chuhandanielzhang.github.io/card/index.html</code>.
+      If you get a JHU email later, swap it here and reprint the back only.
+    </p>
+  </div>
+  <script>
+    function printSide(side) {
+      document.body.classList.remove("print-front", "print-back");
+      document.body.classList.add(side === "back" ? "print-back" : "print-front");
+      window.print();
+    }
+  </script>
+</body>
+</html>
