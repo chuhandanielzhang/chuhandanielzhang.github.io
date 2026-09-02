@@ -102,6 +102,64 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Video modal: click thumbnail → play, fullscreen, track-shot crop
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.createElement('div');
+    modal.className = 'video-modal';
+    modal.innerHTML = [
+        '<span class="video-modal-close" aria-label="Close">&times;</span>',
+        '<div class="video-modal-inner">',
+        '  <video controls playsinline></video>',
+        '  <div class="video-modal-bar">',
+        '    <span class="video-modal-title"></span>',
+        '    <button type="button" class="video-fs-btn">Fullscreen</button>',
+        '  </div>',
+        '</div>'
+    ].join('');
+    document.body.appendChild(modal);
+
+    const video = modal.querySelector('video');
+    const titleEl = modal.querySelector('.video-modal-title');
+    const fsBtn = modal.querySelector('.video-fs-btn');
+
+    function openVideoModal(src, title) {
+        video.src = src;
+        titleEl.textContent = title || 'Demo';
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        video.play().catch(function () {});
+    }
+
+    function closeVideoModal() {
+        video.pause();
+        video.removeAttribute('src');
+        video.load();
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    modal.querySelector('.video-modal-close').addEventListener('click', closeVideoModal);
+    modal.addEventListener('click', function (e) {
+        if (e.target === modal) closeVideoModal();
+    });
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('active')) closeVideoModal();
+    });
+    fsBtn.addEventListener('click', function () {
+        const node = video;
+        if (node.requestFullscreen) node.requestFullscreen();
+        else if (node.webkitRequestFullscreen) node.webkitRequestFullscreen();
+    });
+
+    document.querySelectorAll('[data-video]').forEach(function (el) {
+        el.addEventListener('click', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            openVideoModal(el.getAttribute('data-video'), el.getAttribute('data-title'));
+        });
+    });
+});
+
 // Collapsible submenu - hide all submenus by default
 document.addEventListener('DOMContentLoaded', function() {
     const allSubmenus = document.querySelectorAll('.sidebar-submenu');

@@ -1108,6 +1108,97 @@ html {
     opacity: 1;
 }
 
+.video-thumb {
+    position: relative;
+    cursor: pointer;
+}
+
+.video-thumb img {
+    object-fit: cover;
+    object-position: center;
+}
+
+.play-badge {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(17, 24, 39, 0.78);
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    padding: 6px 10px;
+    border-radius: 999px;
+    pointer-events: none;
+    white-space: nowrap;
+}
+
+.video-thumb:hover .play-badge {
+    background: rgba(99, 102, 241, 0.92);
+}
+
+.video-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.92);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 20px;
+}
+
+.video-modal.active {
+    display: flex;
+}
+
+.video-modal-inner {
+    width: min(96vw, 1400px);
+    position: relative;
+}
+
+.video-modal video {
+    width: 100%;
+    height: auto;
+    max-height: 82vh;
+    background: #000;
+    border-radius: 8px;
+    display: block;
+}
+
+.video-modal-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-top: 10px;
+    color: #e5e7eb;
+    font-size: 14px;
+}
+
+.video-modal-bar button {
+    border: 0;
+    border-radius: 6px;
+    padding: 7px 12px;
+    cursor: pointer;
+    background: #fff;
+    color: #111827;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+.video-modal-close {
+    position: fixed;
+    top: 16px;
+    right: 24px;
+    color: #fff;
+    font-size: 40px;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0.85;
+}
+
 .research-info {
     flex: 1;
 }
