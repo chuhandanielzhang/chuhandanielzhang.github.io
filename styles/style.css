@@ -1357,46 +1357,74 @@ html {
     }
 }
 
-/* Robotics journey timeline (home page) */
+/* Robotics journey timeline (home page): images alternate sides of a centre line */
 .robotics-timeline {
     list-style: none;
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 28px 4px 12px;
     position: relative;
-    background: linear-gradient(var(--primary-color), var(--primary-color)) left 10px / 100% 2px no-repeat local;
+    padding: 8px 0;
+}
+
+.robotics-timeline::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: var(--primary-color);
+    transform: translateX(-50%);
 }
 
 .timeline-item {
-    flex: 0 0 220px;
-    scroll-snap-align: start;
     position: relative;
+    width: 50%;
+    padding: 0 32px 28px 0;
+}
+
+.timeline-item:nth-child(even) {
+    margin-left: 50%;
+    padding: 0 0 28px 32px;
+}
+
+/* Pull each card up so the two columns interleave instead of leaving gaps */
+.timeline-item + .timeline-item {
+    margin-top: -64px;
 }
 
 .timeline-item::before {
     content: "";
     position: absolute;
-    top: -24px;
-    left: 0;
+    top: 14px;
+    right: -8px;
     width: 12px;
     height: 12px;
     border-radius: 50%;
     background: var(--bg-color);
     border: 3px solid var(--primary-color);
+    z-index: 1;
+}
+
+.timeline-item:nth-child(even)::before {
+    right: auto;
+    left: -8px;
 }
 
 .timeline-item a {
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    gap: 16px;
+    align-items: flex-start;
     color: inherit;
     text-decoration: none;
 }
 
+.timeline-item:nth-child(odd) a {
+    flex-direction: row-reverse;
+    text-align: right;
+}
+
 .timeline-item img {
-    width: 100%;
+    flex: 0 0 48%;
+    width: 48%;
     aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: 8px;
@@ -1408,24 +1436,52 @@ html {
     transform: translateY(-3px);
 }
 
+.timeline-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
 .timeline-year {
-    margin-top: 6px;
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .timeline-title {
     font-weight: 600;
+    line-height: 1.3;
 }
 
 .timeline-desc {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-light);
     line-height: 1.45;
 }
 
 @media (max-width: 768px) {
-    .timeline-item {
-        flex-basis: 70%;
+    .robotics-timeline::before {
+        left: 6px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even) {
+        width: 100%;
+        margin-left: 0;
+        padding: 0 0 24px 28px;
+    }
+
+    .timeline-item + .timeline-item {
+        margin-top: 0;
+    }
+
+    .timeline-item::before,
+    .timeline-item:nth-child(even)::before {
+        left: 0;
+        right: auto;
+    }
+
+    .timeline-item:nth-child(odd) a {
+        flex-direction: row;
+        text-align: left;
     }
 }
