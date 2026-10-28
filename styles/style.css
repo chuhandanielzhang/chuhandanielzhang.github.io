@@ -1357,131 +1357,115 @@ html {
     }
 }
 
-/* Robotics journey timeline (home page): images alternate sides of a centre line */
+/* Robotics journey timeline: compact column beside the home intro, newest first */
+.hero-body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    gap: 40px;
+    align-items: start;
+}
+
+.hero-journey {
+    padding-left: 24px;
+    border-left: 1px solid var(--border-color);
+}
+
+.journey-heading {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+
 .robotics-timeline {
     list-style: none;
     position: relative;
-    padding: 8px 0;
 }
 
 .robotics-timeline::before {
     content: "";
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    width: 2px;
-    background: var(--primary-color);
-    transform: translateX(-50%);
+    top: 8px;
+    bottom: 8px;
+    left: 5px;
+    width: 1px;
+    background: var(--border-color);
 }
 
 .timeline-item {
     position: relative;
-    width: 50%;
-    padding: 0 32px 28px 0;
-}
-
-.timeline-item:nth-child(even) {
-    margin-left: 50%;
-    padding: 0 0 28px 32px;
-}
-
-/* Pull each card up so the two columns interleave instead of leaving gaps */
-.timeline-item + .timeline-item {
-    margin-top: -64px;
+    padding-left: 20px;
 }
 
 .timeline-item::before {
     content: "";
     position: absolute;
-    top: 14px;
-    right: -8px;
-    width: 12px;
-    height: 12px;
+    top: 50%;
+    left: 1px;
+    width: 9px;
+    height: 9px;
+    margin-top: -4.5px;
     border-radius: 50%;
     background: var(--bg-color);
-    border: 3px solid var(--primary-color);
-    z-index: 1;
-}
-
-.timeline-item:nth-child(even)::before {
-    right: auto;
-    left: -8px;
+    border: 2px solid var(--primary-color);
 }
 
 .timeline-item a {
     display: flex;
-    gap: 16px;
-    align-items: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
     color: inherit;
     text-decoration: none;
 }
 
-.timeline-item:nth-child(odd) a {
-    flex-direction: row-reverse;
-    text-align: right;
-}
-
 .timeline-item img {
-    flex: 0 0 48%;
-    width: 48%;
-    aspect-ratio: 3 / 2;
+    flex: 0 0 auto;
+    width: 60px;
+    height: 40px;
     object-fit: cover;
-    border-radius: 8px;
-    box-shadow: var(--shadow-md);
-    transition: transform 0.25s ease;
+    border-radius: 4px;
+    filter: saturate(0.85);
+    transition: transform 0.2s ease, filter 0.2s ease;
 }
 
 .timeline-item a:hover img {
-    transform: translateY(-3px);
+    transform: scale(1.06);
+    filter: none;
 }
 
 .timeline-text {
     display: flex;
     flex-direction: column;
-    gap: 2px;
+    line-height: 1.25;
+    min-width: 0;
 }
 
 .timeline-year {
+    font-size: 0.75rem;
     font-weight: 700;
     color: var(--primary-color);
 }
 
 .timeline-title {
-    font-weight: 600;
-    line-height: 1.3;
+    font-size: 0.85rem;
+    color: var(--text-color);
 }
 
-.timeline-desc {
-    font-size: 0.88rem;
-    color: var(--text-light);
-    line-height: 1.45;
+.timeline-item a:hover .timeline-title {
+    color: var(--primary-color);
 }
 
-@media (max-width: 768px) {
-    .robotics-timeline::before {
-        left: 6px;
+@media (max-width: 1100px) {
+    .hero-body {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
     }
 
-    .timeline-item,
-    .timeline-item:nth-child(even) {
-        width: 100%;
-        margin-left: 0;
-        padding: 0 0 24px 28px;
-    }
-
-    .timeline-item + .timeline-item {
-        margin-top: 0;
-    }
-
-    .timeline-item::before,
-    .timeline-item:nth-child(even)::before {
-        left: 0;
-        right: auto;
-    }
-
-    .timeline-item:nth-child(odd) a {
-        flex-direction: row;
-        text-align: left;
+    .hero-journey {
+        padding-left: 0;
+        border-left: none;
     }
 }
