@@ -1402,8 +1402,8 @@ html {
 
 .timeline-item img {
     flex: 0 0 auto;
-    width: 84px;
-    height: 56px;
+    width: 96px;
+    height: 64px;
     object-fit: cover;
     border-radius: 4px;
     filter: saturate(0.85);
@@ -1415,28 +1415,27 @@ html {
     filter: none;
 }
 
+/* Same type scale as the News list */
 .timeline-text {
     display: flex;
     flex-direction: column;
-    line-height: 1.35;
+    font-size: 1rem;
+    line-height: 1.55;
     min-width: 0;
 }
 
 .timeline-year {
-    font-size: 0.78rem;
     font-weight: 700;
-    color: var(--primary-color);
-}
-
-.timeline-title {
-    font-size: 0.95rem;
-    font-weight: 600;
     color: var(--text-color);
 }
 
+.timeline-title {
+    font-weight: 600;
+    color: var(--primary-color);
+}
+
 .timeline-desc {
-    font-size: 0.85rem;
-    color: var(--text-light);
+    color: var(--text-color);
 }
 
 .timeline-item a:hover .timeline-title {
