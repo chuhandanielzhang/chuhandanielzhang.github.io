@@ -1356,3 +1356,76 @@ html {
         gap: 5px;
     }
 }
+
+/* Robotics journey timeline (home page) */
+.robotics-timeline {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 28px 4px 12px;
+    position: relative;
+    background: linear-gradient(var(--primary-color), var(--primary-color)) left 10px / 100% 2px no-repeat local;
+}
+
+.timeline-item {
+    flex: 0 0 220px;
+    scroll-snap-align: start;
+    position: relative;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    top: -24px;
+    left: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--bg-color);
+    border: 3px solid var(--primary-color);
+}
+
+.timeline-item a {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.timeline-item img {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: var(--shadow-md);
+    transition: transform 0.25s ease;
+}
+
+.timeline-item a:hover img {
+    transform: translateY(-3px);
+}
+
+.timeline-year {
+    margin-top: 6px;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.timeline-title {
+    font-weight: 600;
+}
+
+.timeline-desc {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    line-height: 1.45;
+}
+
+@media (max-width: 768px) {
+    .timeline-item {
+        flex-basis: 70%;
+    }
+}
