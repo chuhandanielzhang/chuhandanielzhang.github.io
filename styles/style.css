@@ -842,10 +842,11 @@ html {
     margin-bottom: 15px;
 }
 
-/* One-line opener above the bio, from the SOP */
-.bio-section .bio-tagline {
-    font-style: italic;
-    color: var(--text-light);
+/* Opening paragraph from the SOP, key phrases underlined as in the PDF */
+.bio-key {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 3px;
 }
 
 .bio-section a {
