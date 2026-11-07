@@ -842,13 +842,6 @@ html {
     margin-bottom: 15px;
 }
 
-/* Opening paragraph from the SOP, key phrases underlined as in the PDF */
-.bio-key {
-    text-decoration: underline;
-    text-decoration-thickness: 1px;
-    text-underline-offset: 3px;
-}
-
 .bio-section a {
     color: var(--primary-color);
     text-decoration: none;
