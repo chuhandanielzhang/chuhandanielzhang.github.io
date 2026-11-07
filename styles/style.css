@@ -842,6 +842,12 @@ html {
     margin-bottom: 15px;
 }
 
+/* One-line opener above the bio, from the SOP */
+.bio-section .bio-tagline {
+    font-style: italic;
+    color: var(--text-light);
+}
+
 .bio-section a {
     color: var(--primary-color);
     text-decoration: none;
