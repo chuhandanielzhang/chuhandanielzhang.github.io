@@ -61,6 +61,7 @@
                             <h3 class="research-title">Propeller-Assisted 3D Hopper: Hierarchical Force Allocation</h3>
                             <p class="research-venue">Research Assistant @ CUHK · Jul 2025 – Jun 2026</p>
                             <p class="research-desc">Developed an SRB-based Hierarchical Force Allocation (HFA) stack for a 3-RSR parallel-leg hopper, prioritizing leg contact forces and using tri-rotor thrust as residual authority. Built the real-time LCM control middleware and inverse-kinematics pipeline, enabling continuous 3D hopping and outdoor disturbance recovery.</p>
+                            <p class="research-desc">Also trained PPO hopping policies in Isaac Gym / MuJoCo MJX, with an encoder-decoder policy for flight-phase underactuation and domain randomization plus actuator-delay modeling for sim-to-real of the closed-chain leg.</p>
                             <p class="research-desc" style="margin-top: 8px; font-style: italic; color: var(--text-light);">* First-authored paper accepted by IEEE CASE 2026 (Best Student Paper Award Finalist).</p>
                             <div class="research-links" style="margin-top: 8px;">
                                 <a href="https://arxiv.org/abs/2606.08186" class="research-link" target="_blank">arXiv</a>
@@ -130,6 +131,10 @@
                             <li style="margin-bottom: 10px;">
                                 <a href="https://github.com/chuhandanielzhang/Spring_Dynamic_sim" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">Spring_Dynamic_sim</a>
                                 <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--text-light);">Dynamic simulation of spring-mass systems and related mechanisms.</p>
+                            </li>
+                            <li style="margin-bottom: 10px;">
+                                <a href="https://github.com/chuhandanielzhang/RL_aerohopper" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">RL_aerohopper</a>
+                                <p style="margin: 5px 0 0 0; font-size: 0.9em; color: var(--text-light);">Isaac Gym reinforcement learning environment (PPO) for a single-legged hopper with quadrotor propellers: the policy drives the leg, while a PD controller on the rotors holds attitude.</p>
                             </li>
                             <li style="margin-bottom: 10px;">
                                 <a href="https://github.com/chuhandanielzhang/RL_cart" target="_blank" style="color: var(--primary-color); font-weight: bold; text-decoration: none;">RL_cart</a>
